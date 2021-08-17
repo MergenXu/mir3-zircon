@@ -259,13 +259,13 @@ namespace Client.Scenes.Views
         {
             Size = new Size(260, 650 - 90);
             HasFooter = true;
-            TitleLabel.Text = "Change";
+            TitleLabel.Text = "修改";
             CloseButton.MouseClick += (o, e) => Close();
 
             ChangeButton = new DXButton
             {
                 Parent = this,
-                Label = { Text = "Confirm" },
+                Label = { Text = "确认" },
                 Location = new Point((Size.Width - 80) / 2, Size.Height - 43),
                 Size = new Size(80, DefaultHeight),
             };
@@ -517,7 +517,7 @@ namespace Client.Scenes.Views
             CharacterNameTextBoxLabel = new DXLabel
             {
                 Parent = this,
-                Text = "Name:",
+                Text = "名称:",
             };
             CharacterNameTextBoxLabel.Location = new Point(CharacterNameTextBox.Location.X - CharacterNameTextBoxLabel.Size.Width - 5, (CharacterNameTextBox.Size.Height - CharacterNameTextBoxLabel.Size.Height) / 2 + CharacterNameTextBox.Location.Y);
 

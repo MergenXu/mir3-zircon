@@ -42,12 +42,12 @@ namespace Client.Scenes.Views
             if (AllowGroup)
             {
                 AllowGroupButton.Index = 122;
-                AllowGroupButton.Hint = "Group Status: Allowing";
+                AllowGroupButton.Hint = "组队状态: 允许";
             }
             else
             {
                 AllowGroupButton.Index = 142;
-                AllowGroupButton.Hint = "Group Status: Not Allowing";
+                AllowGroupButton.Hint = "组队状态: 不允许";
             }
         }
 
@@ -106,7 +106,7 @@ namespace Client.Scenes.Views
 
         public GroupDialog()
         {
-            TitleLabel.Text = "Group";
+            TitleLabel.Text = "组队";
             HasFooter = true;
 
             SetClientSize(new Size(200, 200));
@@ -116,7 +116,7 @@ namespace Client.Scenes.Views
                 LibraryFile = LibraryFile.GameInter2,
                 Index = 142,
                 Parent = this,
-                Hint = "Group Status: Not Allowing",
+                Hint = "组队状态: 不允许",
                 Location = new Point(ClientArea.X, Size.Height - 46)
             };
             AllowGroupButton.MouseClick += (o, e) =>
@@ -139,7 +139,7 @@ namespace Client.Scenes.Views
                 {
                     Label =
                     {
-                        Text = "Members"
+                        Text = "成员"
                     },
 
                     IsControl = false,
@@ -152,7 +152,7 @@ namespace Client.Scenes.Views
             {
                 Size = new Size(60, SmallButtonHeight),
                 ButtonType = ButtonType.SmallButton,
-                Label = {Text = "Invite"},
+                Label = {Text = "邀请"},
                 Location = new Point(ClientArea.Right - 135, Size.Height - 40),
                 Parent = this,
             };
@@ -191,7 +191,7 @@ namespace Client.Scenes.Views
             {
                 Size = new Size(60, SmallButtonHeight),
                 ButtonType = ButtonType.SmallButton,
-                Label = { Text = "Remove" },
+                Label = { Text = "移除" },
                 Location = new Point(ClientArea.Right - 65, Size.Height - 40),
                 Parent = this,
                 Enabled = false,

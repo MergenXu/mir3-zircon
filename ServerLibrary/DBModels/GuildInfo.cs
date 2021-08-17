@@ -24,7 +24,7 @@ namespace Server.DBModels
                 var oldValue = _GuildName;
                 _GuildName = value;
 
-                OnChanged(oldValue, value, "GuildName");
+                OnChanged(oldValue, value, "行会名称");
             }
         }
         private string _GuildName;
@@ -39,7 +39,7 @@ namespace Server.DBModels
                 var oldValue = _MemberLimit;
                 _MemberLimit = value;
 
-                OnChanged(oldValue, value, "MemberLimit");
+                OnChanged(oldValue, value, "成员限制");
             }
         }
         private int _MemberLimit;
@@ -54,7 +54,7 @@ namespace Server.DBModels
                 var oldValue = _StorageSize;
                 _StorageSize = value;
 
-                OnChanged(oldValue, value, "StorageSize");
+                OnChanged(oldValue, value, "仓库大小");
             }
         }
         private int _StorageSize;
@@ -69,7 +69,7 @@ namespace Server.DBModels
                 var oldValue = _GuildFunds;
                 _GuildFunds = value;
 
-                OnChanged(oldValue, value, "GuildFunds");
+                OnChanged(oldValue, value, "行会资金");
             }
         }
         private long _GuildFunds;
@@ -84,7 +84,7 @@ namespace Server.DBModels
                 var oldValue = _GuildLevel;
                 _GuildLevel = value;
 
-                OnChanged(oldValue, value, "GuildLevel");
+                OnChanged(oldValue, value, "行会等级");
             }
         }
         private int _GuildLevel;
@@ -99,7 +99,7 @@ namespace Server.DBModels
                 var oldValue = _GuildNotice;
                 _GuildNotice = value;
 
-                OnChanged(oldValue, value, "GuildNotice");
+                OnChanged(oldValue, value, "行会公告");
             }
         }
         private string _GuildNotice;
@@ -204,7 +204,7 @@ namespace Server.DBModels
                 var oldValue = _StarterGuild;
                 _StarterGuild = value;
 
-                OnChanged(oldValue, value, "StarterGuild");
+                OnChanged(oldValue, value, "新人行会");
             }
         }
         private bool _StarterGuild;

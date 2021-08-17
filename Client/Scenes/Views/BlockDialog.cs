@@ -23,7 +23,7 @@ namespace Client.Scenes.Views
 
         public BlockDialog()
         {
-            TitleLabel.Text = "Block List";
+            TitleLabel.Text = "黑名单";
 
             HasFooter = false;
 
@@ -38,7 +38,7 @@ namespace Client.Scenes.Views
 
             DXButton addButton = new DXButton
             {
-                Label = { Text = "Add" },
+                Label = { Text = "添加" },
                 Parent = this,
                 Location = new Point(ClientArea.X, ClientArea.Bottom - 20),
                 Size = new Size(80, SmallButtonHeight),

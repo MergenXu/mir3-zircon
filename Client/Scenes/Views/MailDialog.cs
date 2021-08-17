@@ -49,7 +49,7 @@ namespace Client.Scenes.Views
 
         public MailDialog()
         {
-            TitleLabel.Text = "Mail Box";
+            TitleLabel.Text = "邮件";
             HasFooter = true;
 
             SetClientSize(new Size(350, 350));
@@ -110,7 +110,7 @@ namespace Client.Scenes.Views
                 Location = new Point(ClientArea.Right - 100, Size.Height - 43),
                 Size = new Size(80, DefaultHeight),
                 Parent = this,
-                Label = { Text = "Collect Some" }
+                Label = { Text = "刷新邮件" }
             };
             CollectAllButton.MouseClick += (o, e) =>
             {
@@ -148,7 +148,7 @@ namespace Client.Scenes.Views
                 Location = new Point(ClientArea.Right - 200, Size.Height - 43),
                 Size = new Size(80, DefaultHeight),
                 Parent = this,
-                Label = { Text = "Delete Some" }
+                Label = { Text = "删除邮件" }
             };
             DeleteAll.MouseClick += (o, e) =>
             {
@@ -168,7 +168,7 @@ namespace Client.Scenes.Views
                 Location = new Point(ClientArea.Right - 300, Size.Height - 43),
                 Size = new Size(80, DefaultHeight),
                 Parent = this,
-                Label = { Text = "New Mail" }
+                Label = { Text = "新邮件" }
             };
             NewButton.MouseClick += (o, e) =>
             {
@@ -325,9 +325,9 @@ namespace Client.Scenes.Views
         public event EventHandler<EventArgs> IsHeaderChanged;
         public void OnIsHeaderChanged(bool oValue, bool nValue)
         {
-            SubjectLabel.Text = "Subject";
-            SenderLabel.Text = "Sender";
-            DateLabel.Text = "Date";
+            SubjectLabel.Text = "主题";
+            SenderLabel.Text = "发件人";
+            DateLabel.Text = "日期";
 
             SubjectLabel.ForeColour = Color.FromArgb(198, 166, 99);
             SenderLabel.ForeColour = Color.FromArgb(198, 166, 99);
@@ -560,12 +560,12 @@ namespace Client.Scenes.Views
         public ReadMailDialog()
         {
             SetClientSize(new Size(255, 340));
-            TitleLabel.Text = "Read Mail";
+            TitleLabel.Text = "查看邮件";
 
             DXLabel label = new DXLabel
             {
                 Parent = this,
-                Text = "Sender:"
+                Text = "发件人:"
             };
             label.Location = new Point(ClientArea.X + 50 - label.Size.Width, ClientArea.Y);
 
@@ -586,7 +586,7 @@ namespace Client.Scenes.Views
                 Size = new Size(70, SmallButtonHeight),
                 Location = new Point(SenderBox.Location.X + SenderBox.Size.Width + 10, label.Location.Y),
                 Parent = this,
-                Label = { Text = "Reply" }
+                Label = { Text = "回复" }
             };
             ReplyButton.MouseClick += (o, e) =>
             {
@@ -598,7 +598,7 @@ namespace Client.Scenes.Views
             label = new DXLabel
             {
                 Parent = this,
-                Text = "Subject:"
+                Text = "主题:"
             };
             label.Location = new Point(ClientArea.X + 55 - label.Size.Width, SenderBox.Location.Y + 25);
 
@@ -635,7 +635,7 @@ namespace Client.Scenes.Views
             label = new DXLabel
             {
                 Parent = this,
-                Text = "Message:"
+                Text = "信息:"
             };
             label.Location = new Point(ClientArea.X + 55 - label.Size.Width, DateBox.Location.Y + 25);
 

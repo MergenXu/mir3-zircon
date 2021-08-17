@@ -1576,7 +1576,7 @@ namespace Client.Envir
             MapObject.User.Experience = p.Experience;
             MapObject.User.MaxExperience = p.MaxExperience;
 
-            GameScene.Game.ReceiveChat("Level Increased", MessageType.System);
+            GameScene.Game.ReceiveChat("等级提升", MessageType.System);
         }
         public void Process(S.GainedExperience p)
         {
@@ -1586,12 +1586,12 @@ namespace Client.Envir
 
             if (p.Amount < 0)
             {
-                GameScene.Game.ReceiveChat($"Experience Lost {p.Amount:#,##0.#}.", MessageType.Combat);
+                GameScene.Game.ReceiveChat($"经验损失 {p.Amount:#,##0.#}.", MessageType.Combat);
                 return;
             }
 
 
-            string message = $"Experience Gained {p.Amount:#,##0.#}";
+            string message = $"获得经验 {p.Amount:#,##0.#}";
 
             if (weapon != null && weapon.Info.Effect != ItemEffect.PickAxe && (weapon.Flags & UserItemFlags.Refinable) != UserItemFlags.Refinable && (weapon.Flags & UserItemFlags.NonRefinable) != UserItemFlags.NonRefinable && weapon.Level < Globals.WeaponExperienceList.Count)
             {
@@ -1603,10 +1603,10 @@ namespace Client.Envir
                     weapon.Level++;
                     weapon.Flags |= UserItemFlags.Refinable;
 
-                    message += ", Your weapon is ready for refine";
+                    message += ", 你的武器可以制炼";
                 }
                 else
-                    message += $", Weapon Experience {p.Amount / 10:#,##0.#}";
+                    message += $", 获得武器修炼值 {p.Amount / 10:#,##0.#}";
             }
 
             GameScene.Game.ReceiveChat(message + ".", MessageType.Combat);
@@ -1664,13 +1664,13 @@ namespace Client.Envir
                     displayInfo = Globals.ItemInfoList.Binding.First(x => x.Index == item.AddedStats[Stat.ItemIndex]);
 
                 item.New = true;
-                string text = item.Count > 1 ? $"You gained {displayInfo.ItemName} x{item.Count}." : $"You gained {displayInfo.ItemName}.";
+                string text = item.Count > 1 ? $"获得 {displayInfo.ItemName} x{item.Count}." : $"获得 {displayInfo.ItemName}.";
 
                 if ((item.Flags & UserItemFlags.QuestItem) == UserItemFlags.QuestItem)
-                    text += " (Quest)";
+                    text += " (任务)";
 
                 if (item.Info.Effect == ItemEffect.ItemPart)
-                    text += " [Part]";
+                    text += " [碎片]";
 
                 GameScene.Game.ReceiveChat(text, MessageType.Combat);
             }

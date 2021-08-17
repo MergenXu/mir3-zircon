@@ -45,7 +45,7 @@ namespace Client.Scenes.Views
 
         public StorageDialog()
         {
-            TitleLabel.Text = "Storage";
+            TitleLabel.Text = "仓库";
 
             SetClientSize(new Size(483, 411));
 
@@ -69,7 +69,7 @@ namespace Client.Scenes.Views
             {
                 Parent = filterPanel,
                 Location = new Point(5, 5),
-                Text = "Name:",
+                Text = "名称:",
             };
 
             ItemNameTextBox = new DXTextBox
@@ -84,7 +84,7 @@ namespace Client.Scenes.Views
             {
                 Parent = filterPanel,
                 Location = new Point(ItemNameTextBox.Location.X + ItemNameTextBox.Size.Width + 10, 5),
-                Text = "Item:",
+                Text = "物品:",
             };
 
 
@@ -101,7 +101,7 @@ namespace Client.Scenes.Views
             new DXListBoxItem
             {
                 Parent = ItemTypeComboBox.ListBox,
-                Label = { Text = $"All" },
+                Label = { Text = $"全部" },
                 Item = null
             };
 
@@ -130,7 +130,7 @@ namespace Client.Scenes.Views
                 Location = new Point(ItemTypeComboBox.Location.X + ItemTypeComboBox.Size.Width + 17, label.Location.Y - 1),
                 Parent = filterPanel,
                 ButtonType = ButtonType.SmallButton,
-                Label = { Text = "Clear" }
+                Label = { Text = "清除" }
             };
             ClearButton.MouseClick += (o, e) =>
             {
@@ -142,7 +142,7 @@ namespace Client.Scenes.Views
             {
                 Parent = TabControl,
                 Border = true,
-                TabButton = { Label = { Text = "Storage" } },
+                TabButton = { Label = { Text = "仓库" } },
                 Visible = true,
             };
 
@@ -150,7 +150,7 @@ namespace Client.Scenes.Views
             {
                 Parent = TabControl,
                 Border = true,
-                TabButton = { Label = { Text = "Parts" } },
+                TabButton = { Label = { Text = "碎片" } },
                 Visible = false,
             };
 

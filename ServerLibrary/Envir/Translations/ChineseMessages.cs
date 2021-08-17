@@ -5,24 +5,24 @@ namespace Server.Envir.Translations
     [ConfigPath(@".\Translations\ChineseMessages.ini")]
     public class ChineseMessages : StringMessages
     {
-        public override string BannedWrongPassword { get; set; } = "Too many wrong password login attempts.";
+        public override string BannedWrongPassword { get; set; } = "密码多次输入错误.";
 
 
-        public override string PaymentComplete { get; set; } = "Your payment for {0} Game Gold was successful.";
-        public override string PaymentFailed { get; set; } = "You have been deduceted {0} Game Gold.";
-        public override string ReferralPaymentComplete { get; set; } = "One of your referral's has purchased some game gold, You got a bonus of {0} Hunt Gold.";
-        public override string ReferralPaymentFailed { get; set; } = "One of your referal's purchase has failed, You lost your bonus of {0} Hunt Gold.";
-        public override string GameGoldLost { get; set; } = "Your {0} Game Gold was removed.";
-        public override string GameGoldRefund { get; set; } = "Your {0} Game Gold was refunded.";
-        public override string HuntGoldRefund { get; set; } = "Your {0} Hunt Gold was refunded.";
+        public override string PaymentComplete { get; set; } = "您成功购买了 {0} 元宝.";
+        public override string PaymentFailed { get; set; } = "您因为支付失败被扣除了{0}元宝.";
+        public override string ReferralPaymentComplete { get; set; } = "您推荐的一个用户刚刚购买了元宝，您因此获得了{0}赏金的奖励.";
+        public override string ReferralPaymentFailed { get; set; } = "您所推荐的一个用户的元宝购买因为支付失败，您失去了之前获得的{0}赏金奖励.";
+        public override string GameGoldLost { get; set; } = "您被移除了{0}的元宝.";
+        public override string GameGoldRefund { get; set; } = "您获得了{0}元宝的返还.";
+        public override string HuntGoldRefund { get; set; } = "您获得了{0}赏金的返还.";
 
 
-        public override string Welcome { get; set; } = "Welcome to Zircon Server.";
-        public override string WelcomeObserver { get; set; } = "You are now Observing {0}, to stop, please logout.";
-        public override string ObserverChangeFail { get; set; } = "You cannot change observable mode unless you are in SafeZone";
-        public override string OnlineCount { get; set; } = "Users Online: {0}, Observers Online: {1}";
-        public override string ObserverCount { get; set; } = "You currently have {0} observers.";
-        public override string CannotFindPlayer { get; set; } = "Unable to find the player: {0}";
+        public override string Welcome { get; set; } = "欢迎来到Zircon服务器.";
+        public override string WelcomeObserver { get; set; } = "您正在使用观察者模式观看{0}的视角，想要退出观察者模式请退出登录.";
+        public override string ObserverChangeFail { get; set; } = "您只能在安全区能设置自己是否允许他人观看您的视角";
+        public override string OnlineCount { get; set; } = "当前在线人数:{0}, 观察者在线人数:{1}";
+        public override string ObserverCount { get; set; } = "现在有{0}个观察者正在观看您的视角.";
+        public override string CannotFindPlayer { get; set; } = "无法找到角色:{0}";
         public override string AlreadyBlocked { get; set; } = "{0} is already on your block list.";
         public override string BlockingWhisper { get; set; } = "You are blocking Whispers.";
         public override string PlayerBlockingWhisper { get; set; } = "Player: {0} is blocking Whispers.";
@@ -35,59 +35,59 @@ namespace Server.Envir.Translations
         public override string TradingDisabled { get; set; } = "Trading Disabled.";
         public override string WhisperEnabled { get; set; } = "Whisper Enabled.";
         public override string WhisperDisabled { get; set; } = "Whisper Disabled.";
-        public override string GuildInviteEnabled { get; set; } = "Guild Invites Enabled.";
-        public override string GuildInviteDisabled { get; set; } = "Guild Invites Disabled.";
-        public override string ObserverNotLoggedIn { get; set; } = "You need to be logged in before you can chat";
-        public override string Poisoned { get; set; } = "You have been poisoned.";
-        public override string MurderedBy { get; set; } = "You have been murdered by {0}.";
-        public override string Curse { get; set; } = "You have murdered {0}, Bad luck follows you around...";
-        public override string Murdered { get; set; } = "You have murdered {0}.";
-        public override string Protected { get; set; } = "You have been protected by the law of self defence.";
-        public override string Killed { get; set; } = "You have been killed by {0} in self defence.";
-        public override string Died { get; set; } = "You have died in combat.";
-        public override string GroupRecallEnabled { get; set; } = "Group Recall Enabled.";
-        public override string GroupRecallDisabled { get; set; } = "Group Recall Disabled.";
+        public override string GuildInviteEnabled { get; set; } = "允许加入行会.";
+        public override string GuildInviteDisabled { get; set; } = "禁止加入行会.";
+        public override string ObserverNotLoggedIn { get; set; } = "您需要登录账户才能在观察者模式下聊天";
+        public override string Poisoned { get; set; } = "您中毒了.";
+        public override string MurderedBy { get; set; } = "您被{0}杀死了.";
+        public override string Curse { get; set; } = "您杀死了{0},厄运将伴随你...";
+        public override string Murdered { get; set; } = "您杀死了{0}.";
+        public override string Protected { get; set; } = "您收到正当防卫规则的保护.";
+        public override string Killed { get; set; } = "您被{0}的正当防卫所击杀.";
+        public override string Died { get; set; } = "您在战斗中阵亡了.";
+        public override string GroupRecallEnabled { get; set; } = "组队召唤已启用.";
+        public override string GroupRecallDisabled { get; set; } = "组队召唤已禁用.";
         public override string NoActionOnInstance { get; set; } = "Cannot perform this action whilst on an instance.";
         
 
-        public override string NeedLevel { get; set; } = "You need to be level {0} to proceed.";
-        public override string NeedMaxLevel { get; set; } = "You need to be level {0} or lower to proceed.";
-        public override string NeedItem { get; set; } = "You require a '{0}' to proceed.";
-        public override string NeedMonster { get; set; } = "The way is blocked...";
-        public override string NeedClass { get; set; } = "You need to be class {0} to proceed.";
+        public override string NeedLevel { get; set; } = "您需要达到{0}等级才能进入.";
+        public override string NeedMaxLevel { get; set; } = "您需要等级 {0} 或更低才能继续.";
+        public override string NeedItem { get; set; } = "您需要等级'{0}'才能进入.";
+        public override string NeedMonster { get; set; } = "入口被封印了...";
+        public override string NeedClass { get; set; } = "非{0}禁止入内.";
 
 
-        public override string ConquestStarted { get; set; } = "{0} Conquest has started.";
-        public override string ConquestFinished { get; set; } = "{0} Conquest has finished.";
-        public override string ConquestCapture { get; set; } = "{0} has Captured {1}.";
-        public override string ConquestOwner { get; set; } = "{0} are the now the owners of {1}.";
-        public override string ConquestLost { get; set; } = "{0} have lost {1}.";
+        public override string ConquestStarted { get; set; } = "{0}攻城战开始了.";
+        public override string ConquestFinished { get; set; } = "{0}攻城战结束了.";
+        public override string ConquestCapture { get; set; } = "{0}占领了{1}.";
+        public override string ConquestOwner { get; set; } = "{0} 是{1}的占领者.";
+        public override string ConquestLost { get; set; } = "{0}失去了{1}.";
 
 
-        public override string BossSpawn { get; set; } = "An evil lurks within {0}.";
-        public override string HarvestRare { get; set; } = "Something valuable is hidden inside the {0}.";
-        public override string NetherGateOpen { get; set; } = "The gate to the netherworld has opened, {0}, {1}";
-        public override string NetherGateClosed { get; set; } = "The gate to the netherworld has closed";
-        public override string HarvestNothing { get; set; } = "Nothing was found.";
-        public override string HarvestCarry { get; set; } = "Cannot carry any more.";
-        public override string HarvestOwner { get; set; } = "You do not own any nearby carcasses.";
-        public override string LairGateOpen { get; set; } = "The gate to the underworld has opened, {0}, {1}";
-        public override string LairGateClosed { get; set; } = "The gate to the underworld has closed";
+        public override string BossSpawn { get; set; } = "Boos在{0}刷新了.";
+        public override string HarvestRare { get; set; } = "有价值的珍稀物品需要在 {0} 的尸体里挖取.";
+        public override string NetherGateOpen { get; set; } = "通往幽灵船的门开启了，坐标{0}, {1}";
+        public override string NetherGateClosed { get; set; } = "通往幽灵船的门关闭了";
+        public override string HarvestNothing { get; set; } = "没有获得任何物品.";
+        public override string HarvestCarry { get; set; } = "您无法再装载任何物品.";
+        public override string HarvestOwner { get; set; } = "您无法挖取当前怪物尸体.";
+        public override string LairGateOpen { get; set; } = "通往地狱的大门已经打开, {0}, {1}";
+        public override string LairGateClosed { get; set; } = "通往地狱的大门已经关闭";
 
 
-        public override string Expired { get; set; } = "Your {0} has expired.";
-        public override string CannotTownTeleport { get; set; } = "Unable to Town Teleport on this Map.";
-        public override string CannotRandomTeleport { get; set; } = "Unable to Random Teleport on this Map.";
-        public override string ConnotResetCompanionSkill { get; set; } = "To use {0} please type '@EnableLevel{1}'";
-        public override string LearnBookFailed { get; set; } = "Failed to learn skill, not enough pages";
-        public override string LearnBookSuccess { get; set; } = "Congratulations, You have successfully learned {0}.";
-        public override string LearnBook4Failed { get; set; } = "Failed to learn level {0} skill.";
-        public override string LearnBook4Success { get; set; } = "Congratulations, You have successfully learned level {1} {0}.";
-        public override string StorageSafeZone { get; set; } = "You cannot access storage outside of SafeZone.";
-        public override string GuildStoragePermission { get; set; } = "You do no have the permissions to take from the guild storage";
-        public override string GuildStorageSafeZone { get; set; } = "You cannot use guild storage unless you are in a safe zone";
-        public override string CompanionNoRoom { get; set; } = "Your companion cannot carry this many items";
-        public override string StorageLimit { get; set; } = "You cannot expand your storage anymore.";
+        public override string Expired { get; set; } = "您的{0}物品失效了.";
+        public override string CannotTownTeleport { get; set; } = "无法传送到该地图.";
+        public override string CannotRandomTeleport { get; set; } = "当前地图无法使用随机传送卷.";
+        public override string ConnotResetCompanionSkill { get; set; } = "为了避免误操作，请输入'@宠物等级{1}'来使用{0}";
+        public override string LearnBookFailed { get; set; } = "技能书页数不足，修行技能失败了";
+        public override string LearnBookSuccess { get; set; } = "恭喜您成功修行了{0}技能.";
+        public override string LearnBook4Failed { get; set; } = "未能学习4级技能.";
+        public override string LearnBook4Success { get; set; } = "恭喜，您已成功学习4级 {0}.";
+        public override string StorageSafeZone { get; set; } = "您无法在非安全区使用仓库.";
+        public override string GuildStoragePermission { get; set; } = "您没有从行会仓库取出物品的权限";
+        public override string GuildStorageSafeZone { get; set; } = "您无法在非安全区使用行会仓库";
+        public override string CompanionNoRoom { get; set; } = "您的宠物已经无法携带更多物品";
+        public override string StorageLimit { get; set; } = "您无法再扩展存储空间.";
 
 
         public override string MarryAlreadyMarried { get; set; } = "You are already married.";
@@ -111,16 +111,16 @@ namespace Server.Envir.Translations
         public override string MarryTeleportMapEscape { get; set; } = "You cannot use marraige teleport on this map.";
 
 
-        public override string CompanionAppearanceAlready { get; set; } = "The {0} appreanace is already available.";
-        public override string CompanionNeedTicket { get; set; } = "You need to have a Companion ticket to unlock a new appearance.";
-        public override string CompanionSkillEnabled { get; set; } = "Companion Skill level {0} Enabled.";
-        public override string CompanionSkillDisabled { get; set; } = "Companion Skill level {0} Disabled.";
-        public override string CompanionAppearanceLocked { get; set; } = "The {0} appreanace is not available to you.";
-        public override string CompanionNeedGold { get; set; } = "You cannot afford to adopt this companion.";
-        public override string CompanionBadName { get; set; } = "The name given for your new companion is not acceptable.";
-        public override string CompanionRetrieveFailed { get; set; } = "Able able to retrieve {0} because it is currently with {1}.";
-        public override string QuestSelectReward { get; set; } = "You must select a reward";
-        public override string QuestNeedSpace { get; set; } = "Unable to complete quest, Not enough space in your inventory.";
+        public override string CompanionAppearanceAlready { get; set; } = "宠物{0}的外观已经能够获取.";
+        public override string CompanionNeedTicket { get; set; } = "您需要在商城购买一张宠物外观解锁票来解锁这一宠物外观再进行购买该宠物.";
+        public override string CompanionSkillEnabled { get; set; } = "宠物可以使用{0}级的技能.";
+        public override string CompanionSkillDisabled { get; set; } = "宠物不能使用{0}级的技能.";
+        public override string CompanionAppearanceLocked { get; set; } = "{0}的宠物外观目前尚未解锁，您无法购买，您需要在商城购买一张宠物外观解锁票来解锁这一宠物外观再进行购买该宠物.";
+        public override string CompanionNeedGold { get; set; } = "当前金币不足，无法购买宠物.";
+        public override string CompanionBadName { get; set; } = "该名称不符合宠物命名的规则.";
+        public override string CompanionRetrieveFailed { get; set; } = "无法获得{0}宠物，该宠物当前跟随着{1}.";
+        public override string QuestSelectReward { get; set; } = "您必须选择任务奖励";
+        public override string QuestNeedSpace { get; set; } = "您背包的空间不足，无法完成任务并领取奖励.";
 
 
         public override string MailSafeZone { get; set; } = "Unable to get item from mail, you are not in a safe zone.";
@@ -134,11 +134,11 @@ namespace Server.Envir.Translations
 
         public override string ConsignSafeZone { get; set; } = "You cannot Consign items from your inventory outside of safezone";
         public override string ConsignLimit { get; set; } = "You have reached the maximum number of Consignments";
-        public override string ConsignGuildFundsGuild { get; set; } = "You cannot use Guild Funds to buy from the market place because you are not in a guild.";
-        public override string ConsignGuildFundsPermission { get; set; } = "You cannot use Guild Funds to buy from the market place because you do not have permission.";
-        public override string ConsignGuildFundsCost { get; set; } = "Your Guild cannot afford to buy this many items.";
-        public override string ConsignGuildFundsUsed { get; set; } = "{0} used {1:#,##0} gold of guild funds to consign {2} x{3} for {4} each.";
-        public override string ConsignCost { get; set; } = "You cannot afford to buy this many items.";
+        public override string ConsignGuildFundsGuild { get; set; } = "您还没有加入行会，无法使用行会基金从寄售购买物品.";
+        public override string ConsignGuildFundsPermission { get; set; } = "您没有足够的权限使用行会基金.";
+        public override string ConsignGuildFundsCost { get; set; } = "行会基金不足.";
+        public override string ConsignGuildFundsUsed { get; set; } = "使用了{1:#,##0} 行会基金在寄售商以单价{4}寄售了{2} x{3}.";
+        public override string ConsignCost { get; set; } = "您的金币不足.";
         public override string ConsignComplete { get; set; } = "Item registered successfully.";
         public override string ConsignAlreadySold { get; set; } = "This item has already sold.";
         public override string ConsignNotEnough { get; set; } = "There is not enough of this item for sale.";
@@ -147,62 +147,62 @@ namespace Server.Envir.Translations
         public override string ConsignBuyGuildFundsPermission { get; set; } = "You cannot use Guild Funds to buy from the market place because you do not have permission.";
         public override string ConsignBuyGuildFundsCost { get; set; } = "Your Guild cannot afford to buy this many items.";
         public override string ConsignBuyGuildFundsUsed { get; set; } = "{0} used {1:#,##0} gold of guild funds to buy {2} x{3}.";
-        public override string ConsignBuyCost { get; set; } = "You cannot afford to buy this many items.";
+        public override string ConsignBuyCost { get; set; } = "您的金币不足.";
 
 
-        public override string StoreNotAvailable { get; set; } = "You cannot buy this item, It is not currently available for purchase.";
-        public override string StoreNeedSpace { get; set; } = "You cannot carry this many items, please make room in your inventory.";
-        public override string StoreCost { get; set; } = "You cannot afford to buy this many items.";
+        public override string StoreNotAvailable { get; set; } = "无法购买, 商品已下线.";
+        public override string StoreNeedSpace { get; set; } = "你不能携带更多东西, 包裹空间不足.";
+        public override string StoreCost { get; set; } = "您的金币不足.";
 
 
-        public override string GuildNeedHorn { get; set; } = "Failed to create guild, You do not have the Uma King's Horn.";
-        public override string GuildNeedGold { get; set; } = "Failed to create guild, You do not have enough gold.";
-        public override string GuildBadName { get; set; } = "Failed to create guild, guild name is not acceptable.";
-        public override string GuildNameTaken { get; set; } = "Failed to create guild, guild name already in use.";
-        public override string GuildNoticePermission { get; set; } = "You do not have permission to change the guild notice.";
-        public override string GuildEditMemberPermission { get; set; } = "You do not have permission to change guild member information.";
-        public override string GuildMemberLength { get; set; } = "Failed to change guild rank, Rank Name was too long.";
-        public override string GuildMemberNotFound { get; set; } = "Unable to find guild member.";
-        public override string GuildKickPermission { get; set; } = "You do not have permission to kick a member.";
-        public override string GuildKickSelf { get; set; } = "Unable kick yourself from the guild.";
-        public override string GuildMemberKicked { get; set; } = "{0} has been kicked from the guild by {1}.";
-        public override string GuildKicked { get; set; } = "You have been kicked form the guild by {0}.";
-        public override string GuildManagePermission { get; set; } = "You do not have permission to Manage the guild.";
-        public override string GuildMemberLimit { get; set; } = "Guild has already reached the Maxmimum Member Limit.";
+        public override string GuildNeedHorn { get; set; } = "您需要一个沃玛号角才能创建行会.";
+        public override string GuildNeedGold { get; set; } = "您没有足够的金币创建行会.";
+        public override string GuildBadName { get; set; } = "行会的名称不符合命名规则，无法创建.";
+        public override string GuildNameTaken { get; set; } = "该行会名称已经被使用.";
+        public override string GuildNoticePermission { get; set; } = "您没有权限更新行会公告.";
+        public override string GuildEditMemberPermission { get; set; } = "您没有权限更改行会成员信息.";
+        public override string GuildMemberLength { get; set; } = "公会头衔太长无法编辑.";
+        public override string GuildMemberNotFound { get; set; } = "找不到行会成员.";
+        public override string GuildKickPermission { get; set; } = "您没有权限踢出行会成员.";
+        public override string GuildKickSelf { get; set; } = "您无法将自己踢出行会.";
+        public override string GuildMemberKicked { get; set; } = "{0}被{1}踢出了行会.";
+        public override string GuildKicked { get; set; } = "您被{0}踢出了行会.";
+        public override string GuildManagePermission { get; set; } = "您没有管理行会的权限.";
+        public override string GuildMemberLimit { get; set; } = "行会已经达到成员数上限.";
         public override string GuildMemberCost { get; set; } = "Guild does not have enough funds to increase member limit.";
-        public override string GuildStorageLimit { get; set; } = "Guild has already reached the Maxmimum Storage Size.";
+        public override string GuildStorageLimit { get; set; } = "行会仓库已经达到空间上限.";
         public override string GuildStorageCost { get; set; } = "Guild does not have enough funds to increase storage limit.";
         public override string GuildInvitePermission { get; set; } = "You do not have permission to invite new members";
         public override string GuildInviteGuild { get; set; } = "Player: {0}, is already in another guild.";
         public override string GuildInviteInvited { get; set; } = "Player: {0}, is currently being invited to another Guild.";
-        public override string GuildInviteNotAllowed { get; set; } = "Player: {0}, is not allowing guild invites.";
+        public override string GuildInviteNotAllowed { get; set; } = "玩家: {0} 目前不允许加入行会.";
         public override string GuildInvitedNotAllowed { get; set; } = "{0} wishes to invite you to the guild {1}, but you are not allowing Invites. @AllowGuild";
         public override string GuildInviteRoom { get; set; } = "Your guild already has reached it's member limit.";
-        public override string GuildNoGuild { get; set; } = "You are not in a guild.";
-        public override string GuildWarPermission { get; set; } = "You do not have the permission to start a guild war.";
-        public override string GuildNotFoundGuild { get; set; } = "Could not find the guild {0}.";
-        public override string GuildWarOwnGuild { get; set; } = "You cannot war your own guild.";
-        public override string GuildAlreadyWar { get; set; } = "You are already at war with {0}.";
-        public override string GuildWarCost { get; set; } = "Your guild cannot afford to start a guild war.";
-        public override string GuildWarFunds { get; set; } = "{0} used {1:#,##0} gold of guild funds to start a war with {2}.";
-        public override string GuildConquestCastle { get; set; } = "You already own a castle, You cannot submit a conquest.";
-        public override string GuildConquestExists { get; set; } = "You already have a scheduled conquest.";
-        public override string GuildConquestBadCastle { get; set; } = "Invalid Castle.";
-        public override string GuildConquestProgress { get; set; } = "You cannot submit whilst a conquest is in process.";
-        public override string GuildConquestNeedItem { get; set; } = "You need {0} to request a {1} conquest.";
-        public override string GuildConquestSuccess { get; set; } = "A guild has submitted a conquest war for your castle.";
-        public override string GuildConquestDate { get; set; } = "Your guild has submitted a conquest war for {0}.";
-        public override string GuildJoinGuild { get; set; } = "You are already in a guild.";
+        public override string GuildNoGuild { get; set; } = "您当前没有加入行会.";
+        public override string GuildWarPermission { get; set; } = "您没有权限提交行会战.";
+        public override string GuildNotFoundGuild { get; set; } = "无法找到行会{0}.";
+        public override string GuildWarOwnGuild { get; set; } = "无法跟自己的行会进行行会战.";
+        public override string GuildAlreadyWar { get; set; } = "当前正与{0}行会战.";
+        public override string GuildWarCost { get; set; } = "金币不足无法进行行会战.";
+        public override string GuildWarFunds { get; set; } = "{0}使用了{1:#,##0}行会基金提交了与{2}的行会战.";
+        public override string GuildConquestCastle { get; set; } = "您已经是城主，不能提交攻城战.";
+        public override string GuildConquestExists { get; set; } = "您已经提交了一个攻城战申请.";
+        public override string GuildConquestBadCastle { get; set; } = "占领无效.";
+        public override string GuildConquestProgress { get; set; } = "攻城战期间无法提交攻城战申请.";
+        public override string GuildConquestNeedItem { get; set; } = "您需要{0}来提交{1}攻城战.";
+        public override string GuildConquestSuccess { get; set; } = "一个行会已经提交了对你所占领城池的攻城战.";
+        public override string GuildConquestDate { get; set; } = "您的行会提交了对{0}的攻城战.";
+        public override string GuildJoinGuild { get; set; } = "您已经加入了行会.";
         public override string GuildJoinTime { get; set; } = "You cannot join a guild a for another {0}";
         public override string GuildJoinNoGuild { get; set; } = "Player: {0}, is no longer in a guild.";
         public override string GuildJoinPermission { get; set; } = "Player: {0}, does not have permission to add you to the guild.";
         public override string GuildJoinNoRoom { get; set; } = "{0}'s group has already reached the maximum size.";
-        public override string GuildJoinWelcome { get; set; } = "Welcome to the guild: {0}.";
+        public override string GuildJoinWelcome { get; set; } = "欢迎加入行会: {0}.";
         public override string GuildMemberJoined { get; set; } = "{0} has invited {1} to the guild.";
         public override string GuildLeaveFailed { get; set; } = "Failed to leave guild, You cannot leave other guild members without a leader.";
-        public override string GuildLeave { get; set; } = "You have left the guild.";
-        public override string GuildMemberLeave { get; set; } = "{0} has left the guild.";
-        public override string GuildWarDeath { get; set; } = "{0} from {1} was killed by {2} from the guild {3}.";
+        public override string GuildLeave { get; set; } = "您已经离开了行会.";
+        public override string GuildMemberLeave { get; set; } = "{0}已经离开行会.";
+        public override string GuildWarDeath { get; set; } = "来自{1}行会的{0}被{3}行会的{2}在行会战里击杀了.";
 
 
         public override string GroupNoGroup { get; set; } = "You are not in a group.";
@@ -244,54 +244,54 @@ namespace Server.Envir.Translations
 
         public override string NPCFundsGuild { get; set; } = "You cannot use Guild Funds to buy from a merchant because you are not in a guild.";
         public override string NPCFundsPermission { get; set; } = "You cannot use Guild Funds to buy from a merchant because you do not have permission.";
-        public override string NPCFundsCost { get; set; } = "Unable to buy items, Your Guild needs another {0:#,##0} Gold.";
-        public override string NPCCost { get; set; } = "Unable to buy items, You need another {0:#,##0} Gold.";
-        public override string NPCNoRoom { get; set; } = "You can not carry this many items.";
-        public override string NPCFundsBuy { get; set; } = "{0} used {1:#,##0} gold of guild funds to buy {2} x{3}.";
-        public override string NPCSellWorthless { get; set; } = "Unable to sell items that are worthless";
-        public override string NPCSellTooMuchGold { get; set; } = "Unable to sell items, You would be carrying too much gold";
-        public override string NPCSellResult { get; set; } = "You sold {0} item(s) for {1:#,##0} Gold.";
-        public override string FragmentCost { get; set; } = "Unable to Fragment these items, You need another {0:#,##0} Gold.";
-        public override string FragmentSpace { get; set; } = "Unable to Fragment these items, You need do not have enough inventory space.";
-        public override string FragmentResult { get; set; } = "You fragmented {0} item(s) costing {1:#,##0}.";
-        public override string AccessoryLevelCost { get; set; } = "You cannot afford to level up your item any more.";
-        public override string AccessoryLeveled { get; set; } = "Congratulations your {0} has leveled up and is now ready for upgrade.";
-        public override string RepairFail { get; set; } = "You cannot repair {0}.";
-        public override string RepairFailRepaired { get; set; } = "You cannot repair {0}, it is already fully repaired.";
-        public override string RepairFailLocation { get; set; } = "You cannot repair {0} here.";
-        public override string RepairFailCooldown { get; set; } = "You cannot special repair {0} for another {1}.";
+        public override string NPCFundsCost { get; set; } = "无法买此物，你公会需要{0:#,##0}金币.";
+        public override string NPCCost { get; set; } = "无法买此物，你公会需要{0:#,##0}金币.";
+        public override string NPCNoRoom { get; set; } = "你无法带这么多东西.";
+        public override string NPCFundsBuy { get; set; } = "{0} 已用 {1:#,##0} 公会金币去购买 {2} x{3}.";
+        public override string NPCSellWorthless { get; set; } = "无法出售此物";
+        public override string NPCSellTooMuchGold { get; set; } = "无法出售此物，你携带了太多金币";
+        public override string NPCSellResult { get; set; } = "你卖出 {0} 个 物品， 收到 {1:#,##0} 金币..";
+        public override string FragmentCost { get; set; } = "无法将这些物品转换为碎片，你需要 {0:#,##0} 金币.";
+        public override string FragmentSpace { get; set; } = "无法将这些物品转换为碎片，你需要背包空间.";
+        public override string FragmentResult { get; set; } = "你花费了{1:#,##0} 金币将 {0} 个物品变为碎片.";
+        public override string AccessoryLevelCost { get; set; } = "金币不足，你无法支付升级首饰.";
+        public override string AccessoryLeveled { get; set; } = "恭喜你的{0}已经升级，已经可以升级加属性.";
+        public override string RepairFail { get; set; } = "你无法修理{0}.";
+        public override string RepairFailRepaired { get; set; } = "你无法修理{0},已满持久.";
+        public override string RepairFailLocation { get; set; } = "你无法在这里修理{0}.";
+        public override string RepairFailCooldown { get; set; } = "你需要等待{1}的时间才能下一次特修{0}";
         public override string NPCRepairGuild { get; set; } = "You cannot use Guild Funds to repair because you are not in a guild.";
         public override string NPCRepairPermission { get; set; } = "You cannot use Guild Funds to repair because you do not have permission.";
         public override string NPCRepairGuildCost { get; set; } = "Unable to repair items, Your Guild needs another {0:#,##0} Gold.";
-        public override string NPCRepairCost { get; set; } = "Unable to repair items, You need another {0:#,##0} Gold.";
-        public override string NPCRepairResult { get; set; } = "You normal repaired {0} item(s) for {1:#,##0} Gold.";
-        public override string NPCRepairSpecialResult { get; set; } = "You special repaired {0} item(s) for {1:#,##0} Gold.";
+        public override string NPCRepairCost { get; set; } = "无法修理此物，你还需要{0:#,##0}金币.";
+        public override string NPCRepairResult { get; set; } = "你修理了 {0} 花费了 {1:#,##0} 金币.";
+        public override string NPCRepairSpecialResult { get; set; } = "你特殊修理了{0} ， 花费了 {1:#,##0} 金币.";
         public override string NPCRepairGuildResult { get; set; } = "{0} used {1:#,##0} gold of guild funds to repair {2} item(s).";
-        public override string NPCRefinementGold { get; set; } = "You do not have enough gold.";
-        public override string NPCRefinementStoneFailedRoom { get; set; } = "Failed to create Refinement Stone, Unable to gain this item";
-        public override string NPCRefinementStoneFailed { get; set; } = "Failed to synthesize a Refinement stone.";
-        public override string NPCRefineNotReady { get; set; } = "Unable to get refine back, it is not ready.";
-        public override string NPCRefineNoRoom { get; set; } = "Unable to get refine back, not enough space in your inventory.";
-        public override string NPCRefineSuccess { get; set; } = "Congratulations, Your refine was successful";
-        public override string NPCRefineFailed { get; set; } = "Unfortunately, Your refine was not successful";
-        public override string NPCMasterRefineGold { get; set; } = "You do not have enough gold to request a master refine evaluation, Cost: {0:#,##0}.";
-        public override string NPCMasterRefineChance { get; set; } = "Your chance of success is: {0}%";
-        public override string AccessoryRefineSuccess { get; set; } = "Congratulations your {0} has been refined with {1} + {2}.";
-        public override string AccessoryRefineFailed { get; set; } = "The refine failed and your {0}'s have been destroyed";
+        public override string NPCRefinementGold { get; set; } = "没有足够的金币.";
+        public override string NPCRefinementStoneFailedRoom { get; set; } = "精炼石合成失败，无法获得该物品";
+        public override string NPCRefinementStoneFailed { get; set; } = "精炼合成失败.";
+        public override string NPCRefineNotReady { get; set; } = "无法取出武器，还没准备好.";
+        public override string NPCRefineNoRoom { get; set; } = "无法取出武器，包裹需要空间";
+        public override string NPCRefineSuccess { get; set; } = "恭喜，精炼成功";
+        public override string NPCRefineFailed { get; set; } = "见鬼了，精炼失败";
+        public override string NPCMasterRefineGold { get; set; } = "不好意思你的金币不足,无法完成大师级炼制的成功率评估，需要花费: {0:#,##0}.";
+        public override string NPCMasterRefineChance { get; set; } = "精炼成功率: {0}%";
+        public override string AccessoryRefineSuccess { get; set; } = "感谢您 {0} 成功精炼 {1} + {2}.";
+        public override string AccessoryRefineFailed { get; set; } = "精炼失败，你的 {0} 已损坏";
 
 
-        public override string ChargeExpire { get; set; } = "The energy for {0} has left your weapon.";
-        public override string ChargeFail { get; set; } = "Failed to gether the energy to charge {0}.";
-        public override string CloakCombat { get; set; } = "You cannot cast Cloak during Combat";
-        public override string DashFailed { get; set; } = "You were not strong enough to move what is infront of you.";
-        public override string WraithLevel { get; set; } = "{0} is too high of a level to be effected by your wraith grip.";
-        public override string AbyssLevel { get; set; } = "{0} is too high of a level to be effected by your Abyss.";
-        public override string SkillEffort { get; set; } = "Using {0} on this map takes more effort than normal, You cannot use items for a {1}.";
-        public override string SkillBadMap { get; set; } = "You are unable to use {0} on this map.";
+        public override string ChargeExpire { get; set; } = "能量 {0} 已经消失.";
+        public override string ChargeFail { get; set; } = "无法集中能量 {0}.";
+        public override string CloakCombat { get; set; } = "你无法在战斗中潜行";
+        public override string DashFailed { get; set; } = "没有足够的力量，对方级别过高.";
+        public override string WraithLevel { get; set; } = "{0}的等级比你高 你无法亡灵束缚.";
+        public override string AbyssLevel { get; set; } = "{0} 等级比你高 你无法深渊.";
+        public override string SkillEffort { get; set; } = "在这个地图使用 {0} 需要花费更多的能量， 你在{1}时间内无法使用物品.";
+        public override string SkillBadMap { get; set; } = "您无法在此地图上使用 {0}.";
 
 
-        public override string HorseDead { get; set; } = "You cannot ride your horse when dead.";
-        public override string HorseOwner { get; set; } = "You do not own a horse to ride.";
-        public override string HorseMap { get; set; } = "You cannot ride your horse on this map.";
+        public override string HorseDead { get; set; } = "阵亡状态无法骑马.";
+        public override string HorseOwner { get; set; } = "你还没有马.";
+        public override string HorseMap { get; set; } = "这个地图无法骑马.";
     }
 }

@@ -31,7 +31,7 @@ namespace Client.Scenes.Views
         public CompanionFilterDialog()
         {
             CloseButton.Visible = false;
-            TitleLabel.Text = "Filter Companion Pick";
+            TitleLabel.Text = "宠物拾取过滤";
             SetClientSize(new Size(350, 341));
 
             DXLabel label = new DXLabel
@@ -42,7 +42,7 @@ namespace Client.Scenes.Views
                 ForeColour = Color.FromArgb(198, 166, 99),
                 OutlineColour = Color.Black,
                 IsControl = false,
-                Text = "Class",
+                Text = "职业",
             };
             label.Location = new Point(20, 40);
 
@@ -56,7 +56,7 @@ namespace Client.Scenes.Views
                 ForeColour = Color.FromArgb(198, 166, 99),
                 OutlineColour = Color.Black,
                 IsControl = false,
-                Text = "Rarity Type",
+                Text = "稀有度过滤",
             };
             label.Location = new Point(20, 100);
 
@@ -70,7 +70,7 @@ namespace Client.Scenes.Views
                 ForeColour = Color.FromArgb(198, 166, 99),
                 OutlineColour = Color.Black,
                 IsControl = false,
-                Text = "Item Type",
+                Text = "物品类型过滤",
             };
             label.Location = new Point(20, 160);
 
@@ -79,7 +79,7 @@ namespace Client.Scenes.Views
             DXButton filterButton = new DXButton
             {
                 Parent = this,
-                Label = { Text = "Save settings", },
+                Label = { Text = "保存设置", },
                 ButtonType = ButtonType.SmallButton,
                 Size = new Size(80, SmallButtonHeight)
             };

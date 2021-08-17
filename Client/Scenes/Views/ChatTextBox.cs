@@ -103,7 +103,7 @@ namespace Client.Scenes.Views
             {
                 ButtonType = ButtonType.SmallButton,
                 Size = new Size(50, SmallButtonHeight),
-                Label = { Text = "Options" },
+                Label = { Text = "选项" },
                 Parent = this,
             };
             OptionsButton.MouseClick += (o, e) =>
@@ -211,23 +211,23 @@ namespace Client.Scenes.Views
             if (string.IsNullOrEmpty(TextBox.TextBox.Text))
                 switch (Mode)
                 {
-                    case ChatMode.Shout:
+                    case ChatMode.喇叭:
                         TextBox.TextBox.Text = @"!";
                         break;
-                    case ChatMode.Whisper:
+                    case ChatMode.私聊:
                         if (!string.IsNullOrWhiteSpace(LastPM))
                             TextBox.TextBox.Text = LastPM + " ";
                         break;
-                    case ChatMode.Group:
+                    case ChatMode.组队:
                         TextBox.TextBox.Text = @"!!";
                         break;
-                    case ChatMode.Guild:
+                    case ChatMode.行会:
                         TextBox.TextBox.Text = @"!~";
                         break;
-                    case ChatMode.Global:
+                    case ChatMode.世界:
                         TextBox.TextBox.Text = @"!@";
                         break;
-                    case ChatMode.Observer:
+                    case ChatMode.观众:
                         TextBox.TextBox.Text = @"#";
                         break;
                 }
@@ -291,13 +291,13 @@ namespace Client.Scenes.Views
 
     public enum ChatMode
     {
-        Local,
-        Whisper,
-        Group,
-        Guild,
-        Shout,
-        Global,
-        Observer, //7
+        本地,
+        私聊,
+        组队,
+        行会,
+        喇叭,
+        世界,
+        观众, //7
     }
 
     public class Message

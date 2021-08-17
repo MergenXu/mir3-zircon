@@ -115,7 +115,7 @@ namespace Client.Scenes.Views
                 Index = 82,
                 Parent = this,
                 Location = new Point(650, 23),
-                Hint = "Character [Q]"
+                Hint = "状态信息"
             };
             CharacterButton.MouseClick += (o, e) =>
             {
@@ -128,8 +128,7 @@ namespace Client.Scenes.Views
                 Index = 87,
                 Parent = this,
                 Location = new Point(689, 23),
-                Hint = "Inventory [W]\n" +
-                       "Companion [U]"
+                Hint = "包裹物品"
             };
             InventoryButton.MouseClick += (o, e) => GameScene.Game.InventoryBox.Visible = !GameScene.Game.InventoryBox.Visible;
 
@@ -139,7 +138,7 @@ namespace Client.Scenes.Views
                 Index = 92,
                 Parent = this,
                 Location = new Point(728, 23),
-                Hint = "Spells [E]"
+                Hint = "技能信息"
             };
             SpellButton.MouseClick += (o, e) => GameScene.Game.MagicBox.Visible = !GameScene.Game.MagicBox.Visible;
 
@@ -149,7 +148,7 @@ namespace Client.Scenes.Views
                 Index = 112,
                 Parent = this,
                 Location = new Point(767, 23),
-                Hint = "Quests [J]"
+                Hint = "任务"
             };
             QuestButton.MouseClick += (o, e) => GameScene.Game.QuestBox.Visible = !GameScene.Game.QuestBox.Visible;
 
@@ -159,7 +158,7 @@ namespace Client.Scenes.Views
                 Index = 97,
                 Parent = this,
                 Location = new Point(806, 23),
-                Hint = "Mail [,]"
+                Hint = "邮件"
             };
             MailButton.MouseClick += (o, e) => GameScene.Game.MailBox.Visible = !GameScene.Game.MailBox.Visible;
 
@@ -206,7 +205,7 @@ namespace Client.Scenes.Views
                 Index = 107,
                 Parent = this,
                 Location = new Point(845, 23),
-                Hint = "Belt [Z]"
+                Hint = "快捷栏"
             };
             BeltButton.MouseClick += (o, e) => GameScene.Game.BeltBox.Visible = !GameScene.Game.BeltBox.Visible;
 
@@ -216,7 +215,7 @@ namespace Client.Scenes.Views
                 Index = 102,
                 Parent = this,
                 Location = new Point(884, 23),
-                Hint = "Group [P]"
+                Hint = "组队"
             };
             GroupButton.MouseClick += (o,e) => GameScene.Game.GroupBox.Visible = !GameScene.Game.GroupBox.Visible;
 
@@ -226,7 +225,7 @@ namespace Client.Scenes.Views
                 Index = 117,
                 Parent = this,
                 Location = new Point(923, 23),
-                Hint = "Settings [O]"
+                Hint = "系统设置"
             };
             ConfigButton.MouseClick += (o, e) => GameScene.Game.ConfigBox.Visible = !GameScene.Game.ConfigBox.Visible;
 
@@ -236,7 +235,7 @@ namespace Client.Scenes.Views
                 Index = 122,
                 Parent = this,
                 Location = new Point(972, 16),
-                Hint = "Cash Shop [Y]"
+                Hint = "商铺"
             };
             CashShopButton.MouseClick += (o, e) =>
             {
@@ -253,84 +252,80 @@ namespace Client.Scenes.Views
             {
                 Parent = this,
                 Font = new Font(Config.FontName, CEnvir.FontSize(9F), FontStyle.Bold),
-                Text = "Cl",
-                Hint = "Class",
+                Text = "职业",
             };
-            label.Location = new Point(300 - label.Size.Width, 20);
+            label.Location = new Point(315 - label.Size.Width, 20);
 
             label = new DXLabel
             {
                 Parent = this,
                 Font = new Font(Config.FontName, CEnvir.FontSize(9F), FontStyle.Bold),
-                Text = "Lv",
-                Hint = "Level",
+                Text = "等级",
             };
-            label.Location = new Point(300 - label.Size.Width, 40);
+            label.Location = new Point(315 - label.Size.Width, 40);
 
             label = new DXLabel
             {
                 Parent = this,
                 Font = new Font(Config.FontName, CEnvir.FontSize(9F), FontStyle.Bold),
-                Text = "AC",
+                Text = "防御",
             };
-            label.Location = new Point(385 - label.Size.Width, 20);
+            label.Location = new Point(410 - label.Size.Width, 20);
 
             label = new DXLabel
             {
                 Parent = this,
                 Font = new Font(Config.FontName, CEnvir.FontSize(9F), FontStyle.Bold),
-                Text = "MR",
+                Text = "魔御",
             };
-            label.Location = new Point(470 - label.Size.Width, 20);
+            label.Location = new Point(500 - label.Size.Width, 20);
 
             label = new DXLabel
             {
                 Parent = this,
                 Font = new Font(Config.FontName, CEnvir.FontSize(9F), FontStyle.Bold),
-                Text = "DC",
+                Text = "破坏",
             };
-            label.Location = new Point(385 - label.Size.Width, 40);
+            label.Location = new Point(410 - label.Size.Width, 40);
 
             DXLabel MCLabelLabel = new DXLabel
             {
                 Parent = this,
                 Font = new Font(Config.FontName, CEnvir.FontSize(9F), FontStyle.Bold),
-                Text = "MC",
+                Text = "自然",
             };
-            MCLabelLabel.Location = new Point(470 - MCLabelLabel.Size.Width, 40);
+            MCLabelLabel.Location = new Point(500 - MCLabelLabel.Size.Width, 40);
 
             DXLabel SCLabelLabel = new DXLabel
             {
                 Parent = this,
                 Font = new Font(Config.FontName, CEnvir.FontSize(9F), FontStyle.Bold),
-                Text = "SC",
+                Text = "灵魂",
             };
-            SCLabelLabel.Location = new Point(470 - SCLabelLabel.Size.Width, 40);
+            SCLabelLabel.Location = new Point(500 - SCLabelLabel.Size.Width, 40);
 
             label = new DXLabel
             {
                 Parent = this,
                 Font = new Font(Config.FontName, CEnvir.FontSize(9F), FontStyle.Bold),
-                Text = "Acc",
-                Hint = "Accuracy",
+                Text = "准确",
             };
-            label.Location = new Point(567 - label.Size.Width, 20);
+            label.Location = new Point(585 - label.Size.Width, 20);
 
             label = new DXLabel
             {
                 Parent = this,
                 Font = new Font(Config.FontName, CEnvir.FontSize(9F), FontStyle.Bold),
-                Text = "Agl",
-                Hint = "Agility",
+                Text = "敏捷",
             };
-            label.Location = new Point(567 - label.Size.Width, 40);
+            label.Location = new Point(585 - label.Size.Width, 40);
 
             ClassLabel = new DXLabel
             {
                 AutoSize = false,
                 Parent = this,
-                Font = new Font(Config.FontName, CEnvir.FontSize(10F)),
-                Location = new Point(300, 20),
+                Font = new Font(Config.FontName, CEnvir.FontSize(9F)),
+                Location = new Point(310, 20),
                 Size = new Size(60, 16),
                 DrawFormat = TextFormatFlags.VerticalCenter | TextFormatFlags.HorizontalCenter,
                 ForeColour = Color.White
@@ -341,7 +336,7 @@ namespace Client.Scenes.Views
                 AutoSize = false,
                 Parent = this,
                 Font = new Font(Config.FontName, CEnvir.FontSize(10F)),
-                Location = new Point(300, 40),
+                Location = new Point(310, 40),
                 Size = new Size(60, 16),
                 DrawFormat = TextFormatFlags.VerticalCenter | TextFormatFlags.HorizontalCenter,
                 ForeColour = Color.White
@@ -352,7 +347,7 @@ namespace Client.Scenes.Views
                 AutoSize = false,
                 Parent = this,
                 Font = new Font(Config.FontName, CEnvir.FontSize(10F)),
-                Location = new Point(385, 20),
+                Location = new Point(400, 20),
                 Size = new Size(60, 16),
                 DrawFormat = TextFormatFlags.VerticalCenter | TextFormatFlags.HorizontalCenter,
                 ForeColour = Color.White
@@ -363,7 +358,7 @@ namespace Client.Scenes.Views
                 AutoSize = false,
                 Parent = this,
                 Font = new Font(Config.FontName, CEnvir.FontSize(10F)),
-                Location = new Point(470, 20),
+                Location = new Point(490, 20),
                 Size = new Size(60, 16),
                 DrawFormat = TextFormatFlags.VerticalCenter | TextFormatFlags.HorizontalCenter,
                 ForeColour = Color.White
@@ -374,7 +369,7 @@ namespace Client.Scenes.Views
                 AutoSize = false,
                 Parent = this,
                 Font = new Font(Config.FontName, CEnvir.FontSize(10F)),
-                Location = new Point(385, 40),
+                Location = new Point(400, 40),
                 Size = new Size(60, 16),
                 DrawFormat = TextFormatFlags.VerticalCenter | TextFormatFlags.HorizontalCenter,
                 ForeColour = Color.White
@@ -385,7 +380,7 @@ namespace Client.Scenes.Views
                 AutoSize = false,
                 Parent = this,
                 Font = new Font(Config.FontName, CEnvir.FontSize(10F)),
-                Location = new Point(470, 40),
+                Location = new Point(490, 40),
                 Size = new Size(60, 16),
                 DrawFormat = TextFormatFlags.VerticalCenter | TextFormatFlags.HorizontalCenter,
                 ForeColour = Color.White
@@ -397,7 +392,7 @@ namespace Client.Scenes.Views
                 AutoSize = false,
                 Parent = this,
                 Font = new Font(Config.FontName, CEnvir.FontSize(10F)),
-                Location = new Point(470, 40),
+                Location = new Point(490, 40),
                 Size = new Size(60, 16),
                 DrawFormat = TextFormatFlags.VerticalCenter | TextFormatFlags.HorizontalCenter,
                 ForeColour = Color.White
@@ -409,7 +404,7 @@ namespace Client.Scenes.Views
                 AutoSize = false,
                 Parent = this,
                 Font = new Font(Config.FontName, CEnvir.FontSize(10F)),
-                Location = new Point(567, 20),
+                Location = new Point(575, 20),
                 Size = new Size(60, 16),
                 DrawFormat = TextFormatFlags.VerticalCenter | TextFormatFlags.HorizontalCenter,
                 ForeColour = Color.White
@@ -420,7 +415,7 @@ namespace Client.Scenes.Views
                 AutoSize = false,
                 Parent = this,
                 Font = new Font(Config.FontName, CEnvir.FontSize(10F)),
-                Location = new Point(567, 40),
+                Location = new Point(575, 40),
                 Size = new Size(60, 16),
                 DrawFormat = TextFormatFlags.VerticalCenter | TextFormatFlags.HorizontalCenter,
                 ForeColour = Color.White
