@@ -1510,14 +1510,14 @@ namespace Client.Scenes.Views
 
             StringBuilder message = new StringBuilder();
             
-            message.Append($"Item: {SelectedStoreRow.StoreInfo.Item.ItemName}");
+            message.Append($"物品: {SelectedStoreRow.StoreInfo.Item.ItemName}");
 
             if (StoreBuyCountBox.Value > 1)
                 message.Append($" x{StoreBuyCountBox.Value:#,##0}");
 
             message.Append("\n\n");
 
-            message.Append($"Price: {StoreBuyPriceBox.Value:#,##0}");
+            message.Append($"价格: {StoreBuyPriceBox.Value:#,##0}");
 
             if (StoreBuyCountBox.Value > 1)
                 message.Append(" (每个)");
@@ -1594,7 +1594,7 @@ namespace Client.Scenes.Views
                 displayInfo = Globals.ItemInfoList.Binding.First(x => x.Index == cell.Item.AddedStats[Stat.ItemIndex]);
 
 
-            message.Append($"Item: {displayInfo.ItemName}");
+            message.Append($"物品: {displayInfo.ItemName}");
 
             if (cell.Item.Info.Effect == ItemEffect.ItemPart)
                 message.Append(" - [Part]");
@@ -1605,7 +1605,7 @@ namespace Client.Scenes.Views
 
             message.Append("\n\n");
 
-            message.Append($"Price: {Price:#,##0}");
+            message.Append($"价格: {Price:#,##0}");
 
             if (cell.LinkedCount > 1)
                 message.Append(" (每个)");

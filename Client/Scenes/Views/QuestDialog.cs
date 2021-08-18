@@ -394,7 +394,7 @@ namespace Client.Scenes.Views
 
             DXLabel label = new DXLabel
             {
-                Text = "详细",
+                Text = "任务详情",
                 Parent = this,
                 Font = new Font(Config.FontName, CEnvir.FontSize(10F), FontStyle.Bold),
                 //ForeColour = Color.FromArgb(198, 166, 99),
@@ -454,7 +454,7 @@ namespace Client.Scenes.Views
 
             label = new DXLabel
             {
-                Text = "奖励",
+                Text = "任务奖励",
                 Parent = this,
                 Font = new Font(Config.FontName, CEnvir.FontSize(10F), FontStyle.Bold),
                 //ForeColour = Color.FromArgb(198, 166, 99),

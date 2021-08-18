@@ -2102,7 +2102,7 @@ namespace Client.Scenes
                     ForeColour = Color.MediumAquamarine,
                     Location = new Point(4, ItemLabel.DisplayArea.Bottom),
                     Parent = ItemLabel,
-                    Text = $"拆解花费: {MouseItem.FragmentCost():#,##0}",
+                    Text = $"分解花费: {MouseItem.FragmentCost():#,##0}",
                 };
 
                 ItemLabel.Size = new Size(label.DisplayArea.Right + 4 > ItemLabel.Size.Width ? label.DisplayArea.Right + 4 : ItemLabel.Size.Width,
@@ -2113,7 +2113,7 @@ namespace Client.Scenes
                     ForeColour = Color.MediumAquamarine,
                     Location = new Point(4, ItemLabel.DisplayArea.Bottom),
                     Parent = ItemLabel,
-                    Text = $"拆解花费: {(MouseItem.Info.Rarity == Rarity.Common ? "低级碎片" : "中级碎片")} x{MouseItem.FragmentCount():#,##0}",
+                    Text = $"分解花费: {(MouseItem.Info.Rarity == Rarity.Common ? "初级碎片" : "中级碎片")} x{MouseItem.FragmentCount():#,##0}",
                 };
 
                 ItemLabel.Size = new Size(label.DisplayArea.Right + 4 > ItemLabel.Size.Width ? label.DisplayArea.Right + 4 : ItemLabel.Size.Width,

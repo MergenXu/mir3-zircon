@@ -125,7 +125,7 @@ namespace Library
                     return description.Title;
                 case StatType.Time:
                     if (this[stat] < 0)
-                        return description.Title + ": Permanent";
+                        return description.Title + ": 永 ";
 
                     return description.Title + ": " + Functions.ToString(TimeSpan.FromSeconds(this[stat]), true);
                 case StatType.SpellPower:
@@ -147,7 +147,7 @@ namespace Library
                     if (list.Count == 0 || list[0] != stat)
                         return null;
 
-                    value = $"攻元素: ";
+                    value = $"攻击元素: ";
 
                     neecComma = false;
                     foreach (Stat s in list)
@@ -569,13 +569,13 @@ namespace Library
         [StatDescription(Title = "暴击几率", Format = "{0:+#0;-#0;#0}%", Mode = StatType.Default)]
         CriticalChance,
 
-        [StatDescription(Title = "5%额外售价", Format = "{0} 或者更多", Mode = StatType.Default)]
+        [StatDescription(Title = "5%额外售价", Format = "{0}个或更多", Mode = StatType.Default)]
         SaleBonus5,
-        [StatDescription(Title = "10%额外售价", Format = "{0} 或者更多", Mode = StatType.Default)]
+        [StatDescription(Title = "10%额外售价", Format = "{0}个或更多", Mode = StatType.Default)]
         SaleBonus10,
-        [StatDescription(Title = "15%额外售价", Format = "{0} 或者更多", Mode = StatType.Default)]
+        [StatDescription(Title = "15%额外售价", Format = "{0}个或更多", Mode = StatType.Default)]
         SaleBonus15,
-        [StatDescription(Title = "20%额外售价", Format = "{0} 或者更多", Mode = StatType.Default)]
+        [StatDescription(Title = "20%额外售价", Format = "{0}个或更多", Mode = StatType.Default)]
         SaleBonus20,
 
         [StatDescription(Title = "魔法盾", Format = "{0:+#0%;-#0%;#0%}", Mode = StatType.Percent)]

@@ -439,7 +439,7 @@ namespace Client.Scenes.Views
         public void RefreshHealth()
         {
             ClientObjectData data;
-            HealthLabel.Text = !GameScene.Game.DataDictionary.TryGetValue(Monster.ObjectID, out data) ? string.Empty : $"{data.Health} / {data.MaxHealth}";
+            HealthLabel.Text = !GameScene.Game.DataDictionary.TryGetValue(Monster.ObjectID, out data) ? string.Empty : $"{(data.Health > 0 ? data.Health:0)} / {data.MaxHealth}";
         }
 
         public void RefreshStats()

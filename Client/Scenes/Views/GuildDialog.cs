@@ -2496,7 +2496,7 @@ namespace Client.Scenes.Views
                 Location = new Point(ClientArea.X + 120, StorageBox.Location.Y + 40),
                 ButtonType = ButtonType.SmallButton,
                 Size = new Size(80, SmallButtonHeight),
-                Label = { Text = "Confirm" },
+                Label = { Text = "确认" },
             };
 
             ConfirmButton.MouseClick += (o, e) =>

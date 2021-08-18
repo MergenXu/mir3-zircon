@@ -138,7 +138,7 @@ namespace Client.Scenes.Views
 
 
                 if (userQuest.IsComplete)
-                    label.Text += " (Complete)";
+                    label.Text += " (已完成)";
 
                 Lines.Add(label);
 
