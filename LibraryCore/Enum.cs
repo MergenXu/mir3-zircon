@@ -141,7 +141,7 @@ namespace Library
         RingR = 8,
         [Description("鞋子")]
         Shoes = 9,
-        [Description("药品")]
+        [Description("毒药")]
         Poison = 10,
         [Description("护符")]
         Amulet = 11,
@@ -309,11 +309,11 @@ namespace Library
 
     public enum Rarity : byte
     {
-        [Description("普通物品")]
+        [Description("普通")]
         Common,
-        [Description("高级物品")]
+        [Description("卓越")]
         Superior,
-        [Description("稀世物品")]
+        [Description("稀世")]
         Elite,
     }
 
@@ -345,7 +345,8 @@ namespace Library
 
     public enum ItemType : byte
     {
-        [Description("无")]
+
+        [Description("其它")]
         Nothing,
         [Description("消耗品")]
         Consumable,
@@ -365,23 +366,23 @@ namespace Library
         Ring,
         [Description("鞋子")]
         Shoes,
-        [Description("药品")]
+        [Description("毒药")]
         Poison,
         [Description("护符")]
         Amulet,
-        [Description("肉")]
+        [Description("肉类")]
         Meat,
-        [Description("矿")]
+        [Description("矿石")]
         Ore,
         [Description("技能书")]
         Book,
         [Description("卷轴")]
         Scroll,
-        [Description("黑石头")]
+        [Description("暗黑石")]
         DarkStone,
         [Description("特别精炼")]
         RefineSpecial,
-        [Description("马盔甲")]
+        [Description("马铠")]
         HorseArmour,
         [Description("鲜花")]
         Flower,
@@ -402,7 +403,9 @@ namespace Library
         [Description("盾牌")]
         Shield,
         [Description("翅膀")]
-        Wings
+        Wings,
+
+
     }
 
     public enum MirAction : byte

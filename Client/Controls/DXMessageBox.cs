@@ -98,7 +98,7 @@ namespace Client.Controls
                         Location = new Point((Size.Width - 80) / 2, Size.Height - 43),
                         Size = new Size(80, DefaultHeight),
                         Parent = this,
-                        Label = { Text = "OK" }
+                        Label = { Text = "确定" }
                     };
                     OKButton.MouseClick += (o, e) => Dispose();
                     break;

@@ -66,7 +66,7 @@
             // 
             // SavingButton
             // 
-            this.SavingButton.Caption = "Save Database";
+            this.SavingButton.Caption = "保存";
             this.SavingButton.Glyph = ((System.Drawing.Image)(resources.GetObject("SavingButton.Glyph")));
             this.SavingButton.Id = 1;
             this.SavingButton.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("SavingButton.LargeGlyph")));
@@ -79,7 +79,7 @@
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1});
             this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "Home";
+            this.ribbonPage1.Text = "主页";
             // 
             // ribbonPageGroup1
             // 
@@ -87,7 +87,7 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.SavingButton);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.ShowCaptionButton = false;
-            this.ribbonPageGroup1.Text = "Saving";
+            this.ribbonPageGroup1.Text = "保存";
             // 
             // DropInfoGridControl
             // 

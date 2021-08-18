@@ -884,11 +884,11 @@ namespace Client.Scenes.Views
                     RequirementLabel.Text = string.Empty;
                     break;
                 case ItemType.Meat:
-                    RequirementLabel.Text = $"Quality: {Good.Item.Durability/1000}";
+                    RequirementLabel.Text = $"品质: {Good.Item.Durability/1000}";
                     RequirementLabel.ForeColour = Color.Wheat;
                     break;
                 case ItemType.Ore:
-                    RequirementLabel.Text = $"Purity: {Good.Item.Durability/1000}";
+                    RequirementLabel.Text = $"纯度: {Good.Item.Durability/1000}";
                     RequirementLabel.ForeColour = Color.Wheat;
                     break;
                 case ItemType.Consumable:
@@ -907,12 +907,12 @@ namespace Client.Scenes.Views
 
                     if (GameScene.Game.CanUseItem(ItemCell.Item))
                     {
-                        RequirementLabel.Text = "Can use Item";
+                        RequirementLabel.Text = "可用物品";
                         RequirementLabel.ForeColour = Color.Aquamarine;
                     }
                     else
                     {
-                        RequirementLabel.Text = "Cannot use Item";
+                        RequirementLabel.Text = "不可用物品";
                         RequirementLabel.ForeColour = Color.Red;
                     }
                     break;

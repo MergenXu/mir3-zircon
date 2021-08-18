@@ -2788,7 +2788,7 @@ namespace Client.Scenes
 
                     if (User.AttackMagic != magic.Info.Magic)
                     {
-                        ReceiveChat($"{magic.Info.Name} is now Ready.", MessageType.Hint);
+                        ReceiveChat($"{magic.Info.Name} 准备就绪.", MessageType.Hint);
                         int attackDelay = Globals.AttackDelay - MapObject.User.Stats[Stat.AttackSpeed] * Globals.ASpeedRate;
                         attackDelay = Math.Max(800, attackDelay);
 
@@ -2807,7 +2807,7 @@ namespace Client.Scenes
 
                     if (User.AttackMagic != magic.Info.Magic)
                     {
-                        ReceiveChat($"{magic.Info.Name} is now Ready.", MessageType.Hint);
+                        ReceiveChat($"{magic.Info.Name} 准备就绪.", MessageType.Hint);
                         ToggleTime = CEnvir.Now + TimeSpan.FromMilliseconds(500);
 
                         User.AttackMagic = magic.Info.Magic;
@@ -2826,7 +2826,7 @@ namespace Client.Scenes
                 if (CEnvir.Now >= OutputTime)
                 {
                     OutputTime = CEnvir.Now.AddSeconds(1);
-                    ReceiveChat($"Unable to cast {magic.Info.Name}, it is still on Cooldown.", MessageType.Hint);
+                    ReceiveChat($"无法使用 {magic.Info.Name}, 冷却中.", MessageType.Hint);
                 }
                 return;
             }
@@ -2840,7 +2840,7 @@ namespace Client.Scenes
                         if (CEnvir.Now >= OutputTime)
                         {
                             OutputTime = CEnvir.Now.AddSeconds(1);
-                            ReceiveChat($"Unable to cast {magic.Info.Name} whilst in combat", MessageType.Hint);
+                            ReceiveChat($"战斗中无法使用 {magic.Info.Name} ", MessageType.Hint);
                         }
                         return;
                     }
@@ -2850,7 +2850,7 @@ namespace Client.Scenes
                         if (CEnvir.Now >= OutputTime)
                         {
                             OutputTime = CEnvir.Now.AddSeconds(1);
-                            ReceiveChat($"Unable to cast {magic.Info.Name}, You do not have enough Health.", MessageType.Hint);
+                            ReceiveChat($"无法使用 {magic.Info.Name}, 生命值不足.", MessageType.Hint);
                         }
                         return;
                     }
@@ -2863,7 +2863,7 @@ namespace Client.Scenes
                         if (CEnvir.Now >= OutputTime)
                         {
                             OutputTime = CEnvir.Now.AddSeconds(1);
-                            ReceiveChat($"Unable to cast {magic.Info.Name}, You do not have enough Mana.", MessageType.Hint);
+                            ReceiveChat($"无法使用 {magic.Info.Name}, 魔法值不足.", MessageType.Hint);
                         }
                         return;
                     }
@@ -2874,7 +2874,7 @@ namespace Client.Scenes
                         if (CEnvir.Now >= OutputTime)
                         {
                             OutputTime = CEnvir.Now.AddSeconds(1);
-                            ReceiveChat($"Unable to cast {magic.Info.Name}, You do not have enough Health.", MessageType.Hint);
+                            ReceiveChat($"无法使用 {magic.Info.Name}, 生命值不足.", MessageType.Hint);
                         }
                         return;
                     }
@@ -2883,7 +2883,7 @@ namespace Client.Scenes
                         if (CEnvir.Now >= OutputTime)
                         {
                             OutputTime = CEnvir.Now.AddSeconds(1);
-                            ReceiveChat($"Unable to cast {magic.Info.Name}, You do not have enough Mana.", MessageType.Hint);
+                            ReceiveChat($"无法使用 {magic.Info.Name}, 魔法值不足.", MessageType.Hint);
                         }
                         return;
                     }
@@ -2895,7 +2895,7 @@ namespace Client.Scenes
                         if (CEnvir.Now >= OutputTime)
                         {
                             OutputTime = CEnvir.Now.AddSeconds(1);
-                            ReceiveChat($"Unable to cast {magic.Info.Name}, You do not have enough Mana.", MessageType.Hint);
+                            ReceiveChat($"无法使用 {magic.Info.Name}, 魔法值不足.", MessageType.Hint);
                         }
                         return;
                     }
@@ -2929,7 +2929,7 @@ namespace Client.Scenes
                     {
                         if (CEnvir.Now < OutputTime) return;
                         OutputTime = CEnvir.Now.AddSeconds(1);
-                        ReceiveChat($"Unable to cast {magic.Info.Name}, Your target is too far.", MessageType.Hint);
+                        ReceiveChat($"无法使用 {magic.Info.Name}, 距离目标太远了.", MessageType.Hint);
                         return;
                     }
 
@@ -3097,7 +3097,7 @@ namespace Client.Scenes
                     {
                         if (CEnvir.Now < OutputTime) return;
                         OutputTime = CEnvir.Now.AddSeconds(1);
-                        ReceiveChat($"无法使用 {magic.Info.Name}, 你的攻击目标太远了.", MessageType.Hint);
+                        ReceiveChat($"无法使用 {magic.Info.Name}, 距离目标太远了.", MessageType.Hint);
                         return;
                     }
                     break;
@@ -3109,7 +3109,7 @@ namespace Client.Scenes
             {
                 if (CEnvir.Now < OutputTime) return;
                 OutputTime = CEnvir.Now.AddSeconds(1);
-                ReceiveChat($"无法使用 {magic.Info.Name}, 你的攻击目标太远了.", MessageType.Hint);
+                ReceiveChat($"无法使用 {magic.Info.Name}, 距离目标太远了.", MessageType.Hint);
                 return;
             }
 

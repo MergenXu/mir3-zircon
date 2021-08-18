@@ -82,7 +82,7 @@ namespace Client.Scenes.Views
 
         public DungeonFinderDialog()
         {
-            TitleLabel.Text = "Dungeon Finder";
+            TitleLabel.Text = "地牢搜索";
             SetClientSize(new Size(560, 461));
 
             TabControl = new DXTabControl

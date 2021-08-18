@@ -1348,32 +1348,32 @@ namespace Server.Models
 
                         Connection.ReceiveChat(ExtractorLock ? "Extraction Enabled" : "Extraction Locked", MessageType.System);
                         break;
-                    case "ENABLELEVEL3":
+                    case "宠物等级3":
                         CompanionLevelLock3 = !CompanionLevelLock3;
 
                         Connection.ReceiveChat(string.Format(CompanionLevelLock3 ? Connection.Language.CompanionSkillEnabled : Connection.Language.CompanionSkillDisabled, 3), MessageType.System);
                         break;
-                    case "ENABLELEVEL5":
+                    case "宠物等级5":
                         CompanionLevelLock5 = !CompanionLevelLock5;
                         Connection.ReceiveChat(string.Format(CompanionLevelLock5 ? Connection.Language.CompanionSkillEnabled : Connection.Language.CompanionSkillDisabled, 5), MessageType.System);
                         break;
-                    case "ENABLELEVEL7":
+                    case "宠物等级7":
                         CompanionLevelLock7 = !CompanionLevelLock7;
                         Connection.ReceiveChat(string.Format(CompanionLevelLock7 ? Connection.Language.CompanionSkillEnabled : Connection.Language.CompanionSkillDisabled, 7), MessageType.System);
                         break;
-                    case "ENABLELEVEL10":
+                    case "宠物等级10":
                         CompanionLevelLock10 = !CompanionLevelLock10;
                         Connection.ReceiveChat(string.Format(CompanionLevelLock10 ? Connection.Language.CompanionSkillEnabled : Connection.Language.CompanionSkillDisabled, 10), MessageType.System);
                         break;
-                    case "ENABLELEVEL11":
+                    case "宠物等级11":
                         CompanionLevelLock11 = !CompanionLevelLock11;
                         Connection.ReceiveChat(string.Format(CompanionLevelLock11 ? Connection.Language.CompanionSkillEnabled : Connection.Language.CompanionSkillDisabled, 11), MessageType.System);
                         break;
-                    case "ENABLELEVEL13":
+                    case "宠物等级13":
                         CompanionLevelLock13 = !CompanionLevelLock13;
                         Connection.ReceiveChat(string.Format(CompanionLevelLock13 ? Connection.Language.CompanionSkillEnabled : Connection.Language.CompanionSkillDisabled, 13), MessageType.System);
                         break;
-                    case "ENABLELEVEL15":
+                    case "宠物等级15":
                         CompanionLevelLock15 = !CompanionLevelLock15;
                         Connection.ReceiveChat(string.Format(CompanionLevelLock15 ? Connection.Language.CompanionSkillEnabled : Connection.Language.CompanionSkillDisabled, 15), MessageType.System);
                         break;
@@ -1389,7 +1389,7 @@ namespace Server.Models
                         Character.Account.AllowGuild = !Character.Account.AllowGuild;
                         Connection.ReceiveChat(Character.Account.AllowGuild ? Connection.Language.GuildInviteEnabled : Connection.Language.GuildInviteDisabled, MessageType.System);
                         break;
-                    case "LEAVEGUILD":
+                    case "退出行会":
                         GuildLeave();
                         break;
                     case "RECALL":
@@ -19834,7 +19834,7 @@ namespace Server.Models
             FiltersItemType = Character.FiltersItemType;
             FiltersRarity = Character.FiltersRarity;
             Enqueue(new S.SendCompanionFilters { FilterClass = p.FilterClass, FilterRarity = p.FilterRarity, FilterItemType = p.FilterItemType });
-            Connection.ReceiveChat("Companion filters have been updated", MessageType.System);
+            Connection.ReceiveChat("宠物拾取过滤保存成功", MessageType.System);
         }
 
         #endregion

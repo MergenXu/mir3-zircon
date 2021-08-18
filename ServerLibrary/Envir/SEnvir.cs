@@ -985,7 +985,7 @@ namespace Server.Envir
 
                         if (Now >= UserCountTime)
                         {
-                            UserCountTime = Now.AddMinutes(5);
+                            UserCountTime = Now.AddMinutes(30);
 
                             foreach (SConnection conn in Connections)
                             {

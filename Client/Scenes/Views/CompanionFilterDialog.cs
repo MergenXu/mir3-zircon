@@ -151,9 +151,9 @@ namespace Client.Scenes.Views
             int row = 0;
             foreach (ItemType itemType in itemTypes)
             {
-                string item = itemType.ToString();
-                if (item == "Nothing" || item == "Consumable" || item == "Torch" || item == "Poison" || item == "Amulet" || item == "Meat" || item == "Ore"
-                || item == "DarkStone" || item == "RefineSpecial" || item == "HorseArmour" || item == "CompanionFood" || item == "System" || item == "ItemPart")
+                string item = EnumService.GetDescription(itemType);
+                if (item == "火把" || item == "毒药" || item == "护符" || item == "肉类"
+                || item == "暗黑石" || item == "特别精炼" || item == "马铠" || item == "宠物食物" || item == "系统")
                 {
                     continue;
                 }
@@ -161,7 +161,7 @@ namespace Client.Scenes.Views
                 FilterType[itemType] = new DXCheckBox
                 {
                     Parent = this,
-                    Hint = "Pick " + item.ToLower() + " items",
+                    Hint = "拾取 " + item.ToLower() + " 物品",
                 };
                 FilterType[itemType].Location = new Point(20 + (110 * index), 190 + (18 * row));
 
@@ -192,7 +192,7 @@ namespace Client.Scenes.Views
                 FilterClass[mirClass] = new DXCheckBox
                 {
                     Parent = this,
-                    Hint = "Pick " + mirClass.ToString().ToLower() + " items",
+                    Hint = "拾取" + EnumService.GetDescription(mirClass) + "物品",
                 };
                 FilterClass[mirClass].Location = new Point(20 + (70 * index), 70);
 
@@ -203,7 +203,7 @@ namespace Client.Scenes.Views
                     ForeColour = Color.AntiqueWhite,
                     OutlineColour = Color.Black,
                     IsControl = false,
-                    Text = char.ToUpper(mirClass.ToString()[0]) + mirClass.ToString().Substring(1)
+                    Text = EnumService.GetDescription(mirClass)
                 };
                 label.Location = new Point(35 + (70 * index++), 70);
             }
@@ -218,7 +218,7 @@ namespace Client.Scenes.Views
                 FilterRarity[rarity] = new DXCheckBox
                 {
                     Parent = this,
-                    Hint = "Pick " + rarity.ToString().ToLower() + " items",
+                    Hint = "拾取 " + EnumService.GetDescription(rarity) + " 物品",
                 };
                 FilterRarity[rarity].Location = new Point(20 + (70 * index), 130);
                 Color rarityLabelColor = Color.AntiqueWhite;
@@ -238,7 +238,7 @@ namespace Client.Scenes.Views
                     ForeColour = rarityLabelColor,
                     OutlineColour = Color.Black,
                     IsControl = false,
-                    Text = char.ToUpper(rarity.ToString()[0]) + rarity.ToString().Substring(1)
+                    Text = EnumService.GetDescription(rarity)
                 };
                 label.Location = new Point(35 + (70 * index++), 130);
 

@@ -256,7 +256,7 @@ namespace Client.Scenes.Views
         public MarketPlaceDialog()
         {
             //HasFooter = true;
-            TitleLabel.Text = "商城";
+            TitleLabel.Text = "游戏商铺";
             SetClientSize(new Size(740, 461));
 
 
@@ -397,7 +397,7 @@ namespace Client.Scenes.Views
                 Location = new Point(SearchButton.Location.X + SearchButton.Size.Width + 40, label.Location.Y - 1),
                 Parent = filterPanel,
                 ButtonType = ButtonType.SmallButton,
-                Label = { Text = "清空" }
+                Label = { Text = "清除" }
             };
             ClearButton.MouseClick += (o, e) =>
             {
@@ -1068,7 +1068,7 @@ namespace Client.Scenes.Views
                 Location = new Point(SearchButton.Location.X + SearchButton.Size.Width + 40, label.Location.Y - 1),
                 Parent = filterPanel,
                 ButtonType = ButtonType.SmallButton,
-                Label = { Text = "清空" }
+                Label = { Text = "清除" }
             };
             ClearButton.MouseClick += (o, e) =>
             {

@@ -77,7 +77,7 @@ namespace Client.Scenes.Views
             {
                 Parent = TabControl,
                 Border = true,
-                TabButton = { Label = { Text = "拾取过滤" } },
+                TabButton = { Label = { Text = "掉落过滤" } },
             };
             DXControl namePanel = new DXControl
             {
@@ -387,7 +387,7 @@ namespace Client.Scenes.Views
                     dropItems.Add(DropFiltersMap[i].TextBox.Text);
                 }
                 Config.HighlightedItems = String.Join(",", dropItems);
-                GameScene.Game.ReceiveChat("Drop filters have been saved to your configuration", MessageType.System);
+                GameScene.Game.ReceiveChat("掉落过滤保存成功", MessageType.System);
             };
             // end filter drop box
 

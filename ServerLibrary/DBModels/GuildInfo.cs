@@ -24,7 +24,7 @@ namespace Server.DBModels
                 var oldValue = _GuildName;
                 _GuildName = value;
 
-                OnChanged(oldValue, value, "行会名称");
+                OnChanged(oldValue, value, "GuildName");
             }
         }
         private string _GuildName;
@@ -39,11 +39,11 @@ namespace Server.DBModels
                 var oldValue = _MemberLimit;
                 _MemberLimit = value;
 
-                OnChanged(oldValue, value, "成员限制");
+                OnChanged(oldValue, value, "MemberLimit");
             }
         }
         private int _MemberLimit;
-        
+
         public int StorageSize
         {
             get { return _StorageSize; }
@@ -54,7 +54,7 @@ namespace Server.DBModels
                 var oldValue = _StorageSize;
                 _StorageSize = value;
 
-                OnChanged(oldValue, value, "仓库大小");
+                OnChanged(oldValue, value, "StorageSize");
             }
         }
         private int _StorageSize;
@@ -69,7 +69,7 @@ namespace Server.DBModels
                 var oldValue = _GuildFunds;
                 _GuildFunds = value;
 
-                OnChanged(oldValue, value, "行会资金");
+                OnChanged(oldValue, value, "GuildFunds");
             }
         }
         private long _GuildFunds;
@@ -84,7 +84,7 @@ namespace Server.DBModels
                 var oldValue = _GuildLevel;
                 _GuildLevel = value;
 
-                OnChanged(oldValue, value, "行会等级");
+                OnChanged(oldValue, value, "GuildLevel");
             }
         }
         private int _GuildLevel;
@@ -99,7 +99,7 @@ namespace Server.DBModels
                 var oldValue = _GuildNotice;
                 _GuildNotice = value;
 
-                OnChanged(oldValue, value, "行会公告");
+                OnChanged(oldValue, value, "GuildNotice");
             }
         }
         private string _GuildNotice;
@@ -204,12 +204,12 @@ namespace Server.DBModels
                 var oldValue = _StarterGuild;
                 _StarterGuild = value;
 
-                OnChanged(oldValue, value, "新人行会");
+                OnChanged(oldValue, value, "StarterGuild");
             }
         }
         private bool _StarterGuild;
-        
-        
+
+
 
         [Association("Conquest", true)]
         public UserConquest Conquest
@@ -241,7 +241,7 @@ namespace Server.DBModels
             }
         }
         private CastleInfo _Castle;
-        
+
 
 
         public UserItem[] Storage = new UserItem[1000];
@@ -252,12 +252,12 @@ namespace Server.DBModels
         [Association("Items", true)]
         public DBBindingList<UserItem> Items { get; set; }
 
-        
+
         public ClientGuildInfo ToClientInfo()
         {
             return new ClientGuildInfo
             {
-                GuildName =  GuildName,
+                GuildName = GuildName,
 
                 DailyGrowth = DailyGrowth,
                 GuildFunds = GuildFunds,
@@ -266,12 +266,12 @@ namespace Server.DBModels
 
                 MemberLimit = MemberLimit,
                 StorageLimit = StorageSize,
-                
+
                 Notice = GuildNotice,
 
                 DefaultPermission = DefaultPermission,
                 DefaultRank = DefaultRank,
-                
+
                 Tax = (int)(GuildTax * 100),
 
                 Members = Members.Select(x => x.ToClientInfo()).ToList(),
@@ -279,7 +279,7 @@ namespace Server.DBModels
                 Storage = Items.Select(x => x.ToClientInfo()).ToList(),
             };
         }
-        
+
         protected override void OnLoaded()
         {
             base.OnLoaded();
@@ -300,7 +300,7 @@ namespace Server.DBModels
         {
             base.OnCreated();
 
-            DefaultRank = "New Member";
+            DefaultRank = "新成员";
             DefaultPermission = GuildPermission.None;
         }
 

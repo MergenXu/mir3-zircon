@@ -695,7 +695,7 @@ namespace Client.Scenes.Views
                 Parent = CreateTab,
                 ButtonType = ButtonType.SmallButton,
                 Size = new Size(120, SmallButtonHeight),
-                Label = { Text = "加入新手行会" },
+                Label = { Text = "加入新人行会" },
                 Location = new Point(ClientArea.Left, TotalCostBox.Location.Y + 40)
             };
             StarterGuildButton.MouseClick += StarterGuildButton_MouseClick;
@@ -764,7 +764,7 @@ namespace Client.Scenes.Views
 
              new DXLabel
             {
-                Text = "通知",
+                Text = "公告",
                 Parent = HomeTab,
                 Font = new Font(Config.FontName, CEnvir.FontSize(10F), FontStyle.Bold),
                 ForeColour = Color.FromArgb(198, 166, 99),
@@ -2072,19 +2072,19 @@ namespace Client.Scenes.Views
         public event EventHandler<EventArgs> IsHeaderChanged;
         public void OnIsHeaderChanged(bool oValue, bool nValue)
         {
-            NameLabel.Text = "Name";
+            NameLabel.Text = "名称";
             NameLabel.ForeColour = Color.FromArgb(198, 166, 99);
 
-            RankLabel.Text = "Rank";
+            RankLabel.Text = "级别";
             RankLabel.ForeColour = Color.FromArgb(198, 166, 99);
 
-            TotalLabel.Text = "Total Con.";
+            TotalLabel.Text = "总贡献";
             TotalLabel.ForeColour = Color.FromArgb(198, 166, 99);
 
-            DailyLabel.Text = "Daily Con.";
+            DailyLabel.Text = "今日贡献";
             DailyLabel.ForeColour = Color.FromArgb(198, 166, 99);
 
-            OnlineLabel.Text = "Online";
+            OnlineLabel.Text = "在线";
             OnlineLabel.ForeColour = Color.FromArgb(198, 166, 99);
 
             DrawTexture = false;
@@ -2511,7 +2511,7 @@ namespace Client.Scenes.Views
                 Location = new Point(ClientArea.X, StorageBox.Location.Y + 40),
                 ButtonType = ButtonType.SmallButton,
                 Size = new Size(40, SmallButtonHeight),
-                Label = { Text = "Kick" },
+                Label = { Text = "踢出" },
             };
             KickButton.MouseClick += (o, e) =>
             {
@@ -2737,7 +2737,7 @@ namespace Client.Scenes.Views
             CastleOwnerLabel = new DXLabel
             {
                 Parent = this,
-                Text = "None",
+                Text = "无",
                 Location = new Point(80, 25),
                 ForeColour = Color.White
             };
@@ -2753,7 +2753,7 @@ namespace Client.Scenes.Views
             CastleDateLabel = new DXLabel
             {
                 Parent = this,
-                Text = "None",
+                Text = "无",
                 Location = new Point(80, 45),
                 ForeColour = Color.White
             };
@@ -2780,7 +2780,7 @@ namespace Client.Scenes.Views
             ItemLabel = new DXLabel
             {
                 Parent = this,
-                Text = "None",
+                Text = "无",
                 Location = new Point(80, 95),
                 ForeColour = Color.White
             };
@@ -2791,7 +2791,7 @@ namespace Client.Scenes.Views
         {
             string owner = GameScene.Game.CastleOwners[Castle];
 
-            CastleOwnerLabel.Text = string.IsNullOrEmpty(owner) ? "None" : owner;
+            CastleOwnerLabel.Text = string.IsNullOrEmpty(owner) ? "无" : owner;
         }
 
         public override void Process()
@@ -2799,9 +2799,9 @@ namespace Client.Scenes.Views
             base.Process();
 
             if (Castle.WarDate == DateTime.MinValue)
-                CastleDateLabel.Text = "None";
+                CastleDateLabel.Text = "无";
             else if (Castle.WarDate <= CEnvir.Now)
-                CastleDateLabel.Text = "In Progress";
+                CastleDateLabel.Text = "进行中";
             else
                 CastleDateLabel.Text = Functions.ToString(Castle.WarDate - CEnvir.Now, true);
         }

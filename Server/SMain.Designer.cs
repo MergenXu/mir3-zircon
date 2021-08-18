@@ -144,27 +144,27 @@
             // 
             // StartServerButton
             // 
-            this.StartServerButton.Caption = "Start Server";
+            this.StartServerButton.Caption = "启动";
             this.StartServerButton.Id = 2;
             this.StartServerButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("StartServerButton.ImageOptions.Image")));
             this.StartServerButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("StartServerButton.ImageOptions.LargeImage")));
             this.StartServerButton.LargeWidth = 50;
-            this.StartServerButton.Name = "StartServerButton";
+            this.StartServerButton.Name = "启动服务";
             this.StartServerButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.StartServerButton_ItemClick);
             // 
             // StopServerButton
             // 
-            this.StopServerButton.Caption = "Stop Server";
+            this.StopServerButton.Caption = "停止";
             this.StopServerButton.Id = 3;
             this.StopServerButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("StopServerButton.ImageOptions.Image")));
             this.StopServerButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("StopServerButton.ImageOptions.LargeImage")));
             this.StopServerButton.LargeWidth = 50;
-            this.StopServerButton.Name = "StopServerButton";
+            this.StopServerButton.Name = "停止服务";
             this.StopServerButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.StopServerButton_ItemClick);
             // 
             // barButtonItem1
             // 
-            this.barButtonItem1.Caption = "Map Viewer";
+            this.barButtonItem1.Caption = "地图";
             this.barButtonItem1.Id = 6;
             this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
             this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
@@ -176,7 +176,7 @@
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1});
             this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "Home";
+            this.ribbonPage1.Text = "主页";
             // 
             // ribbonPageGroup1
             // 
@@ -184,27 +184,27 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.StopServerButton);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.ShowCaptionButton = false;
-            this.ribbonPageGroup1.Text = "Control";
+            this.ribbonPageGroup1.Text = "控制";
             // 
             // ribbonPage2
             // 
             this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup2});
             this.ribbonPage2.Name = "ribbonPage2";
-            this.ribbonPage2.Text = "View";
+            this.ribbonPage2.Text = "视图";
             // 
             // ribbonPageGroup2
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.skinRibbonGalleryBarItem1);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "Skin";
+            this.ribbonPageGroup2.Text = "皮肤";
             // 
             // ribbonPage3
             // 
             this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup3});
             this.ribbonPage3.Name = "ribbonPage3";
-            this.ribbonPage3.Text = "Commands";
+            this.ribbonPage3.Text = "命令";
             // 
             // ribbonPageGroup3
             // 
@@ -212,7 +212,7 @@
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem1);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.ShowCaptionButton = false;
-            this.ribbonPageGroup3.Text = "Testing";
+            this.ribbonPageGroup3.Text = "测试";
             // 
             // navBarControl1
             // 
@@ -266,7 +266,7 @@
             // 
             // navBarGroup1
             // 
-            this.navBarGroup1.Caption = "Operations";
+            this.navBarGroup1.Caption = "操作";
             this.navBarGroup1.Expanded = true;
             this.navBarGroup1.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup1.ImageOptions.SmallImage")));
             this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
@@ -276,21 +276,21 @@
             // 
             // LogNavButton
             // 
-            this.LogNavButton.Caption = "System Log";
+            this.LogNavButton.Caption = "系统日志";
             this.LogNavButton.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("LogNavButton.ImageOptions.SmallImage")));
             this.LogNavButton.Name = "LogNavButton";
             this.LogNavButton.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.LogNavButton_LinkClicked);
             // 
             // navBarItem1
             // 
-            this.navBarItem1.Caption = "Chat Log";
+            this.navBarItem1.Caption = "聊天日志";
             this.navBarItem1.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem1.ImageOptions.SmallImage")));
             this.navBarItem1.Name = "navBarItem1";
             this.navBarItem1.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.ChatLogNavButton_LinkClicked);
             // 
             // navBarGroup2
             // 
-            this.navBarGroup2.Caption = "Setup";
+            this.navBarGroup2.Caption = "设置";
             this.navBarGroup2.Expanded = true;
             this.navBarGroup2.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup2.ImageOptions.SmallImage")));
             this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
@@ -321,168 +321,168 @@
             // 
             // MapInfoButton
             // 
-            this.MapInfoButton.Caption = "Map Info";
+            this.MapInfoButton.Caption = "地图信息";
             this.MapInfoButton.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("MapInfoButton.ImageOptions.SmallImage")));
             this.MapInfoButton.Name = "MapInfoButton";
             this.MapInfoButton.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.MapInfoButton_LinkClicked);
             // 
             // InstanceInfoButton
             // 
-            this.InstanceInfoButton.Caption = "Instance Info";
+            this.InstanceInfoButton.Caption = "实例信息";
             this.InstanceInfoButton.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("InstanceInfoButton.ImageOptions.SmallImage")));
             this.InstanceInfoButton.Name = "InstanceInfoButton";
             this.InstanceInfoButton.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.InstanceInfoButton_LinkClicked);
             // 
             // ItemInfoButton
             // 
-            this.ItemInfoButton.Caption = "Item Info";
+            this.ItemInfoButton.Caption = "物品";
             this.ItemInfoButton.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("ItemInfoButton.ImageOptions.SmallImage")));
             this.ItemInfoButton.Name = "ItemInfoButton";
             this.ItemInfoButton.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.ItemInfoButton_LinkClicked);
             // 
             // MonsterInfoButton
             // 
-            this.MonsterInfoButton.Caption = "Monster Info ";
+            this.MonsterInfoButton.Caption = "怪物";
             this.MonsterInfoButton.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("MonsterInfoButton.ImageOptions.SmallImage")));
             this.MonsterInfoButton.Name = "MonsterInfoButton";
             this.MonsterInfoButton.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.MonsterInfoButton_LinkClicked);
             // 
             // MonsterInfoStatButton
             // 
-            this.MonsterInfoStatButton.Caption = "Monster Info Stat";
+            this.MonsterInfoStatButton.Caption = "怪物属性";
             this.MonsterInfoStatButton.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("MonsterInfoStatButton.ImageOptions.SmallImage")));
             this.MonsterInfoStatButton.Name = "MonsterInfoStatButton";
             this.MonsterInfoStatButton.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.MonsterInfoStatButton_LinkClicked);
             // 
             // MagicInfoButton
             // 
-            this.MagicInfoButton.Caption = "Magic Info";
+            this.MagicInfoButton.Caption = "技能";
             this.MagicInfoButton.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("MagicInfoButton.ImageOptions.SmallImage")));
             this.MagicInfoButton.Name = "MagicInfoButton";
             this.MagicInfoButton.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.MagicInfoButton_LinkClicked);
             // 
             // MapRegionButton
             // 
-            this.MapRegionButton.Caption = "Map Region";
+            this.MapRegionButton.Caption = "地图区域";
             this.MapRegionButton.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("MapRegionButton.ImageOptions.SmallImage")));
             this.MapRegionButton.Name = "MapRegionButton";
             this.MapRegionButton.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.MapRegionButton_LinkClicked);
             // 
             // MovementInfoButton
             // 
-            this.MovementInfoButton.Caption = "Movement Info";
+            this.MovementInfoButton.Caption = "地图连接";
             this.MovementInfoButton.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("MovementInfoButton.ImageOptions.SmallImage")));
             this.MovementInfoButton.Name = "MovementInfoButton";
             this.MovementInfoButton.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.MovementInfoButton_LinkClicked);
             // 
             // SafeZoneInfoButton
             // 
-            this.SafeZoneInfoButton.Caption = "Safe Zone Info";
+            this.SafeZoneInfoButton.Caption = "安全区";
             this.SafeZoneInfoButton.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("SafeZoneInfoButton.ImageOptions.SmallImage")));
             this.SafeZoneInfoButton.Name = "SafeZoneInfoButton";
             this.SafeZoneInfoButton.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.SafeZoneInfoButton_LinkClicked);
             // 
             // RespawnInfoButton
             // 
-            this.RespawnInfoButton.Caption = "Respawn Info";
+            this.RespawnInfoButton.Caption = "怪物刷新";
             this.RespawnInfoButton.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("RespawnInfoButton.ImageOptions.SmallImage")));
             this.RespawnInfoButton.Name = "RespawnInfoButton";
             this.RespawnInfoButton.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.RespawnInfoButton_LinkClicked);
             // 
             // DropInfoButton
             // 
-            this.DropInfoButton.Caption = "Drop Info";
+            this.DropInfoButton.Caption = "掉落信息";
             this.DropInfoButton.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("DropInfoButton.ImageOptions.SmallImage")));
             this.DropInfoButton.Name = "DropInfoButton";
             this.DropInfoButton.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.DropInfoButton_LinkClicked);
             // 
             // BaseStatButton
             // 
-            this.BaseStatButton.Caption = "Base Stats";
+            this.BaseStatButton.Caption = "基础属性";
             this.BaseStatButton.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("BaseStatButton.ImageOptions.SmallImage")));
             this.BaseStatButton.Name = "BaseStatButton";
             this.BaseStatButton.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.BaseStatButton_LinkClicked);
             // 
             // ItemInfoStatButton
             // 
-            this.ItemInfoStatButton.Caption = "Item Info Stat";
+            this.ItemInfoStatButton.Caption = "物品属性";
             this.ItemInfoStatButton.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("ItemInfoStatButton.ImageOptions.SmallImage")));
             this.ItemInfoStatButton.Name = "ItemInfoStatButton";
             this.ItemInfoStatButton.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.ItemInfoStatButton_LinkClicked);
             // 
             // SetInfoButton
             // 
-            this.SetInfoButton.Caption = "Set Info";
+            this.SetInfoButton.Caption = "套装属性";
             this.SetInfoButton.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("SetInfoButton.ImageOptions.SmallImage")));
             this.SetInfoButton.Name = "SetInfoButton";
             this.SetInfoButton.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.SetInfoButton_LinkClicked);
             // 
             // navBarItem5
             // 
-            this.navBarItem5.Caption = "Weapon Craft Info";
+            this.navBarItem5.Caption = "武器工艺";
             this.navBarItem5.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem5.ImageOptions.SmallImage")));
             this.navBarItem5.Name = "navBarItem5";
             this.navBarItem5.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem5_LinkClicked);
             // 
             // NPCInfoButton
             // 
-            this.NPCInfoButton.Caption = "NPC Info";
+            this.NPCInfoButton.Caption = "NPC";
             this.NPCInfoButton.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("NPCInfoButton.ImageOptions.SmallImage")));
             this.NPCInfoButton.Name = "NPCInfoButton";
             this.NPCInfoButton.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.NPCInfoButton_LinkClicked);
             // 
             // NPCPageButton
             // 
-            this.NPCPageButton.Caption = "NPC Page";
+            this.NPCPageButton.Caption = "NPC页面";
             this.NPCPageButton.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("NPCPageButton.ImageOptions.SmallImage")));
             this.NPCPageButton.Name = "NPCPageButton";
             this.NPCPageButton.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.NPCPageButton_LinkClicked);
             // 
             // QuestInfoButton
             // 
-            this.QuestInfoButton.Caption = "Quest Info";
+            this.QuestInfoButton.Caption = "任务";
             this.QuestInfoButton.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("QuestInfoButton.ImageOptions.SmallImage")));
             this.QuestInfoButton.Name = "QuestInfoButton";
             this.QuestInfoButton.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.QuestInfoButton_LinkClicked);
             // 
             // StoreInfoButton
             // 
-            this.StoreInfoButton.Caption = "Store Info";
+            this.StoreInfoButton.Caption = "商铺";
             this.StoreInfoButton.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("StoreInfoButton.ImageOptions.SmallImage")));
             this.StoreInfoButton.Name = "StoreInfoButton";
             this.StoreInfoButton.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.StoreInfoButton_LinkClicked);
             // 
             // EventInfoButton
             // 
-            this.EventInfoButton.Caption = "Event Info";
+            this.EventInfoButton.Caption = "事件";
             this.EventInfoButton.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("EventInfoButton.ImageOptions.SmallImage")));
             this.EventInfoButton.Name = "EventInfoButton";
             this.EventInfoButton.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.EventInfoButton_LinkClicked);
             // 
             // CastleInfoButton
             // 
-            this.CastleInfoButton.Caption = "Castle Info";
+            this.CastleInfoButton.Caption = "城堡";
             this.CastleInfoButton.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("CastleInfoButton.ImageOptions.SmallImage")));
             this.CastleInfoButton.Name = "CastleInfoButton";
             this.CastleInfoButton.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.CastleInfoButton_LinkClicked);
             // 
             // CompanionInfoButton
             // 
-            this.CompanionInfoButton.Caption = "Companion Info";
+            this.CompanionInfoButton.Caption = "宠物";
             this.CompanionInfoButton.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("CompanionInfoButton.ImageOptions.SmallImage")));
             this.CompanionInfoButton.Name = "CompanionInfoButton";
             this.CompanionInfoButton.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.CompanionInfoButton_LinkClicked);
             // 
             // ConfigButton
             // 
-            this.ConfigButton.Caption = "Config";
+            this.ConfigButton.Caption = "配置";
             this.ConfigButton.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("ConfigButton.ImageOptions.SmallImage")));
             this.ConfigButton.Name = "ConfigButton";
             this.ConfigButton.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.ConfigButton_LinkClicked);
             // 
             // navBarGroup3
             // 
-            this.navBarGroup3.Caption = "Management";
+            this.navBarGroup3.Caption = "管理";
             this.navBarGroup3.Expanded = true;
             this.navBarGroup3.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup3.ImageOptions.SmallImage")));
             this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
@@ -499,49 +499,49 @@
             // 
             // AccountInfoButton
             // 
-            this.AccountInfoButton.Caption = "Account";
+            this.AccountInfoButton.Caption = "账号";
             this.AccountInfoButton.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("AccountInfoButton.ImageOptions.SmallImage")));
             this.AccountInfoButton.Name = "AccountInfoButton";
             this.AccountInfoButton.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.AccountInfoButton_LinkClicked);
             // 
             // CharacterInfoButton
             // 
-            this.CharacterInfoButton.Caption = "Character Info";
+            this.CharacterInfoButton.Caption = "角色信息";
             this.CharacterInfoButton.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("CharacterInfoButton.ImageOptions.SmallImage")));
             this.CharacterInfoButton.Name = "CharacterInfoButton";
             this.CharacterInfoButton.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.CharacterInfoButton_LinkClicked);
             // 
             // UserDropButton
             // 
-            this.UserDropButton.Caption = "User Drop";
+            this.UserDropButton.Caption = "用户掉落";
             this.UserDropButton.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("UserDropButton.ImageOptions.SmallImage")));
             this.UserDropButton.Name = "UserDropButton";
             this.UserDropButton.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.UserDropButton_LinkClicked);
             // 
             // PaymentButton
             // 
-            this.PaymentButton.Caption = "Payments";
+            this.PaymentButton.Caption = "付款信息";
             this.PaymentButton.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("PaymentButton.ImageOptions.SmallImage")));
             this.PaymentButton.Name = "PaymentButton";
             this.PaymentButton.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.PaymentButton_LinkClicked);
             // 
             // StoreSalesButton
             // 
-            this.StoreSalesButton.Caption = "Store Sales";
+            this.StoreSalesButton.Caption = "商铺销售";
             this.StoreSalesButton.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("StoreSalesButton.ImageOptions.SmallImage")));
             this.StoreSalesButton.Name = "StoreSalesButton";
             this.StoreSalesButton.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.StoreSalesButton_LinkClicked);
             // 
             // DiagnosticButton
             // 
-            this.DiagnosticButton.Caption = "Diagnostics";
+            this.DiagnosticButton.Caption = "诊断";
             this.DiagnosticButton.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("DiagnosticButton.ImageOptions.SmallImage")));
             this.DiagnosticButton.Name = "DiagnosticButton";
             this.DiagnosticButton.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.DiagnosticButton_LinkClicked);
             // 
             // navBarItem2
             // 
-            this.navBarItem2.Caption = "User Item";
+            this.navBarItem2.Caption = "用户物品";
             this.navBarItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarItem2.ImageOptions.LargeImage")));
             this.navBarItem2.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem2.ImageOptions.SmallImage")));
             this.navBarItem2.Name = "navBarItem2";
@@ -549,7 +549,7 @@
             // 
             // navBarItem3
             // 
-            this.navBarItem3.Caption = "Conquest Stats";
+            this.navBarItem3.Caption = "征服统计";
             this.navBarItem3.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarItem3.ImageOptions.LargeImage")));
             this.navBarItem3.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem3.ImageOptions.SmallImage")));
             this.navBarItem3.Name = "navBarItem3";
@@ -557,7 +557,7 @@
             // 
             // navBarItem4
             // 
-            this.navBarItem4.Caption = "User Mail";
+            this.navBarItem4.Caption = "用户邮件";
             this.navBarItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarItem4.ImageOptions.LargeImage")));
             this.navBarItem4.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem4.ImageOptions.SmallImage")));
             this.navBarItem4.Name = "navBarItem4";
@@ -597,7 +597,7 @@
             // 
             // bar3
             // 
-            this.bar3.BarName = "Status bar";
+            this.bar3.BarName = "状态栏";
             this.bar3.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
             this.bar3.DockCol = 0;
             this.bar3.DockRow = 0;
@@ -617,7 +617,7 @@
             this.bar3.OptionsBar.AllowQuickCustomization = false;
             this.bar3.OptionsBar.DrawDragBorder = false;
             this.bar3.OptionsBar.UseWholeRow = true;
-            this.bar3.Text = "Status bar";
+            this.bar3.Text = "状态栏";
             // 
             // ConnectionLabel
             // 

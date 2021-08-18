@@ -339,7 +339,7 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Caption = "Save";
+            this.SaveButton.Caption = "保存";
             this.SaveButton.Id = 1;
             this.SaveButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("SaveButton.ImageOptions.Image")));
             this.SaveButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("SaveButton.ImageOptions.LargeImage")));
@@ -348,7 +348,7 @@
             // 
             // ReloadButton
             // 
-            this.ReloadButton.Caption = "Reload";
+            this.ReloadButton.Caption = "加载";
             this.ReloadButton.Id = 2;
             this.ReloadButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ReloadButton.ImageOptions.Image")));
             this.ReloadButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("ReloadButton.ImageOptions.LargeImage")));
@@ -360,7 +360,7 @@
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1});
             this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "Home";
+            this.ribbonPage1.Text = "主页";
             // 
             // ribbonPageGroup1
             // 
@@ -369,7 +369,7 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.ReloadButton);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.ShowCaptionButton = false;
-            this.ribbonPageGroup1.Text = "Actions";
+            this.ribbonPageGroup1.Text = "操作";
             // 
             // xtraTabControl1
             // 

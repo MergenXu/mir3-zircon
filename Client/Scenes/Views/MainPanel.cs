@@ -205,7 +205,7 @@ namespace Client.Scenes.Views
                 Index = 107,
                 Parent = this,
                 Location = new Point(845, 23),
-                Hint = "快捷栏"
+                Hint = "物品快捷栏"
             };
             BeltButton.MouseClick += (o, e) => GameScene.Game.BeltBox.Visible = !GameScene.Game.BeltBox.Visible;
 
@@ -235,7 +235,7 @@ namespace Client.Scenes.Views
                 Index = 122,
                 Parent = this,
                 Location = new Point(972, 16),
-                Hint = "商铺"
+                Hint = "游戏商铺"
             };
             CashShopButton.MouseClick += (o, e) =>
             {
