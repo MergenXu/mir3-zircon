@@ -439,7 +439,7 @@ namespace Client.Scenes.Views
         public void RefreshHealth()
         {
             ClientObjectData data;
-            HealthLabel.Text = !GameScene.Game.DataDictionary.TryGetValue(Monster.ObjectID, out data) ? string.Empty : $"{(data.Health > 0 ? data.Health:0)} / {data.MaxHealth}";
+            HealthLabel.Text = !GameScene.Game.DataDictionary.TryGetValue(Monster.ObjectID, out data) ? string.Empty : $"{(data.Health >= 0 ? data.Health:0)} / {data.MaxHealth}";
         }
 
         public void RefreshStats()
@@ -468,41 +468,41 @@ namespace Client.Scenes.Views
                 {
                     case Element.None:
                         AttackIcon.Index = 1517;
-                        AttackIcon.Hint = "Physical";
+                        AttackIcon.Hint = "物理";
                         break;
                     case Element.Fire:
                         AttackIcon.Index = 1510;
-                        AttackIcon.Hint = "Fire";
+                        AttackIcon.Hint = "火";
                         break;
                     case Element.Ice:
                         AttackIcon.Index = 1511;
-                        AttackIcon.Hint = "Ice";
+                        AttackIcon.Hint = "冰";
                         break;
                     case Element.Lightning:
                         AttackIcon.Index = 1512;
-                        AttackIcon.Hint = "Lightning";
+                        AttackIcon.Hint = "雷";
                         break;
                     case Element.Wind:
                         AttackIcon.Index = 1513;
-                        AttackIcon.Hint = "Wind";
+                        AttackIcon.Hint = "风";
                         break;
                     case Element.Holy:
                         AttackIcon.Index = 1514;
-                        AttackIcon.Hint = "Holy";
+                        AttackIcon.Hint = "神圣";
                         break;
                     case Element.Dark:
                         AttackIcon.Index = 1515;
-                        AttackIcon.Hint = "Dark";
+                        AttackIcon.Hint = "暗黑";
                         break;
                     case Element.Phantom:
                         AttackIcon.Index = 1516;
-                        AttackIcon.Hint = "Phantom";
+                        AttackIcon.Hint = "幻影";
                         break;
                 }
             }
             else
             {
-                HealthLabel.Text = $"{data.Health} / {data.MaxHealth}";
+                HealthLabel.Text = $"{(data.Health >= 0 ? data.Health : 0)} / {data.MaxHealth}";
 
 
                 ACLabel.Text = $"{data.Stats[Stat.MinAC]} - {data.Stats[Stat.MaxAC]}";
@@ -524,35 +524,35 @@ namespace Client.Scenes.Views
                 {
                     case Element.None:
                         AttackIcon.Index = 1517;
-                        AttackIcon.Hint = "Physical";
+                        AttackIcon.Hint = "物理";
                         break;
                     case Element.Fire:
                         AttackIcon.Index = 1510;
-                        AttackIcon.Hint = "Fire";
+                        AttackIcon.Hint = "火";
                         break;
                     case Element.Ice:
                         AttackIcon.Index = 1511;
-                        AttackIcon.Hint = "Ice";
+                        AttackIcon.Hint = "冰";
                         break;
                     case Element.Lightning:
                         AttackIcon.Index = 1512;
-                        AttackIcon.Hint = "Lightning";
+                        AttackIcon.Hint = "雷";
                         break;
                     case Element.Wind:
                         AttackIcon.Index = 1513;
-                        AttackIcon.Hint = "Wind";
+                        AttackIcon.Hint = "风";
                         break;
                     case Element.Holy:
                         AttackIcon.Index = 1514;
-                        AttackIcon.Hint = "Holy";
+                        AttackIcon.Hint = "神圣";
                         break;
                     case Element.Dark:
                         AttackIcon.Index = 1515;
-                        AttackIcon.Hint = "Dark";
+                        AttackIcon.Hint = "暗黑";
                         break;
                     case Element.Phantom:
                         AttackIcon.Index = 1516;
-                        AttackIcon.Hint = "Phantom";
+                        AttackIcon.Hint = "幻影";
                         break;
                 }
             }

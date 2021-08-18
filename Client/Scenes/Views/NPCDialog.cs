@@ -739,7 +739,7 @@ namespace Client.Scenes.Views
 
                 ClientUserItem item = new ClientUserItem(SelectedCell.Good.Item, (int) Math.Min(int.MaxValue, maxCount));
 
-                DXItemAmountWindow window = new DXItemAmountWindow("Buy Item", item);
+                DXItemAmountWindow window = new DXItemAmountWindow("购买物品", item);
                 window.ConfirmButton.MouseClick += (o, e) =>
                 {
                     CEnvir.Enqueue(new C.NPCBuy { Index = SelectedCell.Good.Index, Amount = window.Amount, GuildFunds = GuildCheckBox.Checked });
@@ -3574,7 +3574,7 @@ namespace Client.Scenes.Views
 
             SelectedCompanionInfo = Globals.CompanionInfoList[SelectedIndex];
 
-            IndexLabel.Text = $"{SelectedIndex + 1} of {Globals.CompanionInfoList.Count}";
+            IndexLabel.Text = $"{SelectedIndex + 1} / {Globals.CompanionInfoList.Count}";
 
             LeftButton.Enabled = SelectedIndex > 0;
 
@@ -3646,7 +3646,7 @@ namespace Client.Scenes.Views
 
         public NPCAdoptCompanionDialog()
         {
-            TitleLabel.Text = "Adopt Companion";
+            TitleLabel.Text = "领养宠物";
             
             Movable = false;
 
@@ -3697,7 +3697,7 @@ namespace Client.Scenes.Views
             DXLabel label = new DXLabel
             {
                 Parent = this,
-                Text = "Price:"
+                Text = "价格:"
             };
             label.Location = new Point(160 - label.Size.Width, CompanionDisplayPoint.Y);
 
@@ -3719,7 +3719,7 @@ namespace Client.Scenes.Views
             label = new DXLabel
             {
                 Parent = this,
-                Text = "Name:"
+                Text = "名称:"
             };
             label.Location = new Point(CompanionNameTextBox.Location.X - label.Size.Width, CompanionNameTextBox.Location.Y + (CompanionNameTextBox.Size.Height - label.Size.Height)/2);
 
@@ -3729,7 +3729,7 @@ namespace Client.Scenes.Views
                 Location = new Point(CompanionNameTextBox.Location.X, CompanionNameTextBox.Location.Y + 27),
                 Size = new Size(120, SmallButtonHeight),
                 ButtonType = ButtonType.SmallButton,
-                Label = { Text = "Adopt" }
+                Label = { Text = "领养" }
             };
             AdoptButton.MouseClick += AdoptButton_MouseClick;
 
@@ -3739,7 +3739,7 @@ namespace Client.Scenes.Views
                 Location = new Point(ClientArea.Right - 80, ClientArea.Y),
                 Size = new Size(80, SmallButtonHeight),
                 ButtonType = ButtonType.SmallButton,
-                Label = { Text = "Unlock" }
+                Label = { Text = "解锁" }
             };
 
             UnlockButton.MouseClick += UnlockButton_MouseClick;
@@ -3768,11 +3768,11 @@ namespace Client.Scenes.Views
         {
             if (GameScene.Game.Inventory.All(x => x == null || x.Info.Effect != ItemEffect.CompanionTicket))
             {
-                GameScene.Game.ReceiveChat("You need a Companion Ticket to unlock a new appearance", MessageType.System);
+                GameScene.Game.ReceiveChat("你需要一张宠物令牌来解锁新外观", MessageType.System);
                 return;
             }
 
-            DXMessageBox box = new DXMessageBox($"Are you sure you want to use a Companion Ticket?\n\n" + $"" + $"This will unlock the {SelectedCompanionInfo.MonsterInfo.MonsterName} appearance for new companions", "Unlock Appearance", DXMessageBoxButtons.YesNo);
+            DXMessageBox box = new DXMessageBox($"你确定要使用宠物令牌来解锁新外观吗?\n\n" + $"" + $"解锁 {SelectedCompanionInfo.MonsterInfo.MonsterName}外观" , "解锁外观", DXMessageBoxButtons.YesNo);
 
 
             box.YesButton.MouseClick += (o1, e1) =>
@@ -3938,7 +3938,7 @@ namespace Client.Scenes.Views
 
         public NPCCompanionStorageDialog()
         {
-            TitleLabel.Text = "Storage";
+            TitleLabel.Text = "宠物仓库";
 
             Movable = false;
 
@@ -4147,7 +4147,7 @@ namespace Client.Scenes.Views
                 Location = new Point(85, 60),
                 Size = new Size(80, SmallButtonHeight),
                 ButtonType = ButtonType.SmallButton,
-                Label = { Text = "Store" },
+                Label = { Text = "寄养" },
                 Visible = false
             };
             StoreButton.MouseClick += StoreButton_MouseClick;
@@ -4159,7 +4159,7 @@ namespace Client.Scenes.Views
                 Location = new Point(85, 60),
                 Size = new Size(80, SmallButtonHeight),
                 ButtonType = ButtonType.SmallButton,
-                Label = { Text = "Retrieve" }
+                Label = { Text = "取回" }
             };
             RetrieveButton.MouseClick += RetrieveButton_MouseClick;
 
