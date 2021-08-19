@@ -948,7 +948,7 @@ namespace Client.Controls
 
                 if (Item?.Count > 1)
                 {
-                    DXItemAmountWindow window = new DXItemAmountWindow("Amount", Item);
+                    DXItemAmountWindow window = new DXItemAmountWindow("数量", Item);
 
                     if (toCell.GridType == GridType.Sell)
                         window.AmountBox.Value = Item.Count;
@@ -1037,7 +1037,7 @@ namespace Client.Controls
                             default:
                                 if (Item.Count > 1 && !skipCount)
                                 {
-                                    DXItemAmountWindow window = new DXItemAmountWindow("Amount", Item);
+                                    DXItemAmountWindow window = new DXItemAmountWindow("数量", Item);
 
                                     if (cell.GridType == GridType.Sell)
                                         window.AmountBox.Value = Item.Count;

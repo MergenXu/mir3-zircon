@@ -17993,7 +17993,7 @@ namespace Server.Models
         {
             if (ob?.Node == null || !CanAttackTarget(ob)) return;
 
-            if (ob.MonsterInfo.IsBoss) return;
+            if (ob.MonsterInfo.IsBoss&& !ob.MonsterInfo.CanTame) return;
 
             if (SEnvir.Random.Next(4 - magic.Level) > 0)
             {
@@ -18017,10 +18017,34 @@ namespace Server.Models
                 ob.Target = null;
                 return;
             }
+            
+            if (!ob.MonsterInfo.CanTame) return;
 
-            if (ob.Level > Level + 2 || !ob.MonsterInfo.CanTame) return;
+            if (Level + 5 < ob.Level && ob.Level < 101 ) return;
 
-            if (SEnvir.Random.Next(Level + 20 + magic.Level * 5) <= ob.Level + 10)
+
+            if (ob.Level > 100)
+            {
+                if (SEnvir.Random.Next(Level + magic.Level * 2) <= ob.GetMR() + ob.GetAC())
+                {
+                    if (SEnvir.Random.Next(5) > 0 && ob.PetOwner == null)
+                    {
+                        ob.RageTime = SEnvir.Now.AddSeconds(SEnvir.Random.Next(20) + 10);
+                        ob.Target = null;
+                    }
+                    return;
+                }
+                if (Pets.Count > 0)
+                {
+                    for (int i = Pets.Count - 1; i >= 0; i--)
+                    {
+                        if (Pets[i].Level > 100) return;
+                    }
+                }
+                
+                     
+            }
+            else if (SEnvir.Random.Next(Level + 20 + magic.Level * 5) <= ob.Level + 10)
             {
                 if (SEnvir.Random.Next(5) > 0 && ob.PetOwner == null)
                 {
@@ -18029,9 +18053,11 @@ namespace Server.Models
                 }
                 return;
             }
-            if (Pets.Count >= 3) return;
+            
 
-            if (SEnvir.Random.Next(4) > 0) return;
+            if (Pets.Count > magic.Level) return;
+            
+            //if (SEnvir.Random.Next(4) > 0) return;
 
             if (SEnvir.Random.Next(20) == 0)
             {
@@ -18064,14 +18090,25 @@ namespace Server.Models
             ob.Master?.MinionList.Remove(ob);
             ob.Master = null;
 
+            double hpratio = ob.CurrentHP / ob.Stats[Stat.Health];
+
             ob.TameTime = SEnvir.Now.AddHours(magic.Level + 1);
             ob.Target = null;
             ob.RageTime = DateTime.MinValue;
             ob.ShockTime = DateTime.MinValue;
             ob.Magics.Add(magic);
-            ob.SummonLevel = magic.Level;
+            if (ob.Level > 100)
+            {
+                ob.SummonLevel = magic.Level + 2;
+            }
+            else
+            {
+                ob.SummonLevel = magic.Level + 5;
+            }
+            
             ob.RefreshStats();
 
+            ob.CurrentHP = Convert.ToInt32( ob.Stats[Stat.Health] * hpratio);
             ob.Broadcast(new S.ObjectPetOwnerChanged { ObjectID = ob.ObjectID, PetOwner = Name });
         }
         private void ExpelUndeadEnd(UserMagic magic, MonsterObject ob)

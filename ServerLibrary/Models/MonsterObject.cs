@@ -695,6 +695,7 @@ namespace Server.Models
 
                 Stats[Stat.Accuracy] += Stats[Stat.Accuracy] * SummonLevel / 10;
                 Stats[Stat.Agility] += Stats[Stat.Agility] * SummonLevel / 10;
+
             }
 
 

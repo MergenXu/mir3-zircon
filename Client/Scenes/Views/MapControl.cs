@@ -396,7 +396,8 @@ namespace Client.Scenes.Views
 
             MapObject.User.Opacity = oldOpacity;
 
-            if (Config.DrawEffects)
+            //Turn off costume effects
+            /*if (Config.DrawEffects)
             {
                 foreach (MirEffect ob in Effects)
                 {
@@ -404,7 +405,7 @@ namespace Client.Scenes.Views
 
                     ob.Draw();
                 }
-            }
+            }*/
 
         }
 

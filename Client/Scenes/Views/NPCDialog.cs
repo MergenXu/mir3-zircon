@@ -4057,7 +4057,7 @@ namespace Client.Scenes.Views
             CompanionDisplay = new MonsterObject(UserCompanion.CompanionInfo);
 
             NameLabel.Text = UserCompanion.Name;
-            LevelLabel.Text = $"Level {UserCompanion.Level}";
+            LevelLabel.Text = $"等级 {UserCompanion.Level}";
 
             if (UserCompanion == GameScene.Game.Companion)
                 Selected = true;
@@ -4068,7 +4068,7 @@ namespace Client.Scenes.Views
                 if (!string.IsNullOrEmpty(UserCompanion.CharacterName))
                 {
                     RetrieveButton.Enabled = false;
-                    RetrieveButton.Hint = $"The Companion is currently with {UserCompanion.CharacterName}.";
+                    RetrieveButton.Hint = $"这个宠物正在跟随 {UserCompanion.CharacterName}.";
                 }
                 else
                 {
