@@ -145,7 +145,7 @@ namespace Library
         Poison = 10,
         [Description("护符")]
         Amulet = 11,
-        [Description("鲜花")]
+        [Description("玫瑰")]
         Flower = 12,
         [Description("马护甲")]
         HorseArmour = 13,
@@ -384,7 +384,7 @@ namespace Library
         RefineSpecial,
         [Description("马铠")]
         HorseArmour,
-        [Description("鲜花")]
+        [Description("玫瑰")]
         Flower,
         [Description("宠物食物")]
         CompanionFood,

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Threading;
 using Library;
 using Library.Network;
 using Library.SystemModels;
@@ -97,6 +96,8 @@ namespace Server.Models
         public PlayerObject PetOwner;
         public HashSet<UserMagic> Magics = new HashSet<UserMagic>();
         public int SummonLevel;
+
+        public int SummonExperience;
 
         public int ViewRange
         {
@@ -661,6 +662,40 @@ namespace Server.Models
 
             Activate();
         }
+
+        public void LevelUp()
+        {
+            int lostHp = Stats[Stat.Health] - CurrentHP;
+            Stats[Stat.Health] = Stats[Stat.Health] + (Stats[Stat.Health] * 20 / 100 > 200  ? 200 : Stats[Stat.Health] * 20 / 100) ;
+            CurrentHP = Stats[Stat.Health] - lostHp;
+
+            Stats[Stat.MinAC] = Stats[Stat.MinAC] + 1;
+            Stats[Stat.MaxAC] = Stats[Stat.MaxAC] + 2;
+
+            Stats[Stat.MinMR] = Stats[Stat.MinMR] + 1;
+            Stats[Stat.MaxMR] = Stats[Stat.MaxMR] + 2;
+
+            //Stats[Stat.MinDC] = Stats[Stat.MinDC] + (Stats[Stat.MinDC] * 15 / 100 > 2 ? Stats[Stat.MinDC] * 15 / 100 : 2) * SummonLevel;
+            Stats[Stat.MaxDC] = Stats[Stat.MaxDC] + 3;
+
+            //Stats[Stat.MinMC] = Stats[Stat.MinMC] + (Stats[Stat.MinMC] * 15 / 100 > 2 ? Stats[Stat.MinMC] * 15 / 100 : 2) * SummonLevel;
+            Stats[Stat.MaxMC] = Stats[Stat.MaxMC] + 3;
+
+            //Stats[Stat.MinSC] = Stats[Stat.MinSC] + (Stats[Stat.MinSC] * 15 / 100 > 2 ? Stats[Stat.MaxMC] * 15 / 100 : 2) * SummonLevel;
+            Stats[Stat.MaxSC] = Stats[Stat.MaxSC] + 3;
+
+            MoveDelay -= MoveDelay * 2 / 100;
+
+            AttackDelay -= AttackDelay * 2 / 100;
+
+            Level += 1;
+
+            S.DataObjectMaxHealthMana p = new S.DataObjectMaxHealthMana { ObjectID = ObjectID, Stats = Stats ,Level = Level };
+
+            foreach (PlayerObject player in DataSeenByPlayers)
+                player.Enqueue(p);
+        }
+
         public override void RefreshStats()
         {
             base.RefreshStats();
@@ -676,26 +711,32 @@ namespace Server.Models
 
             if (SummonLevel > 0)
             {
-                Stats[Stat.Health] += Stats[Stat.Health] * SummonLevel / 10;
+                int lostHp = Stats[Stat.Health] - CurrentHP;
+                Stats[Stat.Health] = Stats[Stat.Health] + Stats[Stat.Health] * SummonLevel * 40 / 100;
+                CurrentHP = Stats[Stat.Health] - lostHp;
 
-                Stats[Stat.MinAC] += Stats[Stat.MinAC] * SummonLevel / 10;
-                Stats[Stat.MaxAC] += Stats[Stat.MaxAC] * SummonLevel / 10;
+                //Stats[Stat.Health] = Stats[Stat.Health] + Stats[Stat.Health] * SummonLevel / 5 + UserStats[Stat.Health] * UserStats[Stat.MaxMC] / 25;
 
-                Stats[Stat.MinMR] += Stats[Stat.MinMR] * SummonLevel / 10;
-                Stats[Stat.MaxMR] += Stats[Stat.MaxMR] * SummonLevel / 10;
+                Stats[Stat.MinAC] = Stats[Stat.MinAC] + (Stats[Stat.MinAC] * 15 / 100 > 2 ? Stats[Stat.MinAC] * 15 / 100 :2) * SummonLevel;
+                Stats[Stat.MaxAC] = Stats[Stat.MaxAC] + (Stats[Stat.MaxAC] * 15 / 100 > 2 ? Stats[Stat.MaxAC] * 15 / 100 : 2) * SummonLevel;
 
-                Stats[Stat.MinDC] += Stats[Stat.MinDC] * SummonLevel / 10;
-                Stats[Stat.MaxDC] += Stats[Stat.MaxDC] * SummonLevel / 10;
+                Stats[Stat.MinMR] = Stats[Stat.MinMR] + (Stats[Stat.MinMR] * 15 / 100 > 2 ? Stats[Stat.MinMR] * 15 / 100 : 2) * SummonLevel;
+                Stats[Stat.MaxMR] = Stats[Stat.MaxMR] + (Stats[Stat.MaxMR] * 15 / 100 > 2 ? Stats[Stat.MaxMR] * 15 / 100 : 2) * SummonLevel;
 
-                Stats[Stat.MinMC] += Stats[Stat.MinMC] * SummonLevel / 10;
-                Stats[Stat.MaxMC] += Stats[Stat.MaxMC] * SummonLevel / 10;
+                //Stats[Stat.MinDC] = Stats[Stat.MinDC] + (Stats[Stat.MinDC] * 15 / 100 > 2 ? Stats[Stat.MinDC] * 15 / 100 : 2) * SummonLevel;
+                Stats[Stat.MaxDC] = Stats[Stat.MaxDC] + Stats[Stat.MaxDC] * 5 / 100 * SummonLevel;
 
-                Stats[Stat.MinSC] += Stats[Stat.MinSC] * SummonLevel / 10;
-                Stats[Stat.MaxSC] += Stats[Stat.MaxSC] * SummonLevel / 10;
+                //Stats[Stat.MinMC] = Stats[Stat.MinMC] + (Stats[Stat.MinMC] * 15 / 100 > 2 ? Stats[Stat.MinMC] * 15 / 100 : 2) * SummonLevel;
+                Stats[Stat.MaxMC] = Stats[Stat.MaxMC] + Stats[Stat.MaxMC] * 5 / 100 * SummonLevel;
 
-                Stats[Stat.Accuracy] += Stats[Stat.Accuracy] * SummonLevel / 10;
-                Stats[Stat.Agility] += Stats[Stat.Agility] * SummonLevel / 10;
+                //Stats[Stat.MinSC] = Stats[Stat.MinSC] + (Stats[Stat.MinSC] * 15 / 100 > 2 ? Stats[Stat.MaxMC] * 15 / 100 : 2) * SummonLevel;
+                Stats[Stat.MaxSC] = Stats[Stat.MaxSC] + Stats[Stat.MaxSC] * 5 / 100 * SummonLevel;
 
+                //Stats[Stat.Accuracy] = Stats[Stat.Accuracy] + Stats[Stat.Accuracy] * SummonLevel / 15 ;
+                //Stats[Stat.Agility] = Stats[Stat.Agility] + Stats[Stat.Agility] * SummonLevel / 15 ;
+
+                MoveDelay = MoveDelay > 1200 ? 1200 : MoveDelay - MoveDelay * SummonLevel / 10;
+                
             }
 
 
@@ -2572,6 +2613,7 @@ namespace Server.Models
                         exp /= ExtraExperienceRate;
 
                     EXPOwner.GainExperience(exp, PlayerTagged, Level);
+                    EXPOwner.PetGainExperience(Level);
                 }
             }
             else
@@ -2589,8 +2631,10 @@ namespace Server.Models
                         expfinal /= ExtraExperienceRate;
 
                     player.GainExperience(expfinal, PlayerTagged, Level);
+                    player.PetGainExperience(Level);
                 }
             }
+
 
             if (dPlayers.Count == 0)
             {

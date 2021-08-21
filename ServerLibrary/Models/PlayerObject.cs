@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using Library;
 using Library.Network;
@@ -2360,6 +2359,24 @@ namespace Server.Models
             Level++;
             LevelUp();
         }
+
+
+        public void PetGainExperience(int petexp)
+        {
+            if (Pets.Count > 0)
+            {
+                for (int i = Pets.Count - 1; i >= 0; i--)
+                {
+                    Pets[i].SummonExperience += petexp;
+                    if (Pets[i].SummonExperience >= Pets[i].Level * 20 + 100 )
+                    {
+                        Pets[i].SummonExperience -= Pets[i].Level * 20 + 100;
+                        Pets[i].LevelUp();
+                    }
+                }
+            }
+        }
+
         public void LevelUp()
         {
             RefreshStats();
@@ -17118,7 +17135,7 @@ namespace Server.Models
                         target.GainExperience(expbonus, false, int.MaxValue, false);
                     }
 
-                    SEnvir.Broadcast(new S.Chat { Text = $"{Name} has died and lost {expbonus:##,##0} Experience, {target?.Name ?? "No one"} has won the experience.", Type = MessageType.System });
+                    SEnvir.Broadcast(new S.Chat { Text = $"{Name} 死，损失了 {expbonus:##,##0}经验, {target?.Name ?? "No one"} has won the experience.", Type = MessageType.System });
                 }
 
                 // Enqueue(new S.LevelChanged { Level = Level, Experience = Experience });
@@ -18018,33 +18035,9 @@ namespace Server.Models
                 return;
             }
             
-            if (!ob.MonsterInfo.CanTame) return;
+            if (!ob.MonsterInfo.CanTame || Level + 5 < ob.Level) return;
 
-            if (Level + 5 < ob.Level && ob.Level < 101 ) return;
-
-
-            if (ob.Level > 100)
-            {
-                if (SEnvir.Random.Next(Level + magic.Level * 2) <= ob.GetMR() + ob.GetAC())
-                {
-                    if (SEnvir.Random.Next(5) > 0 && ob.PetOwner == null)
-                    {
-                        ob.RageTime = SEnvir.Now.AddSeconds(SEnvir.Random.Next(20) + 10);
-                        ob.Target = null;
-                    }
-                    return;
-                }
-                if (Pets.Count > 0)
-                {
-                    for (int i = Pets.Count - 1; i >= 0; i--)
-                    {
-                        if (Pets[i].Level > 100) return;
-                    }
-                }
-                
-                     
-            }
-            else if (SEnvir.Random.Next(Level + 20 + magic.Level * 5) <= ob.Level + 10)
+            if (SEnvir.Random.Next(Level*2 + Stats[Stat.MaxMC] + magic.Level * 5) <= ob.Level + 20)
             {
                 if (SEnvir.Random.Next(5) > 0 && ob.PetOwner == null)
                 {
@@ -18055,9 +18048,8 @@ namespace Server.Models
             }
             
 
-            if (Pets.Count > magic.Level) return;
+            if (Pets.Count > 4 ) return;
             
-            //if (SEnvir.Random.Next(4) > 0) return;
 
             if (SEnvir.Random.Next(20) == 0)
             {
@@ -18090,25 +18082,16 @@ namespace Server.Models
             ob.Master?.MinionList.Remove(ob);
             ob.Master = null;
 
-            double hpratio = ob.CurrentHP / ob.Stats[Stat.Health];
-
             ob.TameTime = SEnvir.Now.AddHours(magic.Level + 1);
             ob.Target = null;
             ob.RageTime = DateTime.MinValue;
             ob.ShockTime = DateTime.MinValue;
             ob.Magics.Add(magic);
-            if (ob.Level > 100)
-            {
-                ob.SummonLevel = magic.Level + 2;
-            }
-            else
-            {
-                ob.SummonLevel = magic.Level + 5;
-            }
-            
+
+            ob.SummonLevel = magic.Level;
+
             ob.RefreshStats();
 
-            ob.CurrentHP = Convert.ToInt32( ob.Stats[Stat.Health] * hpratio);
             ob.Broadcast(new S.ObjectPetOwnerChanged { ObjectID = ob.ObjectID, PetOwner = Name });
         }
         private void ExpelUndeadEnd(UserMagic magic, MonsterObject ob)
@@ -19875,6 +19858,7 @@ namespace Server.Models
         }
 
         #endregion
+
     }
 
 }

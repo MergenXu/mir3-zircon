@@ -266,7 +266,7 @@ namespace Client.Envir
                     break;
                 case ChangePasswordResult.Success:
                     login.ChangeBox.Clear();
-                    DXMessageBox.Show("Password changed successfully.", "Change Password");
+                    DXMessageBox.Show("密码修改成功.", "修改密码");
                     break;
             }
 
@@ -346,8 +346,8 @@ namespace Client.Envir
                     break;
                 case RequestPasswordResetResult.Success:
                     login.RequestPassswordBox.Clear();
-                    DXMessageBox.Show("Password reset request success\n" +
-                                      "Please check your E-Mail for further instructions.", "Reset Password");
+                    DXMessageBox.Show("密码重置请求成功\n" +
+                                      "请检查你的邮箱进行下一步操作.", "重置密码");
                     break;
             }
 
@@ -363,19 +363,19 @@ namespace Client.Envir
             {
                 case ResetPasswordResult.Disabled:
                     login.ResetBox.Clear();
-                    DXMessageBox.Show("Manual password reset is currently disabled.", "Reset Password");
+                    DXMessageBox.Show("Manual password reset is currently disabled.", "重置密码");
                     break;
                 case ResetPasswordResult.BadNewPassword:
                     login.ResetBox.NewPassword1TextBox.SetFocus();
-                    DXMessageBox.Show("New Password is not acceptable.", "Reset Password");
+                    DXMessageBox.Show("新密码不可用.", "重置密码");
                     break;
                 case ResetPasswordResult.AccountNotFound:
                     login.ResetBox.ResetKeyTextBox.SetFocus();
-                    DXMessageBox.Show("Account could not be found.", "Reset Password");
+                    DXMessageBox.Show("账号不存在.", "重置密码");
                     break;
                 case ResetPasswordResult.Success:
                     login.ResetBox.Clear();
-                    DXMessageBox.Show("Password changed successfully.", "Reset Password");
+                    DXMessageBox.Show("密码修改成功.", "重置密码");
                     break;
             }
 
@@ -391,15 +391,15 @@ namespace Client.Envir
             {
                 case ActivationResult.Disabled:
                     login.ActivationBox.Clear();
-                    DXMessageBox.Show("Manual Activation is currently disabled.", "Activation");
+                    DXMessageBox.Show("当前服务器未开启手动激活功能.", "激活账号");
                     break;
                 case ActivationResult.AccountNotFound:
                     login.ActivationBox.ActivationKeyTextBox.SetFocus();
-                    DXMessageBox.Show("Account could not be found.", "Activation");
+                    DXMessageBox.Show("账号不存在.", "激活账号");
                     break;
                 case ActivationResult.Success:
                     login.ActivationBox.Clear();
-                    DXMessageBox.Show("Your account has been activated successfully\n", "Activation");
+                    DXMessageBox.Show("你的账号已经激活成功\n", "激活账号");
                     break;
             }
 
@@ -614,40 +614,40 @@ namespace Client.Envir
             {
                 case NewCharacterResult.Disabled:
                     select.CharacterBox.Clear();
-                    DXMessageBox.Show("Character creation is currently disabled.", "Character Creation");
+                    DXMessageBox.Show("当前游戏不允许创建角色.", "角色创建");
                     break;
                 case NewCharacterResult.BadCharacterName:
                     select.CharacterBox.CharacterNameTextBox.SetFocus();
-                    DXMessageBox.Show("Character Name is not acceptable.", "Character Creation");
+                    DXMessageBox.Show("角色名称不可用.", "角色创建");
                     break;
                 case NewCharacterResult.BadHairType:
                     select.CharacterBox.HairNumberBox.Value = 1;
-                    DXMessageBox.Show("Error: Invalid Hair Type.", "Character Creation");
+                    DXMessageBox.Show("Error: Invalid Hair Type.", "角色创建");
                     break;
                 case NewCharacterResult.BadHairColour:
-                    DXMessageBox.Show("Error: Invalid Hair Colour.", "Character Creation");
+                    DXMessageBox.Show("Error: Invalid Hair Colour.", "角色创建");
                     break;
                 case NewCharacterResult.BadArmourColour:
-                    DXMessageBox.Show("Error: Invalid Armour Colour.", "Character Creation");
+                    DXMessageBox.Show("Error: Invalid Armour Colour.", "角色创建");
                     break;
                 case NewCharacterResult.BadGender:
                     select.CharacterBox.SelectedGender = MirGender.Male;
-                    DXMessageBox.Show("Error: Invalid gender selected.", "Character Creation");
+                    DXMessageBox.Show("Error: Invalid gender selected.", "角色创建");
                     break;
                 case NewCharacterResult.BadClass:
                     select.CharacterBox.SelectedClass = MirClass.Warrior;
-                    DXMessageBox.Show("Error: Invalid class selected.", "Character Creation");
+                    DXMessageBox.Show("Error: Invalid class selected.", "角色创建");
                     break;
                 case NewCharacterResult.ClassDisabled:
-                    DXMessageBox.Show("The selected class is currently not available.", "Character Creation");
+                    DXMessageBox.Show("你选择的职业不可用.", "角色创建");
                     break;
                 case NewCharacterResult.MaxCharacters:
                     select.CharacterBox.Clear();
-                    DXMessageBox.Show("Character limit already reached.", "Character Creation");
+                    DXMessageBox.Show("角色数量达到上线.", "角色创建");
                     break;
                 case NewCharacterResult.AlreadyExists:
                     select.CharacterBox.CharacterNameTextBox.SetFocus();
-                    DXMessageBox.Show("Character already exists.", "Character Creation");
+                    DXMessageBox.Show("角色名称已存在.", "角色创建");
                     break;
                 case NewCharacterResult.Success:
                     select.CharacterBox.Clear();
@@ -656,7 +656,7 @@ namespace Client.Envir
                     select.SelectBox.UpdateCharacters();
                     select.SelectBox.SelectedButton = select.SelectBox.SelectButtons[select.SelectBox.CharacterList.Count - 1];
 
-                    DXMessageBox.Show("Character has been created.", "Character Creation");
+                    DXMessageBox.Show("角色创建成功.", "角色创建");
                     break;
             }
         }
@@ -3999,6 +3999,7 @@ namespace Client.Envir
                 data.MaxHealth = p.Stats[Stat.Health];
                 data.MaxMana = p.Stats[Stat.Mana];
                 data.Stats = p.Stats;
+                data.Level = p.Level;
             }
             else
             {

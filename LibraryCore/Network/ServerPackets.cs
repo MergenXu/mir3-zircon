@@ -1176,7 +1176,7 @@ namespace Library.Network.ServerPackets
     public sealed class DataObjectMaxHealthMana : Packet
     {
         public uint ObjectID { get; set; }
-
+        public int Level { get; set; }
         public int MaxHealth { get; set; }
         public int MaxMana { get; set; }
         public Stats Stats { get; set; }

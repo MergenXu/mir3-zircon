@@ -509,6 +509,7 @@ namespace Client.Scenes.Views
                 MRLabel.Text = $"{data.Stats[Stat.MinMR]} - {data.Stats[Stat.MaxMR]}";
                 DCLabel.Text = $"{data.Stats[Stat.MinDC]} - {data.Stats[Stat.MaxDC]}";
 
+                LevelLabel.Text = data.Level == 0 ? Monster.MonsterInfo.Level.ToString():$"{ data.Level}";
 
                 PopulateLabel(Stat.FireResistance, FireResistLabel, data.Stats);
                 PopulateLabel(Stat.IceResistance, IceResistLabel, data.Stats);

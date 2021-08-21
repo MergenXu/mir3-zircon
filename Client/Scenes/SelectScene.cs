@@ -1211,7 +1211,7 @@ namespace Client.Scenes
                     Visible = false,
                     Parent = this,
                     Text = "[?]",
-                    Hint = $"Character Name.\nAccepted characters: a-z A-Z 0-9.\nLength: between {Globals.MinCharacterNameLength} and {Globals.MaxCharacterNameLength} characters.\nCan use previous names on same account.",
+                    Hint = $"角色名称.\n可用字符: 英文字母 数字 汉字.\n长度: {Globals.MinCharacterNameLength} ~ {Globals.MaxCharacterNameLength} 个字符.\n可以使用相同账号之前的名称.",
                 };
                 CharacterNameHelpLabel.Location = new Point(CharacterNameTextBox.Location.X + CharacterNameTextBox.Size.Width + 2, (CharacterNameTextBox.Size.Height - CharacterNameHelpLabel.Size.Height)/2 + CharacterNameTextBox.Location.Y);
 

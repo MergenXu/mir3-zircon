@@ -1959,7 +1959,7 @@ namespace Client.Controls
                                 if (Item.Info.Effect == ItemEffect.ItemPart)
                                     MoveItem(GameScene.Game.StorageBox.PartGrid);
                                 else if (!MoveItem(GameScene.Game.StorageBox.Grid))
-                                        GameScene.Game.ReceiveChat("No Free Space in Storage.", MessageType.System);
+                                        GameScene.Game.ReceiveChat("仓库可以剩余空间.", MessageType.System);
                                 
                                 return;
                             }
@@ -1981,7 +1981,7 @@ namespace Client.Controls
                             if (GameScene.Game.CompanionBox.IsVisible)
                             {
                                 if (!MoveItem(GameScene.Game.CompanionBox.InventoryGrid))
-                                    GameScene.Game.ReceiveChat("No Free Space in companion's Inventory.", MessageType.System);
+                                    GameScene.Game.ReceiveChat("宠物包裹没有剩余空间.", MessageType.System);
                                 return;
                             }
 
@@ -2305,7 +2305,7 @@ namespace Client.Controls
 
 
                             if (!MoveItem(GameScene.Game.InventoryBox.Grid))
-                                GameScene.Game.ReceiveChat("No Free Space in Inventory.", MessageType.System);
+                                GameScene.Game.ReceiveChat("包裹没有剩余空间..", MessageType.System);
 
                             break;
                         case GridType.CompanionEquipment:
@@ -2324,7 +2324,7 @@ namespace Client.Controls
 
 
                             if (!MoveItem(GameScene.Game.InventoryBox.Grid))
-                                GameScene.Game.ReceiveChat("No Free Space in Inventory.", MessageType.System);
+                                GameScene.Game.ReceiveChat("包裹没有剩余空间..", MessageType.System);
 
                             break;
                         default:

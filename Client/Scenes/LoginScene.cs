@@ -2160,14 +2160,14 @@ namespace Client.Scenes
             public RequestResetPasswordDialog()
             {
                 Size = new Size(330, 150);
-                TitleLabel.Text = "Request Password Reset";
+                TitleLabel.Text = "申请密码重置";
                 HasFooter = true;
                 Visible = false;
 
                 CancelButton = new DXButton
                 {
                     Parent = this,
-                    Label = { Text = "Cancel" },
+                    Label = { Text = "取消" },
                     Location = new Point(Size.Width / 2 + 10, Size.Height - 43),
                     Size = new Size(80, DefaultHeight),
                 };
@@ -2178,7 +2178,7 @@ namespace Client.Scenes
                 {
                     Enabled = false,
                     Parent = this,
-                    Label = { Text = "Request" },
+                    Label = { Text = "申请" },
                     Location = new Point((Size.Width) / 2 - 80 - 10, Size.Height - 43),
                     Size = new Size(80, DefaultHeight),
                 };
@@ -2217,7 +2217,7 @@ namespace Client.Scenes
                 HaveKeyLabel = new DXLabel
                 {
                     Parent = this,
-                    Text = "Have Reset Key?",
+                    Text = "输入重置验证码?",
                 };
                 HaveKeyLabel.MouseEnter += (o, e) => HaveKeyLabel.ForeColour = Color.White;
                 HaveKeyLabel.MouseLeave += (o, e) => HaveKeyLabel.ForeColour = Color.FromArgb(198, 166, 99);
@@ -2476,14 +2476,14 @@ namespace Client.Scenes
             public ResetPasswordDialog()
             {
                 Size = new Size(330, 180);
-                TitleLabel.Text = "Reset Password";
+                TitleLabel.Text = "重置密码";
                 HasFooter = true;
                 Visible = false;
 
                 CancelButton = new DXButton
                 {
                     Parent = this,
-                    Label = { Text = "Cancel" },
+                    Label = { Text = "取消" },
                     Location = new Point(Size.Width / 2 + 10, Size.Height - 43),
                     Size = new Size(80, DefaultHeight),
                 };
@@ -2494,7 +2494,7 @@ namespace Client.Scenes
                 {
                     Enabled = false,
                     Parent = this,
-                    Label = { Text = "Reset" },
+                    Label = { Text = "重置" },
                     Location = new Point((Size.Width) / 2 - 80 - 10, Size.Height - 43),
                     Size = new Size(80, DefaultHeight),
                 };
@@ -2543,21 +2543,21 @@ namespace Client.Scenes
                 DXLabel label = new DXLabel
                 {
                     Parent = this,
-                    Text = "Reset Key:",
+                    Text = "验证码:",
                 };
                 label.Location = new Point(ResetKeyTextBox.Location.X - label.Size.Width - 5, (ResetKeyTextBox.Size.Height - label.Size.Height) / 2 + ResetKeyTextBox.Location.Y);
 
                 label = new DXLabel
                 {
                     Parent = this,
-                    Text = "New Password:",
+                    Text = "新密码:",
                 };
                 label.Location = new Point(NewPassword1TextBox.Location.X - label.Size.Width - 5, (NewPassword1TextBox.Size.Height - label.Size.Height) / 2 + NewPassword1TextBox.Location.Y);
 
                 label = new DXLabel
                 {
                     Parent = this,
-                    Text = "New Password:",
+                    Text = "新密码:",
                 };
                 label.Location = new Point(NewPassword2TextBox.Location.X - label.Size.Width - 5, (NewPassword2TextBox.Size.Height - label.Size.Height) / 2 + NewPassword2TextBox.Location.Y);
 
@@ -2841,14 +2841,14 @@ namespace Client.Scenes
             public ActivationDialog()
             {
                 Size = new Size(330, 155);
-                TitleLabel.Text = "Account Activation";
+                TitleLabel.Text = "账号激活";
                 HasFooter = true;
                 Visible = false;
 
                 CancelButton = new DXButton
                 {
                     Parent = this,
-                    Label = { Text = "Cancel" },
+                    Label = { Text = "取消" },
                     Location = new Point(Size.Width / 2 + 10, Size.Height - 43),
                     Size = new Size(80, DefaultHeight),
                 };
@@ -2859,7 +2859,7 @@ namespace Client.Scenes
                 {
                     Enabled = false,
                     Parent = this,
-                    Label = { Text = "Activate" },
+                    Label = { Text = "激活" },
                     Location = new Point((Size.Width) / 2 - 80 - 10, Size.Height - 43),
                     Size = new Size(80, DefaultHeight),
                 };
@@ -2882,7 +2882,7 @@ namespace Client.Scenes
                 DXLabel label = new DXLabel
                 {
                     Parent = this,
-                    Text = "Activation Key::",
+                    Text = "激活码::",
                 };
                 label.Location = new Point(ActivationKeyTextBox.Location.X - label.Size.Width - 5, (ActivationKeyTextBox.Size.Height - label.Size.Height) / 2 + ActivationKeyTextBox.Location.Y);
 
@@ -2898,7 +2898,7 @@ namespace Client.Scenes
                 ResendLabel = new DXLabel
                 {
                     Parent = this,
-                    Text = "Not received E-Mail?",
+                    Text = "没有接送到邮件?",
                 };
                 ResendLabel.MouseEnter += (o, e) => ResendLabel.ForeColour = Color.White;
                 ResendLabel.MouseLeave += (o, e) => ResendLabel.ForeColour = Color.FromArgb(198, 166, 99);
@@ -3106,14 +3106,14 @@ namespace Client.Scenes
             public RequestActivationKeyDialog()
             {
                 Size = new Size(330, 130);
-                TitleLabel.Text = "Request Activation Key";
+                TitleLabel.Text = "申请激活码";
                 HasFooter = true;
                 Visible = false;
 
                 CancelButton = new DXButton
                 {
                     Parent = this,
-                    Label = { Text = "Cancel" },
+                    Label = { Text = "取消" },
                     Location = new Point(Size.Width / 2 + 10, Size.Height - 43),
                     Size = new Size(80, DefaultHeight),
                 };
@@ -3124,7 +3124,7 @@ namespace Client.Scenes
                 {
                     Enabled = false,
                     Parent = this,
-                    Label = { Text = "Request" },
+                    Label = { Text = "申请" },
                     Location = new Point((Size.Width) / 2 - 80 - 10, Size.Height - 43),
                     Size = new Size(80, DefaultHeight),
                 };

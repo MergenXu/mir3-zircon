@@ -125,7 +125,7 @@ namespace Library
                     return description.Title;
                 case StatType.Time:
                     if (this[stat] < 0)
-                        return description.Title + ": 永 ";
+                        return description.Title + ": 永久 ";
 
                     return description.Title + ": " + Functions.ToString(TimeSpan.FromSeconds(this[stat]), true);
                 case StatType.SpellPower:
@@ -517,7 +517,7 @@ namespace Library
 
         [StatDescription(Title = "舒适", Format = "{0:+#0;-#0;#0}", Mode = StatType.Default)]
         Comfort, //Regen Timer
-        [StatDescription(Title = "生命窃取", Format = "{0:+#0%;-#0%;#0%}", Mode = StatType.Percent)]
+        [StatDescription(Title = "吸星大法", Format = "{0:+#0%;-#0%;#0%}", Mode = StatType.Percent)]
         LifeSteal,
 
         [StatDescription(Title = "经验倍率", Format = "{0:+#0%;-#0%;#0%}", Mode = StatType.Percent)]
@@ -556,14 +556,14 @@ namespace Library
         [StatDescription(Title = "亲和: 幻影", Mode = StatType.Text)]
         PhantomAffinity,
 
-        [StatDescription(Title = "伤害反弹", Format = "{0:+#0%;-#0%;#0%}", Mode = StatType.Percent)]
+        [StatDescription(Title = "移花接木", Format = "{0:+#0%;-#0%;#0%}", Mode = StatType.Percent)]
         ReflectDamage,
 
         [StatDescription(Mode = StatType.None)]
         WeaponElement,
         [StatDescription(Title = "Temporary Innocence.", Mode = StatType.Text)]
         Redemption,
-        [StatDescription(Title = "生命", Format = "{0:+#0%;-#0%;#0%}", Mode = StatType.Percent)]
+        [StatDescription(Title = "生命百分比", Format = "{0:+#0%;-#0%;#0%}", Mode = StatType.Percent)]
         HealthPercent,
 
         [StatDescription(Title = "暴击几率", Format = "{0:+#0;-#0;#0}%", Mode = StatType.Default)]
@@ -585,7 +585,7 @@ namespace Library
         [StatDescription(Title = "潜行伤害", Format = "{0} 每次", Mode = StatType.Default)]
         CloakDamage,
 
-        [StatDescription(Title = "New Beginning Charges", Format = "{0}", Mode = StatType.Default)]
+        [StatDescription(Title = "心念", Format = "{0}", Mode = StatType.Default)]
         TheNewBeginning,
 
         [StatDescription(Title = "灰名, 其他人可以合法攻击你", Mode = StatType.Text)]
@@ -599,16 +599,16 @@ namespace Library
         [StatDescription(Title = "魔法", Format = "{0:+#0%;-#0%;#0%}", Mode = StatType.Percent)]
         MCPercent,
 
-        [StatDescription(Title = "审判几率", Format = "{0:+#0%;-#0%;#0%}", Mode = StatType.Percent)]
+        [StatDescription(Title = "天打雷劈", Format = "{0:+#0%;-#0%;#0%}", Mode = StatType.Percent)]
         JudgementOfHeaven,
 
-        [StatDescription(Title = "透明度", Mode = StatType.Text)]
+        [StatDescription(Title = "妙影无踪", Mode = StatType.Text)]
         Transparency,
 
         [StatDescription(Title = "HP Recovery", Format = "{0:+#0%;-#0%;#0%}", Mode = StatType.Percent)]
         CelestialLight,
 
-        [StatDescription(Title = "MP Conversion", Format = "{0:+#0;-#0;#0}", Mode = StatType.Default)]
+        [StatDescription(Title = "恶灵契约", Format = "{0:+#0;-#0;#0}", Mode = StatType.Default)]
         DarkConversion,
 
         [StatDescription(Title = "HP Recovery", Format = "{0:+#0;-#0;#0}", Mode = StatType.Default)]
@@ -659,9 +659,9 @@ namespace Library
 
         [StatDescription(Title = "负重倍率", Format = "x{0}", Mode = StatType.Default)]
         WeightRate,
-        [StatDescription(Title = "最小防御与魔御已经大幅提升.", Mode = StatType.Text)]
+        [StatDescription(Title = "铁布衫.", Mode = StatType.Text)]
         Defiance,
-        [StatDescription(Title = "转守为攻(降低防御，增强攻击).", Mode = StatType.Text)]
+        [StatDescription(Title = "破血狂杀(降低防御，增强攻击).", Mode = StatType.Text)]
         Might,
         [StatDescription(Title = "魔法", Format = "{0:+#0%;-#0%;#0%}", Mode = StatType.Percent)]
         ManaPercent,

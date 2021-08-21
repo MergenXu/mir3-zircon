@@ -1141,6 +1141,8 @@ namespace Library
 
         public string PetOwner;
 
+        public int Level;
+
         public int Health;
         public int MaxHealth;
 
