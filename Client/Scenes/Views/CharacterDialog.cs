@@ -193,6 +193,18 @@ namespace Client.Scenes.Views
             };
             cell.BeforeDraw += (o, e) => Draw((DXItemCell)o, 38);
 
+            /*Grid[(int)EquipmentSlot.Poison2] = cell = new DXItemCell
+            {
+                Location = new Point(15, 180),
+                Parent = CharacterTab,
+                FixedBorder = true,
+                Border = true,
+                ItemGrid = GameScene.Game.Equipment,
+                Slot = (int)EquipmentSlot.Poison2,
+                GridType = GridType.Equipment,
+            };
+            cell.BeforeDraw += (o, e) => Draw((DXItemCell)o, 40);*/
+
             Grid[(int)EquipmentSlot.Necklace] = cell = new DXItemCell
             {
                 Location = new Point(215, 180),

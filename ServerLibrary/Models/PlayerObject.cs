@@ -151,6 +151,9 @@ namespace Server.Models
         public string FiltersRarity;
         public string FiltersItemType;
 
+        private int PoisonChange = 0;
+        
+
         public PlayerObject(CharacterInfo info, SConnection con)
         {
             Character = info;
@@ -7847,18 +7850,46 @@ namespace Server.Models
 
             UserItem poison = Equipment[(int)EquipmentSlot.Poison];
 
+            int ItemIntex = 0;
+
+            if (PoisonChange == 1)
+            {
+                for (int i = 0; i < Inventory.Length; i++)
+                {
+                    if (Inventory[i] == null)
+                    {
+                        continue;
+                    }
+                    if (Inventory[i].Info.ItemType == ItemType.Poison)
+                    {
+                        poison = Inventory[i];
+                        ItemIntex = i;
+                        break;
+                    }
+
+                }
+            }
+            
+
             if (poison == null || poison.Info.ItemType != ItemType.Poison || poison.Count < count) return false;
 
             shape = poison.Info.Shape;
 
             poison.Count -= count;
 
-            Enqueue(new S.ItemChanged
+            if (PoisonChange == 0)
             {
-                Link = new CellLinkInfo { GridType = GridType.Equipment, Slot = (int)EquipmentSlot.Poison, Count = poison.Count },
-                Success = true
-            });
-
+                Enqueue(new S.ItemChanged
+                {
+                    Link = new CellLinkInfo { GridType = GridType.Equipment, Slot = (int)EquipmentSlot.Poison, Count = poison.Count },
+                    Success = true
+                });
+            }
+            else
+            {
+                Enqueue(new S.ItemChanged { Link = new CellLinkInfo { GridType = GridType.Inventory, Slot = ItemIntex, Count = poison.Count }, Success = true });
+            }
+                
 
             if (poison.Count != 0) return true;
 
@@ -14158,7 +14189,6 @@ namespace Server.Models
                         if (!UsePoison(1, out shape))
                             break;
 
-
                         if (augMagic != null)
                             count++;
 
@@ -14169,6 +14199,15 @@ namespace Server.Models
                             magics,
                             target,
                             shape == 0 ? PoisonType.Green : PoisonType.Red));
+                    }
+
+                    if (PoisonChange == 0)
+                    {
+                        PoisonChange = 1;
+                    }
+                    else
+                    {
+                        PoisonChange = 0;
                     }
 
                     if (count > 0)
