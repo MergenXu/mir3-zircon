@@ -152,7 +152,7 @@ namespace Server.Envir.Translations
 
         public override string StoreNotAvailable { get; set; } = "无法购买, 商品已下线.";
         public override string StoreNeedSpace { get; set; } = "你不能携带更多东西, 包裹空间不足.";
-        public override string StoreCost { get; set; } = "你的金币不足.";
+        public override string StoreCost { get; set; } = "你的元宝不足.";
 
 
         public override string GuildNeedHorn { get; set; } = "你需要一个沃玛号角才能创建行会.";

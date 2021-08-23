@@ -1,10 +1,10 @@
-﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
-using Client.Controls;
+﻿using Client.Controls;
 using Client.Envir;
 using Client.UserModels;
 using Library;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 using C = Library.Network.ClientPackets;
 
 namespace Client.Scenes.Views
@@ -132,7 +132,7 @@ namespace Client.Scenes.Views
                     break;
 
             }
-            SelectedGenderLabel.Text = SelectedGender.ToString();
+            SelectedGenderLabel.Text = EnumService.GetDescription(SelectedGender);
         }
 
         #endregion
@@ -255,7 +255,7 @@ namespace Client.Scenes.Views
         {
             Size = new Size(260, 650 - 90);
             HasFooter = true;
-            TitleLabel.Text = "修改";
+            TitleLabel.Text = "编辑角色";
             CloseButton.MouseClick += (o, e) => Close();
 
             ChangeButton = new DXButton
@@ -365,7 +365,7 @@ namespace Client.Scenes.Views
             {
                 Parent = panel,
                 Font = new Font(Config.FontName, CEnvir.FontSize(9F), FontStyle.Bold),
-                Text = "Select Gender",
+                Text = "选择性别",
             };
             label.Location = new Point((panel.Size.Width - label.Size.Width) / 2, 0);
 
@@ -396,7 +396,7 @@ namespace Client.Scenes.Views
                 DrawFormat = TextFormatFlags.HorizontalCenter,
                 Size = new Size(80, 15),
                 Parent = panel,
-                Text = "Male",
+                Text = "男",
                 BackColour = Color.FromArgb(16, 8, 8),
                 Border = true,
                 BorderColour = Color.FromArgb(198, 166, 99)
@@ -423,7 +423,7 @@ namespace Client.Scenes.Views
             {
                 Parent = panel,
                 Font = new Font(Config.FontName, CEnvir.FontSize(9F), FontStyle.Bold),
-                Text = "Customization",
+                Text = "自定义装扮",
             };
             label.Location = new Point((panel.Size.Width - label.Size.Width) / 2, 0);
 
@@ -443,7 +443,7 @@ namespace Client.Scenes.Views
             HairTypeLabel = new DXLabel
             {
                 Parent = panel,
-                Text = "Hair Type:",
+                Text = "发型:",
             };
             HairTypeLabel.Location = new Point(HairNumberBox.Location.X - HairTypeLabel.Size.Width - 5, (HairNumberBox.Size.Height - HairTypeLabel.Size.Height) / 2 + HairNumberBox.Location.Y);
 
@@ -457,7 +457,7 @@ namespace Client.Scenes.Views
             HairColourLabel = new DXLabel
             {
                 Parent = panel,
-                Text = "Hair Colour:",
+                Text = "发色:",
             };
             HairColourLabel.Location = new Point(HairNumberBox.Location.X - HairColourLabel.Size.Width - 5, (HairColour.Size.Height - HairColourLabel.Size.Height) / 2 + HairColour.Location.Y);
 
@@ -471,7 +471,7 @@ namespace Client.Scenes.Views
             ArmourColourLabel = new DXLabel
             {
                 Parent = panel,
-                Text = "Armour Colour:",
+                Text = "负责颜色:",
             };
             ArmourColourLabel.Location = new Point(HairNumberBox.Location.X - ArmourColourLabel.Size.Width - 5, (ArmourColour.Size.Height - ArmourColourLabel.Size.Height) / 2 + ArmourColour.Location.Y);
 
@@ -492,7 +492,7 @@ namespace Client.Scenes.Views
             {
                 Parent = previewPanel,
                 Font = new Font(Config.FontName, CEnvir.FontSize(9F), FontStyle.Bold),
-                Text = "Preview",
+                Text = "预览",
             };
             label.Location = new Point((panel.Size.Width - label.Size.Width) / 2, 0);
 
@@ -540,7 +540,7 @@ namespace Client.Scenes.Views
                 case ChangeType.GenderChange:
                     if (SelectedGender == GameScene.Game.User.Gender)
                     {
-                        GameScene.Game.ReceiveChat($"You are already a {SelectedGender}.", MessageType.System);
+                        GameScene.Game.ReceiveChat($"你已经是一个 {SelectedGender}.", MessageType.System);
                         return;
                     }
 

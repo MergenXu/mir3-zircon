@@ -625,6 +625,9 @@ namespace Server.DBModels
         [Association("Quests", true)]
         public DBBindingList<UserQuest> Quests { get; set; }
 
+        [Association("UserPets", true)]
+        public DBBindingList<UserQuest> UserPets { get; set; }
+
         [Association("Marriage")]
         public CharacterInfo Partner
         {

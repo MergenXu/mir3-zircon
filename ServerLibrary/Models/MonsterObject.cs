@@ -667,6 +667,7 @@ namespace Server.Models
         {
             int lostHp = Stats[Stat.Health] - CurrentHP;
             Stats[Stat.Health] = Stats[Stat.Health] + (Stats[Stat.Health] * 20 / 100 > 200  ? 200 : Stats[Stat.Health] * 20 / 100) ;
+            //Stats[Stat.Health] = Stats[Stat.Health] + 100;
             CurrentHP = Stats[Stat.Health] - lostHp;
 
             Stats[Stat.MinAC] = Stats[Stat.MinAC] + 1;
@@ -675,13 +676,13 @@ namespace Server.Models
             Stats[Stat.MinMR] = Stats[Stat.MinMR] + 1;
             Stats[Stat.MaxMR] = Stats[Stat.MaxMR] + 2;
 
-            //Stats[Stat.MinDC] = Stats[Stat.MinDC] + (Stats[Stat.MinDC] * 15 / 100 > 2 ? Stats[Stat.MinDC] * 15 / 100 : 2) * SummonLevel;
+            Stats[Stat.MinDC] = Stats[Stat.MinDC] + 1;
             Stats[Stat.MaxDC] = Stats[Stat.MaxDC] + 3;
 
-            //Stats[Stat.MinMC] = Stats[Stat.MinMC] + (Stats[Stat.MinMC] * 15 / 100 > 2 ? Stats[Stat.MinMC] * 15 / 100 : 2) * SummonLevel;
+            Stats[Stat.MinMC] = Stats[Stat.MinMC] + 1;
             Stats[Stat.MaxMC] = Stats[Stat.MaxMC] + 3;
 
-            //Stats[Stat.MinSC] = Stats[Stat.MinSC] + (Stats[Stat.MinSC] * 15 / 100 > 2 ? Stats[Stat.MaxMC] * 15 / 100 : 2) * SummonLevel;
+            Stats[Stat.MinSC] = Stats[Stat.MinSC] + 1; ;
             Stats[Stat.MaxSC] = Stats[Stat.MaxSC] + 3;
 
             MoveDelay -= MoveDelay * 2 / 100;
@@ -711,8 +712,59 @@ namespace Server.Models
 
             if (SummonLevel > 0)
             {
-                int lostHp = Stats[Stat.Health] - CurrentHP;
-                Stats[Stat.Health] = Stats[Stat.Health] + Stats[Stat.Health] * SummonLevel * 40 / 100;
+                Stats[Stat.Health] += (Stats[Stat.Health]*15/100 < 50 ? 50 : Stats[Stat.Health] * 15 / 100) * SummonLevel;
+
+                CurrentHP = Stats[Stat.Health];
+
+                Stats[Stat.MinAC] += Stats[Stat.MinAC] * 10 / 100 < 1 ? 5 * SummonLevel / 10 : Stats[Stat.MinAC] * 10 / 100 * SummonLevel;
+                Stats[Stat.MaxAC] += Stats[Stat.MaxAC] * 10 / 100 < 1 ? 8 * SummonLevel / 10 : Stats[Stat.MaxAC] * 10 / 100 * SummonLevel;
+
+                Stats[Stat.MinMR] += Stats[Stat.MinMR] * 10 / 100 < 1 ? 5 * SummonLevel / 10 : Stats[Stat.MinMR] * 10 / 100 * SummonLevel;
+                Stats[Stat.MaxMR] += Stats[Stat.MaxMR] * 10 / 100 < 1 ? 8 * SummonLevel / 10 : Stats[Stat.MaxMR] * 10 / 100 * SummonLevel;
+
+                Stats[Stat.MinDC] += Stats[Stat.MinDC] * 10 / 100 < 1 ? 1 * SummonLevel : Stats[Stat.MinDC] * 10 / 100 * SummonLevel;
+                Stats[Stat.MaxDC] += Stats[Stat.MaxDC] * 10 / 100 < 2 ? 2 * SummonLevel : Stats[Stat.MaxDC] * 10 / 100 * SummonLevel;
+
+                Stats[Stat.MinMC] += Stats[Stat.MinMC] * 10 / 100 < 1 ? 1 * SummonLevel : Stats[Stat.MinMC] * 10 / 100 * SummonLevel;
+                Stats[Stat.MaxMC] += Stats[Stat.MaxMC] * 10 / 100 < 2 ? 2 * SummonLevel : Stats[Stat.MaxMC] * 10 / 100 * SummonLevel;
+
+                Stats[Stat.MinSC] += Stats[Stat.MinSC] * 10 / 100 < 1 ? 1 * SummonLevel : Stats[Stat.MinSC] * 10 / 100 * SummonLevel;
+                Stats[Stat.MaxSC] += Stats[Stat.MaxSC] * 10 / 100 < 2 ? 2 * SummonLevel : Stats[Stat.MaxSC] * 10 / 100 * SummonLevel;
+
+                Stats[Stat.Accuracy] += Stats[Stat.Accuracy] * 10 / 100 < 1 ? 5 * SummonLevel / 10 : Stats[Stat.Accuracy] * 10 / 100 * SummonLevel;
+                Stats[Stat.Agility] += Stats[Stat.Agility] * 10 / 100 < 1 ? 5 * SummonLevel / 10 : Stats[Stat.Agility] * 10 / 100 * SummonLevel;
+
+                if (MoveDelay>700)
+                    MoveDelay = 1000;
+
+
+                //Stats[Stat.Health] = Stats[Stat.Health] + 50 + (Stats[Stat.Health] * 20 / 100 > 200 ? 200 : Stats[Stat.Health] * 20 / 100);
+                /*Stats[Stat.Health] = Stats[Stat.Health] + 60 * SummonLevel;
+                CurrentHP = Stats[Stat.Health];
+
+                Stats[Stat.MinAC] = Stats[Stat.MinAC] + 1 * SummonLevel;
+                Stats[Stat.MaxAC] = Stats[Stat.MaxAC] + 2 * SummonLevel;
+
+                Stats[Stat.MinMR] = Stats[Stat.MinMR] + 1 * SummonLevel;
+                Stats[Stat.MaxMR] = Stats[Stat.MaxMR] + 2 * SummonLevel;
+
+                Stats[Stat.MinDC] = Stats[Stat.MinDC] + 1 * SummonLevel;
+                Stats[Stat.MaxDC] = Stats[Stat.MaxDC] + 3 * SummonLevel;
+
+                Stats[Stat.MinMC] = Stats[Stat.MinMC] + 1 * SummonLevel;
+                Stats[Stat.MaxMC] = Stats[Stat.MaxMC] + 3 * SummonLevel;
+
+                Stats[Stat.MinSC] = Stats[Stat.MinSC] + 1 * SummonLevel; ;
+                Stats[Stat.MaxSC] = Stats[Stat.MaxSC] + 3 * SummonLevel;
+
+                MoveDelay = MoveDelay > 1200 ? 1200 : MoveDelay;
+
+                MoveDelay -= MoveDelay * 2 / 100 * SummonLevel;
+
+                AttackDelay -= AttackDelay * 2 / 100 * SummonLevel;*/
+
+                /*int lostHp = Stats[Stat.Health] - CurrentHP;
+                Stats[Stat.Health] = Stats[Stat.Health] + Stats[Stat.Health] * SummonLevel * 40 / 100 ;
                 CurrentHP = Stats[Stat.Health] - lostHp;
 
                 //Stats[Stat.Health] = Stats[Stat.Health] + Stats[Stat.Health] * SummonLevel / 5 + UserStats[Stat.Health] * UserStats[Stat.MaxMC] / 25;
@@ -730,13 +782,13 @@ namespace Server.Models
                 Stats[Stat.MaxMC] = Stats[Stat.MaxMC] + Stats[Stat.MaxMC] * 5 / 100 * SummonLevel;
 
                 //Stats[Stat.MinSC] = Stats[Stat.MinSC] + (Stats[Stat.MinSC] * 15 / 100 > 2 ? Stats[Stat.MaxMC] * 15 / 100 : 2) * SummonLevel;
-                Stats[Stat.MaxSC] = Stats[Stat.MaxSC] + Stats[Stat.MaxSC] * 5 / 100 * SummonLevel;
+                Stats[Stat.MaxSC] = Stats[Stat.MaxSC] + Stats[Stat.MaxSC] * 5 / 100 * SummonLevel;*/
 
                 //Stats[Stat.Accuracy] = Stats[Stat.Accuracy] + Stats[Stat.Accuracy] * SummonLevel / 15 ;
                 //Stats[Stat.Agility] = Stats[Stat.Agility] + Stats[Stat.Agility] * SummonLevel / 15 ;
 
-                MoveDelay = MoveDelay > 1200 ? 1200 : MoveDelay - MoveDelay * SummonLevel / 10;
-                
+                //
+
             }
 
 
@@ -830,7 +882,7 @@ namespace Server.Models
             if (ChristmasEventMob)
                 Stats[Stat.Health] = 10;
 
-            S.DataObjectMaxHealthMana p = new S.DataObjectMaxHealthMana { ObjectID = ObjectID, Stats = Stats };
+            S.DataObjectMaxHealthMana p = new S.DataObjectMaxHealthMana { ObjectID = ObjectID, Stats = Stats ,Level = Level};
 
             foreach (PlayerObject player in DataSeenByPlayers)
                 player.Enqueue(p);
@@ -2613,7 +2665,20 @@ namespace Server.Models
                         exp /= ExtraExperienceRate;
 
                     EXPOwner.GainExperience(exp, PlayerTagged, Level);
-                    EXPOwner.PetGainExperience(Level);
+                    //EXPOwner.PetGainExperience(Level);
+/*                    if (EXPOwner.Pets.Count > 0)
+                    {
+                        for (int i = EXPOwner.Pets.Count - 1; i >= 0; i--)
+                        {
+                            EXPOwner.Pets[i].MonsterInfo.PetExp += MonsterInfo.Level;
+
+                            if (EXPOwner.Pets[i].MonsterInfo.PetExp >= EXPOwner.Pets[i].MonsterInfo.Level * 5)
+                            {
+                                EXPOwner.Pets[i].MonsterInfo.PetExp -= EXPOwner.Pets[i].MonsterInfo.Level * 5;
+                                EXPOwner.Pets[i].LevelUp();
+                            }
+                        }
+                    }*/
                 }
             }
             else
@@ -2631,7 +2696,21 @@ namespace Server.Models
                         expfinal /= ExtraExperienceRate;
 
                     player.GainExperience(expfinal, PlayerTagged, Level);
-                    player.PetGainExperience(Level);
+
+/*                    if (player.Pets.Count > 0)
+                    {
+                        for (int i = EXPOwner.Pets.Count - 1; i >= 0; i--)
+                        {
+                            EXPOwner.Pets[i].MonsterInfo.PetExp += MonsterInfo.Level;
+
+                            if (player.Pets[i].MonsterInfo.PetExp >= player.Pets[i].MonsterInfo.Level * 5)
+                            {
+                                player.Pets[i].MonsterInfo.PetExp -= player.Pets[i].MonsterInfo.Level * 5;
+                                player.Pets[i].LevelUp();
+                            }
+                        }
+                    }*/
+
                 }
             }
 
@@ -2648,6 +2727,7 @@ namespace Server.Models
             }
 
         }
+
 
         public virtual void Drop(PlayerObject owner, int players, decimal rate)
         {

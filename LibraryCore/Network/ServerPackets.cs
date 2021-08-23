@@ -1168,7 +1168,7 @@ namespace Library.Network.ServerPackets
     public sealed class DataObjectHealthMana : Packet
     {
         public uint ObjectID { get; set; }
-
+        public int Level { get; set; }
         public int Health { get; set; }
         public int Mana { get; set; }
         public bool Dead { get; set; }

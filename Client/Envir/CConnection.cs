@@ -473,26 +473,26 @@ namespace Client.Envir
             switch (p.Result)
             {
                 case LoginResult.Disabled:
-                    DXMessageBox.Show("Logging in is currently disabled.", "Log In");
+                    DXMessageBox.Show("系统当前禁止账号登陆.", "账号登陆");
                     break;
                 case LoginResult.BadEMail:
                     login.LoginBox.EMailTextBox.SetFocus();
-                    DXMessageBox.Show("Username is not acceptable.", "Log In");
+                    DXMessageBox.Show("用户名不合法.", "账号登陆");
                     break;
                 case LoginResult.BadPassword:
                     login.LoginBox.PasswordTextBox.SetFocus();
-                    DXMessageBox.Show("Current Password is not acceptable.", "Log In");
+                    DXMessageBox.Show("密码不合法.", "账号登陆");
                     break;
                 case LoginResult.AccountNotExists:
                     login.LoginBox.EMailTextBox.SetFocus();
-                    DXMessageBox.Show("Account does not exist.", "Log In");
+                    DXMessageBox.Show("账号不存在.", "账号登陆");
                     break;
                 case LoginResult.AccountNotActivated:
                     login.ShowActivationBox(login.LoginBox);
                     break;
                 case LoginResult.WrongPassword:
                     login.LoginBox.PasswordTextBox.SetFocus();
-                    DXMessageBox.Show("Incorrect Password.", "Log In");
+                    DXMessageBox.Show("密码错误.", "账号登陆");
                     break;
                 case LoginResult.Banned:
                     DateTime expiry = CEnvir.Now.Add(p.Duration);
@@ -500,7 +500,7 @@ namespace Client.Envir
                     DXMessageBox box = DXMessageBox.Show($"This account is banned.\n\n" +
                                                          $"原因: {p.Message}\n" +
                                                          $"Expiary Date: {expiry}\n" +
-                                                         $"Duration: {Math.Floor(p.Duration.TotalHours):#,##0} Hours, {p.Duration.Minutes} Minutes, {p.Duration.Seconds} Seconds", "Log In");
+                                                         $"Duration: {Math.Floor(p.Duration.TotalHours):#,##0} Hours, {p.Duration.Minutes} Minutes, {p.Duration.Seconds} Seconds", "账号登陆");
 
                     box.ProcessAction = () =>
                     {
@@ -522,16 +522,16 @@ namespace Client.Envir
                     break;
                 case LoginResult.AlreadyLoggedIn:
                     login.LoginBox.EMailTextBox.SetFocus();
-                    DXMessageBox.Show("Account is currently in use, please try again later.", "Log In");
+                    DXMessageBox.Show("Account is currently in use, please try again later.", "账号登陆");
                     break;
                 case LoginResult.AlreadyLoggedInPassword:
                     login.LoginBox.EMailTextBox.SetFocus();
                     DXMessageBox.Show("Account is currently in use\n" +
-                                      "New Password has been sent to the E-Mail Addresss..", "Log In");
+                                      "New Password has been sent to the E-Mail Addresss..", "账号登陆");
                     break;
                 case LoginResult.AlreadyLoggedInAdmin:
                     login.LoginBox.EMailTextBox.SetFocus();
-                    DXMessageBox.Show("Account is currently in use by an admin", "Log In");
+                    DXMessageBox.Show("Account is currently in use by an admin", "账号登陆");
                     break;
                 case LoginResult.Success:
                     login.LoginBox.Visible = false;
@@ -710,6 +710,12 @@ namespace Client.Envir
                     case StartGameResult.Deleted:
                         DXMessageBox.Show("You cannot start the game on a deleted character.", "Start Game");
                         break;
+                    case StartGameResult.UnableToSpawn:
+                        DXMessageBox.Show("Unable to start the game, failed to spawn character.", "Start Game");
+                        break;
+                    case StartGameResult.NotFound:
+                        DXMessageBox.Show("Unable to start the game, character not found.", "Start Game");
+                        break;
                     case StartGameResult.Delayed:
                         expiry = CEnvir.Now.Add(p.Duration);
 
@@ -731,12 +737,6 @@ namespace Client.Envir
                             box.Label.Text = $"This character has recently logged out please wait.\n" +
                                              $"Duration: {Math.Floor(remaining.TotalHours):#,##0} Hours, {remaining.Minutes:#,##0} Minutes, {remaining.Seconds} Seconds";
                         };
-                        break;
-                    case StartGameResult.UnableToSpawn:
-                        DXMessageBox.Show("Unable to start the game, failed to spawn character.", "Start Game");
-                        break;
-                    case StartGameResult.NotFound:
-                        DXMessageBox.Show("Unable to start the game, character not found.", "Start Game");
                         break;
                     case StartGameResult.Success:
                         select.Dispose();

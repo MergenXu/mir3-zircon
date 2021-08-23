@@ -36,9 +36,8 @@ namespace Library
 
         public static readonly Regex EMailRegex = new Regex(@"\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*", RegexOptions.Compiled);
         public static readonly Regex PasswordRegex = new Regex(@"^[\S]{" + MinPasswordLength + "," + MaxPasswordLength + "}$", RegexOptions.Compiled);
-        //public static readonly Regex CharacterReg = new Regex(@"^[A-Za-z0-9]{" + MinCharacterNameLength + "," + MaxCharacterNameLength + @"}$", RegexOptions.Compiled);
         public static readonly Regex CharacterReg = new Regex(@"^[a-zA-Z0-9\u4e00-\u9fa5]{" + MinCharacterNameLength + "," + MaxCharacterNameLength + @"}$", RegexOptions.Compiled);
-        public static readonly Regex GuildNameRegex = new Regex(@"^[A-Za-z0-9]{" + MinGuildNameLength + "," + MaxGuildNameLength + "}$", RegexOptions.Compiled);
+        public static readonly Regex GuildNameRegex = new Regex(@"^[A-Za-z0-9\u4e00-\u9fa5]{" + MinGuildNameLength + "," + MaxGuildNameLength + "}$", RegexOptions.Compiled);
 
         public static Color NoneColour = Color.White,
                             FireColour = Color.OrangeRed,
@@ -492,6 +491,8 @@ namespace Library
         public List<CompanionInfo> AvailableCompanions = new List<CompanionInfo>();
 
         public List<ClientUserCompanion> Companions { get; set; }
+
+        public List<ClientUserCompanion> UserPets { get; set; }
 
         public int Companion { get; set; }
 

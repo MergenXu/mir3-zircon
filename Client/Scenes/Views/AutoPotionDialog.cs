@@ -27,7 +27,7 @@ namespace Client.Scenes.Views
 
         public AutoPotionDialog()
         {
-            TitleLabel.Text = "自动吃药";
+            TitleLabel.Text = "辅助功能";
             HasFooter = true;
 
             SetClientSize(new Size(280, 398));

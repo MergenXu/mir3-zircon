@@ -93,7 +93,7 @@ namespace Server
         {
             base.OnClosing(e);
 
-            if (XtraMessageBox.Show(this, "Are you sure you want to close the server?", "Close Server", MessageBoxButtons.YesNo) != DialogResult.Yes)
+            if (XtraMessageBox.Show(this, "你确定要关闭服务器吗?", "关闭服务器", MessageBoxButtons.YesNo) != DialogResult.Yes)
             {
                 e.Cancel = true;
                 return;

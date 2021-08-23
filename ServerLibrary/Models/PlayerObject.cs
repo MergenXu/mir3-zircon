@@ -2360,23 +2360,6 @@ namespace Server.Models
             LevelUp();
         }
 
-
-        public void PetGainExperience(int petexp)
-        {
-            if (Pets.Count > 0)
-            {
-                for (int i = Pets.Count - 1; i >= 0; i--)
-                {
-                    Pets[i].SummonExperience += petexp;
-                    if (Pets[i].SummonExperience >= Pets[i].Level * 20 + 100 )
-                    {
-                        Pets[i].SummonExperience -= Pets[i].Level * 20 + 100;
-                        Pets[i].LevelUp();
-                    }
-                }
-            }
-        }
-
         public void LevelUp()
         {
             RefreshStats();
@@ -16814,6 +16797,8 @@ namespace Server.Models
                         break;
                     case MagicType.SummonSkeleton:
                     case MagicType.SummonJinSkeleton:
+                        SummonSkeletonEnd(magic, (Map)data[1], (Point)data[2], (MonsterInfo)data[3]);
+                        break;
                     case MagicType.SummonShinsu:
                     case MagicType.SummonDemonicCreature:
                         SummonEnd(magic, (Map)data[1], (Point)data[2], (MonsterInfo)data[3]);
@@ -18048,7 +18033,7 @@ namespace Server.Models
             }
             
 
-            if (Pets.Count > 4 ) return;
+            if (Pets.Count >  4) return;
             
 
             if (SEnvir.Random.Next(20) == 0)
@@ -18088,12 +18073,30 @@ namespace Server.Models
             ob.ShockTime = DateTime.MinValue;
             ob.Magics.Add(magic);
 
-            ob.SummonLevel = magic.Level;
+            ob.SummonLevel = magic.Level+(Level-ob.Level > 0? Level - ob.Level : 2);
 
             ob.RefreshStats();
 
             ob.Broadcast(new S.ObjectPetOwnerChanged { ObjectID = ob.ObjectID, PetOwner = Name });
         }
+
+        public void PetGainExperience(int PetExp)
+        {
+            if (Pets.Count > 0)
+            {
+                for (int i = Pets.Count - 1; i >= 0; i--)
+                {
+                    Pets[i].SummonExperience += PetExp;
+
+                    if (Pets[i].SummonExperience >= Pets[i].Level * 18 +100)
+                    {
+                        Pets[i].SummonExperience -= Pets[i].Level * 18 + 100;
+                        Pets[i].LevelUp();
+                    }
+                }
+            }
+        }
+
         private void ExpelUndeadEnd(UserMagic magic, MonsterObject ob)
         {
             if (ob?.Node == null || !CanAttackTarget(ob) || ob.MonsterInfo.IsBoss || ob.Level >= 70) return;
@@ -18784,7 +18787,37 @@ namespace Server.Models
                 break;
             }
         }
+        public void SummonSkeletonEnd(UserMagic magic, Map map, Point location, MonsterInfo info)
+        {
+            int SkeletonCount = 0;
+            for (int i = Pets.Count - 1; i >= 0; i--)
+                if(Pets[i].MonsterInfo.MonsterName == "变异骷髅"  || Pets[i].MonsterInfo.MonsterName == "超强骷髅" 
+                    || Pets[i].MonsterInfo.MonsterName == "Skeleton" || Pets[i].MonsterInfo.MonsterName == "Jin Skeleton")
+                    SkeletonCount++;
+            for (int i = 10-SkeletonCount; i >= 0; i--)
+            {
+                MonsterObject ob = MonsterObject.GetMonster(info);
+                ob.PetOwner = this;
+                Pets.Add(ob);
 
+                ob.Master?.MinionList.Remove(ob);
+                ob.Master = null;
+                ob.Magics.Add(magic);
+                ob.SummonLevel = Convert.ToInt32((magic.Level + Stats[Stat.PhantomAttack]) * (1 + (decimal)Stats[Stat.MaxDC]/200));
+                ob.TameTime = SEnvir.Now.AddDays(365);
+
+                if (Buffs.Any(x => x.Type == BuffType.StrengthOfFaith))
+                    ob.Magics.Add(Magics[MagicType.StrengthOfFaith]);
+
+                Cell cell = map.GetCell(location);
+
+                if (cell == null || cell.Movements != null || !ob.Spawn(map, location))
+                    ob.Spawn(CurrentMap, CurrentLocation);
+
+                ob.SetHP(ob.Stats[Stat.Health]);
+            }
+            LevelMagic(magic);
+        }
         public void SummonEnd(UserMagic magic, Map map, Point location, MonsterInfo info)
         {
             if (info == null) return;
@@ -18797,7 +18830,7 @@ namespace Server.Models
                 return;
             }
 
-            if (Pets.Count >= 2) return;
+            //if (Pets.Count >= 2) return;
 
             ob = MonsterObject.GetMonster(info);
 
@@ -18807,7 +18840,7 @@ namespace Server.Models
             ob.Master?.MinionList.Remove(ob);
             ob.Master = null;
             ob.Magics.Add(magic);
-            ob.SummonLevel = magic.Level * 2;
+            ob.SummonLevel = Convert.ToInt32((magic.Level + Stats[Stat.PhantomAttack]) * (1 + (decimal)Stats[Stat.MaxDC] / 200));
             ob.TameTime = SEnvir.Now.AddDays(365);
 
             if (Buffs.Any(x => x.Type == BuffType.StrengthOfFaith))

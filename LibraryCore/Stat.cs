@@ -666,7 +666,7 @@ namespace Library
         [StatDescription(Title = "魔法", Format = "{0:+#0%;-#0%;#0%}", Mode = StatType.Percent)]
         ManaPercent,
 
-        [StatDescription(Title = "Recall Command: @GroupRecall", Mode = StatType.Text)]
+        [StatDescription(Title = "天地和一: @GroupRecall", Mode = StatType.Text)]
         RecallSet,
 
         [StatDescription(Title = "常规怪物基础经验倍率", Format = "{0:+#0%;-#0%;#0%}", Mode = StatType.Percent)]
