@@ -13,7 +13,7 @@ namespace Client.Envir
     {
         public static readonly Size IntroSceneSize = new Size(1024, 768);
 
-        public const string DefaultIPAddress = "145.239.204.13";
+        public const string DefaultIPAddress = "127.0.0.1";
         public const int DefaultPort = 7100;
 
         [ConfigSection("Network")]
@@ -58,6 +58,7 @@ namespace Client.Envir
 
         [ConfigSection("Game")]
         public static bool DrawEffects { get; set; } = true;
+        public static bool DrawParticles { get; set; } = false;
         public static bool ShowItemNames { get; set; } = true;
         public static bool ShowMonsterNames { get; set; } = true;
         public static bool ShowPlayerNames { get; set; } = true;

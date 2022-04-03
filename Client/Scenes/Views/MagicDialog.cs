@@ -607,6 +607,7 @@ namespace Client.Scenes.Views
 
             if (MapObject.User.Magics.TryGetValue(Info, out magic))
             {
+                Image.IsEnabled = true;
                 LevelLabel.Text = $"等级: {magic.Level}";
                 LevelLabel.ForeColour = Color.FromArgb(198, 166, 99);
 
@@ -664,6 +665,7 @@ namespace Client.Scenes.Views
             }
             else
             {
+                Image.IsEnabled = false;
                 LevelLabel.Text = "未学习";
                 LevelLabel.ForeColour = Color.Red;
 

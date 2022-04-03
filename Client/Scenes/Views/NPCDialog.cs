@@ -22,6 +22,7 @@ namespace Client.Scenes.Views
     public sealed class NPCDialog : DXWindow
     {
         #region Properties
+
         public static  Regex R = new Regex(@"\[(?<Text>.*?):(?<ID>.+?)\]", RegexOptions.Compiled);
 
         public NPCPage Page;
@@ -154,6 +155,7 @@ namespace Client.Scenes.Views
                 Parent = this,
                 Location = new Point(ClientArea.X + 10, ClientArea.Y + 10),
                 Size = new Size(ClientArea.Width - 20, ClientArea.Height - 20),
+                ForeColour = Color.White
             };
         }
 
@@ -170,7 +172,6 @@ namespace Client.Scenes.Views
             int height = DXLabel.GetHeight(PageText, ClientArea.Width).Height;
             if (height > ClientArea.Height)
                 SetClientSize(new Size(ClientArea.Width, height));
-
 
             ProcessText();
 
@@ -295,7 +296,7 @@ namespace Client.Scenes.Views
                         Location = info.Region.Location,
                         DrawFormat = PageText.DrawFormat,
                         Text = PageText.Text.Substring(info.Index, info.Length),
-                        Font = new Font(PageText.Font.FontFamily, PageText.Font.Size, FontStyle.Underline),
+                        Font = new Font(PageText.Font.FontFamily, PageText.Font.Size),
                         Size = info.Region.Size,
                         Outline = false,
                         Sound = SoundIndex.ButtonC,
@@ -344,7 +345,6 @@ namespace Client.Scenes.Views
 
         public static List<ButtonInfo> GetWordRegionsNew(Graphics graphics, string text, Font font, TextFormatFlags flags, int width, int index, int length)
         {
-
             List<ButtonInfo> regions = new List<ButtonInfo>();
 
             Size tSize = TextRenderer.MeasureText(graphics, "A", font, new Size(width, 2000), flags);
@@ -490,6 +490,7 @@ namespace Client.Scenes.Views
 
             return regions;*/
         }
+
         #endregion
 
         #region IDisposable
@@ -3179,7 +3180,7 @@ namespace Client.Scenes.Views
 
             QuestInfo previousQuest = SelectedQuest?.QuestInfo;
 
-            _SelectedQuest = null;
+            SelectedQuest = null;
 
             UpdateScrollBar();
 
@@ -3189,7 +3190,7 @@ namespace Client.Scenes.Views
                 {
                     if (row.QuestInfo != previousQuest) continue;
 
-                    _SelectedQuest = row;
+                    SelectedQuest = row;
                     break;
                 }
             }
@@ -3367,13 +3368,59 @@ namespace Client.Scenes.Views
                 QuestIcon.Visible = true;
             }
 
-            if (UserQuest == null)
-                QuestIcon.BaseIndex = 83; //Available
-            else if (!UserQuest.IsComplete)
-                QuestIcon.BaseIndex = 85; //Completed
-            else
-                QuestIcon.BaseIndex = 93; //Current
-            
+            Color colour = Color.White;
+
+            QuestIcon icon = Library.QuestIcon.None;
+            QuestType type = QuestType.General;
+
+            if (UserQuest != null)
+            {
+                type = UserQuest.Quest.QuestType;
+                icon = UserQuest.IsComplete ? Library.QuestIcon.Complete : Library.QuestIcon.Incomplete;
+            }
+            else if (QuestInfo != null)
+            {
+                type = QuestInfo.QuestType;
+
+                icon = Library.QuestIcon.New;
+            }
+
+            int startIndex = 0;
+
+            switch (type)
+            {
+                case QuestType.General:
+                    startIndex = 16;
+                    break;
+                case QuestType.Daily:
+                    startIndex = 76;
+                    break;
+                case QuestType.Repeatable:
+                    startIndex = 16;
+                    break;
+                case QuestType.Story:
+                    startIndex = 56;
+                    break;
+                //case QuestType.Account:
+                //    startIndex = 36;
+                //    break;
+            }
+
+            switch (icon)
+            {
+                case Library.QuestIcon.New:
+                    startIndex += 0;
+                    break;
+                case Library.QuestIcon.Incomplete:
+                    startIndex = 2;
+                    break;
+                case Library.QuestIcon.Complete:
+                    startIndex += 2;
+                    break;
+            }
+
+            QuestIcon.BaseIndex = startIndex;
+
             QuestInfoChanged?.Invoke(this, EventArgs.Empty);
         }
 
@@ -3446,8 +3493,8 @@ namespace Client.Scenes.Views
                 Parent = this,
                 Location = new Point(2,2),
                 Loop = true,
-                LibraryFile = LibraryFile.Interface,
-                BaseIndex = 83,
+                LibraryFile = LibraryFile.QuestIcon,
+                BaseIndex = 2,
                 FrameCount = 2,
                 AnimationDelay = TimeSpan.FromSeconds(1),
                 Visible = false,
@@ -4758,7 +4805,6 @@ namespace Client.Scenes.Views
         #endregion
     }
 
-
     public sealed class NPCItemFragmentDialog : DXWindow
     {
         #region Properties
@@ -4941,7 +4987,6 @@ namespace Client.Scenes.Views
 
         #endregion
     }
-
 
     public sealed class NPCMasterRefineDialog : DXWindow
     {
@@ -6363,7 +6408,6 @@ namespace Client.Scenes.Views
 
         #endregion
     }
-
 
     public sealed class NPCAccessoryResetDialog : DXWindow
     {

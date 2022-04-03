@@ -161,6 +161,7 @@ namespace Client.Scenes.Views
         public List<DXControl> MapInfoObjects = new List<DXControl>();
         public List<MapObject> Objects = new List<MapObject>();
         public List<MirEffect> Effects = new List<MirEffect>();
+        public List<Models.Particles.ParticleEmitter> ParticleEffects = new List<Models.Particles.ParticleEmitter>();
 
         public const int CellWidth = 48, CellHeight = 32;
 
@@ -273,8 +274,9 @@ namespace Client.Scenes.Views
             }
 
             DXManager.Sprite.Flush();
-            DXManager.Device.SetRenderState(RenderState.SourceBlend, Blend.DestinationColor);
-            DXManager.Device.SetRenderState(RenderState.DestinationBlend, Blend.BothInverseSourceAlpha);
+
+            DXManager.Device.SetRenderState(RenderState.SourceBlend, Blend.Zero);
+            DXManager.Device.SetRenderState(RenderState.DestinationBlend, Blend.SourceColor);
 
             DXManager.Sprite.Draw(LLayer.ControlTexture, Color.White);
 
@@ -399,6 +401,14 @@ namespace Client.Scenes.Views
             //Turn off costume effects
             if (Config.DrawEffects)
             {
+                if (Config.DrawParticles)
+                {
+                    foreach (var ob in ParticleEffects)
+                    {
+                        ob.Draw();
+                    }
+                }
+
                 foreach (MirEffect ob in Effects)
                 {
                     if (ob.DrawType != DrawType.Object || !ob.MapTarget.IsEmpty || ob.Target != User) continue;
@@ -1318,6 +1328,7 @@ namespace Client.Scenes.Views
 
                 DXManager.SetBlend(true);
                 DXManager.Device.SetRenderState(RenderState.SourceBlend, Blend.SourceAlpha);
+                DXManager.Device.SetRenderState(RenderState.DestinationBlend, Blend.One);
 
 
                 const float lightScale = 0.02F; //Players/Monsters
